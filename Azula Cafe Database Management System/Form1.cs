@@ -13,14 +13,15 @@ namespace Azula_Cafe_Database_Management_System
 {
     public partial class Form1 : Form
     {
+        string connectionString;
         SqlConnection cnn;
-        SqlCommand cmd;
-        SqlDataReader reader;
+        //SqlCommand cmd;
+        //SqlDataReader reader;
         public Form1()
         {
             InitializeComponent();
-            string connetionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=TigerMedia;Integrated Security = True";
-            cnn = new SqlConnection(connetionString);
+            connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
+            cnn = new SqlConnection(connectionString);
             cnn.Open();
         }
 
@@ -31,30 +32,35 @@ namespace Azula_Cafe_Database_Management_System
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (cnn.State == System.Data.ConnectionState.Open)
+            //Login log = new Login(connectionString);
+            Login log = new Login(cnn);
+            if (AccountName.Text.Length > 0 && AccountPassword.Text.Length > 0)
             {
-                if (AccountName.Text.Length > 0 && AccountPassword.Text.Length > 0)
-                {
-                    string sql = "select * from Accounts where Username = '" + AccountName.Text.ToString() + "' and AccPwd = '" + AccountPassword.Text.ToString() + "'";
-                    cmd = new SqlCommand(sql, cnn);
-                    reader = cmd.ExecuteReader();
-                    if (reader.Read()) //if the account exists
-                    {
-                            int AccNo = Convert.ToInt32(reader["AccountNo"]);
-                            reader.Close();
-                            cmd.Dispose();
-                            tabControl1.SelectedTab = tabPage2;
-                    }
-                    else
-                    {
-                        reader.Close();
-                        cmd.Dispose();
-                        MessageBox.Show("Invalid Credentials");
-                    }
-                }
+                //string sql = "select * from Accounts where Username = '" + AccountName.Text.ToString() + "' and AccPassword = '" + AccountPassword.Text.ToString() + "'";
+                //cmd = new SqlCommand(sql, cnn);
+                //reader = cmd.ExecuteReader();
+                //if (reader.Read()) //if the account exists
+                //{
+                //        int AccNo = Convert.ToInt32(reader["AccountNo"]);
+                //        reader.Close();
+                //        cmd.Dispose();
+                //        tabControl1.SelectedTab = tabPage2;
+                //}
+                //else
+                //{
+                //    reader.Close();
+                //    cmd.Dispose();
+                //    MessageBox.Show("Invalid Credentials");
+                //}
+                //Login log = new Login(connectionString);
+                int flag = log.checkaccount(AccountName.Text.ToString(), AccountPassword.Text.ToString());
+                if (flag == 1)
+                    tabControl1.SelectedTab = tabPage2;
+                else if (flag == 0)
+                    MessageBox.Show("Welcome Customer");
+                else
+                    MessageBox.Show("Invalid Credentials");
             }
-            else
-                MessageBox.Show("Debug Error 1 : Database not connected");
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -8,3 +8,13 @@ E:\Azula Cafe Database Management System\Azula Cafe Database Management System\o
 E:\Azula Cafe Database Management System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csproj.CoreCompileInputs.cache
 E:\Azula Cafe Database Management System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.exe
 E:\Azula Cafe Database Management System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.pdb
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csprojAssemblyReference.cache
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula_Cafe_Database_Management_System.Form1.resources
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula_Cafe_Database_Management_System.Properties.Resources.resources
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csproj.GenerateResource.cache
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csproj.CoreCompileInputs.cache
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.exe
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.pdb
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.exe.config
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.exe
+E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.pdb

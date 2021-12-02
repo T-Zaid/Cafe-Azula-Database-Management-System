@@ -137,6 +137,7 @@
             // 
             this.AccountPassword.Location = new System.Drawing.Point(337, 214);
             this.AccountPassword.Name = "AccountPassword";
+            this.AccountPassword.PasswordChar = '*';
             this.AccountPassword.Size = new System.Drawing.Size(123, 20);
             this.AccountPassword.TabIndex = 1;
             // 
