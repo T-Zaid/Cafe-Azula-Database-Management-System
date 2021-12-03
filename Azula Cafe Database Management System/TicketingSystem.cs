@@ -13,19 +13,15 @@ namespace Azula_Cafe_Database_Management_System
         private SqlCommand cmd;
         private SqlDataReader reader;
         private SqlConnection cnn;
+        private string errorString;
         //DateTime currentDateTime = DateTime.Now;
         public TicketingSystem(SqlConnection connection)
         {
             cnn = connection;
+            errorString = "";
         }
         public bool BookSeat(int SeatNo, DateTime Start_Time, DateTime End_Time, int CustomerID)
         {
-            if (Start_Time > End_Time || Start_Time < DateTime.Now || End_Time < DateTime.Now)
-            {
-                MessageBox.Show("Invalid time period entered.");
-                return false;
-            }
-
             double Amount_Paid;
 
             string queryString = "SELECT Premium_YES_NO FROM Seats WHERE SeatNo = " + SeatNo.ToString();
@@ -43,7 +39,7 @@ namespace Azula_Cafe_Database_Management_System
             }
             else
             {
-                MessageBox.Show("Invalid Seat Number selected.");
+                errorString = "Invalid Seat Number: " + SeatNo.ToString() + " selected.\n";
                 reader.Close();
                 cmd.Dispose();
                 return false;
@@ -66,7 +62,7 @@ namespace Azula_Cafe_Database_Management_System
             }
             else
             {
-                MessageBox.Show("Seat Number: " + SeatNo.ToString() + " is not available at the specified time.");
+                errorString = "Seat Number: " + SeatNo.ToString() + " is not available at the specified time.\n";
                 return false;
             }
         }
@@ -87,6 +83,64 @@ namespace Azula_Cafe_Database_Management_System
             cmd.Dispose();
 
             return result;
+        }
+
+        public void BookMultipleSeats(int numSeats, List<int> SeatNums, DateTime Start_Time, DateTime End_Time, int CustomerID)
+        {
+            errorString = "";
+            if (Start_Time > End_Time || Start_Time < DateTime.Now || End_Time < DateTime.Now)
+            {
+                MessageBox.Show("Invalid time period entered.");
+                return;
+            }
+
+            string details = "";
+            List<int> notBooked = new List<int>();
+
+            for(int i = 0; i < numSeats; i++)
+            {
+                if (!BookSeat(SeatNums[i], Start_Time, End_Time, CustomerID))
+                {
+                    notBooked.Add(SeatNums[i]);
+                    details += errorString;
+                }
+            }
+
+            if(notBooked.Count() > 0)
+            {
+                MessageBox.Show(notBooked.Count().ToString() + " Seats could not be booked. Reasons for each are:\n\n" + details, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void CancelTicket(int SeatNo, DateTime Start_Time, DateTime End_Time, int CustomerID)
+        {
+            if(Start_Time < DateTime.Now || End_Time < DateTime.Now)
+            {
+                MessageBox.Show("Cannot cancel a booking of which the starting time has passed.");
+                return;
+            }
+
+            string queryString = "SELECT * FROM Bookings WHERE SeatNo = " + SeatNo.ToString() + " AND Start_Time = '" + Start_Time.ToString("yyyy-MM-dd HH:mm:ss") + "' AND End_Time = '" + End_Time.ToString("yyyy-MM-dd HH:mm:ss") + "' AND CustomerID = " + CustomerID.ToString();
+            cmd = new SqlCommand(queryString, cnn);
+            reader = cmd.ExecuteReader();
+
+            if (!reader.Read())
+            {
+                MessageBox.Show("The specified booking does not exist.");
+                reader.Close();
+                cmd.Dispose();
+                return;
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            queryString = "DELETE FROM Bookings WHERE SeatNo = " + SeatNo.ToString() + " AND Start_Time = '" + Start_Time.ToString("yyyy-MM-dd HH:mm:ss") + "' AND End_Time = '" + End_Time.ToString("yyyy-MM-dd HH:mm:ss") + "' AND CustomerID = " + CustomerID.ToString();
+            cmd = new SqlCommand(queryString, cnn);
+            int rowsDeleted = cmd.ExecuteNonQuery();
+            cmd.Dispose();
+
+            MessageBox.Show("Booking cancelled successfully.");
         }
     }
 }
