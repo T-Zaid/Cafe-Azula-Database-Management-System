@@ -18,3 +18,13 @@ E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\A
 E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.exe.config
 E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.exe
 E:\Azula Cafe Database Management System\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.pdb
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.exe.config
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.exe
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\bin\Debug\Azula Cafe Database Management System.pdb
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csproj.AssemblyReference.cache
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula_Cafe_Database_Management_System.Form1.resources
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula_Cafe_Database_Management_System.Properties.Resources.resources
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csproj.GenerateResource.cache
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csproj.CoreCompileInputs.cache
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.exe
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.pdb

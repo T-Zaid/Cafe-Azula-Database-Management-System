@@ -13,15 +13,17 @@ namespace Azula_Cafe_Database_Management_System
 {
     public partial class Form1 : Form
     {
-        string connectionString;
+        string connectionString, umer_connectionString;
         SqlConnection cnn;
         //SqlCommand cmd;
         //SqlDataReader reader;
         public Form1()
         {
             InitializeComponent();
+            umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true"
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             cnn = new SqlConnection(connectionString);
+            //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
 
