@@ -24,9 +24,9 @@ namespace Azula_Cafe_Database_Management_System
             cnn = connection;
         }
 
-        public int checkaccount(string accname, string accpass)
+        public int[] checkaccount(string accname, string accpass)
         {
-            int Staff_or_Cust; //0 for customer, 1 for staff
+            int[] Staff_or_Cust = new int[2]; //Index 1: 0 for customer, 1 for staff, Index 2: ID of either customer or staff
             string sql = "select * from accounts where username = '" + accname + "' and AccPassword = '" + accpass + "'";
             cmd = new SqlCommand(sql, cnn);
             reader = cmd.ExecuteReader();
@@ -37,9 +37,27 @@ namespace Azula_Cafe_Database_Management_System
                 sql = "select * from Customers where AccountNo = " + AccNo;
                 cmd = new SqlCommand(sql, cnn);
                 reader = cmd.ExecuteReader();
-                return (reader.Read()) ? 0 : 1;
+                //return (reader.Read()) ? 0 : 1;
+                if(reader.Read())
+                {
+                    Staff_or_Cust[0] = 0;
+                    Staff_or_Cust[1] = Convert.ToInt32(reader["CustomerID"]);
+                }
+                else
+                {
+                    sql = "select * from Staff where AccountNo = " + AccNo;
+                    cmd = new SqlCommand(sql, cnn);
+                    reader = cmd.ExecuteReader();
+                    if(reader.Read())
+                    {
+                        Staff_or_Cust[0] = 1;
+                        Staff_or_Cust[1] = Convert.ToInt32(reader["StaffID"]);
+                    }
+                }
+                return Staff_or_Cust;
             }
-            return -1;
+            Staff_or_Cust[0] = -1;
+            return Staff_or_Cust;
         }
 
         ~Login()

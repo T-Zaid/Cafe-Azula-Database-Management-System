@@ -53,10 +53,11 @@ namespace Azula_Cafe_Database_Management_System
                 //    MessageBox.Show("Invalid Credentials");
                 //}
                 //Login log = new Login(connectionString);
-                int flag = log.checkaccount(AccountName.Text.ToString(), AccountPassword.Text.ToString());
-                if (flag == 1)
+                int[] flag = new int[2];
+                flag = log.checkaccount(AccountName.Text.ToString(), AccountPassword.Text.ToString());
+                if (flag[0] == 1)
                     tabControl1.SelectedTab = tabPage2;
-                else if (flag == 0)
+                else if (flag[0] == 0)
                     MessageBox.Show("Welcome Customer");
                 else
                     MessageBox.Show("Invalid Credentials");
