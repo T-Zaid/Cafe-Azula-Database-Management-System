@@ -117,7 +117,7 @@ namespace Azula_Cafe_Database_Management_System
             if(reader.HasRows)  //if it wasn't open, there's no point in closing it...
                 reader.Close();
             cmd.Dispose();
-            cnn.Close();
+            //cnn.Close();
         }
     }
 }

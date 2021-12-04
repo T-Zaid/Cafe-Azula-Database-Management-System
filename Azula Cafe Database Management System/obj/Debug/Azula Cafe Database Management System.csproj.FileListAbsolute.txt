@@ -28,3 +28,4 @@ C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula C
 C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.csproj.CoreCompileInputs.cache
 C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.exe
 C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula Cafe Database Management System.pdb
+C:\Users\umera\source\repos\T-Zaid\Cafe-Azula-Database-Management-System\Azula Cafe Database Management System\obj\Debug\Azula_Cafe_Database_Management_System.ReceiptWindow.resources

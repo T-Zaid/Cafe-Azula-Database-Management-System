@@ -55,6 +55,12 @@
     <Compile Include="Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptWindow.Designer.cs">
+      <DependentUpon>ReceiptWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="TicketingSystem.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -67,7 +73,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReceiptWindow.resx">
+      <DependentUpon>ReceiptWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Azula_Cafe_Database_Management_System.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Azula_Cafe_Database_Management_System.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\TicketingSystem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\89da2eb8a14efd3146b87325a658c8e2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookSeatButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
