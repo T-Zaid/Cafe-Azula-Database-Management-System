@@ -110,6 +110,25 @@ namespace Azula_Cafe_Database_Management_System
             {
                 MessageBox.Show(notBooked.Count().ToString() + " Seats could not be booked. Reasons for each are:\n\n" + details, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            List<int> receiptSeatNums = new List<int>();
+            bool notBookedFlag;
+
+            for(int i = 0; i < SeatNums.Count(); i++)
+            {
+                notBookedFlag = false;
+                for(int j = 0; j < notBooked.Count(); j++)
+                {
+                    if(SeatNums[i] == notBooked[j])
+                        notBookedFlag = true;
+                }
+
+                if (!notBookedFlag)
+                    receiptSeatNums.Add(SeatNums[i]);
+            }
+
+            ReceiptWindow ticketReceipt = new ReceiptWindow(CustomerID, receiptSeatNums.Count(), receiptSeatNums, Start_Time, End_Time, DateTime.Now);
+            ticketReceipt.ShowDialog();
         }
 
         public void CancelTicket(int SeatNo, DateTime Start_Time, DateTime End_Time, int CustomerID)
