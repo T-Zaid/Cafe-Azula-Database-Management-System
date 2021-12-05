@@ -72,6 +72,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.BookSeatsPage2 = new System.Windows.Forms.TabPage();
+            this.BackButton2 = new System.Windows.Forms.Button();
+            this.ContinueButton2 = new System.Windows.Forms.Button();
+            this.AutoSelectSeatsButton = new System.Windows.Forms.Button();
             this.SelectedSeatsLabel = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.RemoveSeatButton = new System.Windows.Forms.Button();
@@ -79,15 +82,25 @@
             this.SeatPicker = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.AutoSelectSeatsButton = new System.Windows.Forms.Button();
-            this.ContinueButton2 = new System.Windows.Forms.Button();
-            this.BackButton2 = new System.Windows.Forms.Button();
+            this.CancelSeatPage = new System.Windows.Forms.TabPage();
+            this.CancelBookingBackButton = new System.Windows.Forms.Button();
+            this.CancelBookingButton = new System.Windows.Forms.Button();
+            this.CancelBookingTable = new System.Windows.Forms.DataGridView();
+            this.SeatNoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateOfBookingColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AmountPaidColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
             this.CustomerPage.SuspendLayout();
             this.BookSeatsPage.SuspendLayout();
             this.BookSeatsPage2.SuspendLayout();
+            this.CancelSeatPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -97,6 +110,7 @@
             this.tabControl1.Controls.Add(this.CustomerPage);
             this.tabControl1.Controls.Add(this.BookSeatsPage);
             this.tabControl1.Controls.Add(this.BookSeatsPage2);
+            this.tabControl1.Controls.Add(this.CancelSeatPage);
             this.tabControl1.Location = new System.Drawing.Point(-7, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -366,6 +380,7 @@
             this.CancelSeatBookingButton.TabIndex = 4;
             this.CancelSeatBookingButton.Text = "Cancel Seat Booking";
             this.CancelSeatBookingButton.UseVisualStyleBackColor = true;
+            this.CancelSeatBookingButton.Click += new System.EventHandler(this.CancelSeatBookingButton_Click);
             // 
             // ViewBookingHistoryButton
             // 
@@ -572,6 +587,36 @@
             this.BookSeatsPage2.Text = "Book Seats 2";
             this.BookSeatsPage2.UseVisualStyleBackColor = true;
             // 
+            // BackButton2
+            // 
+            this.BackButton2.Location = new System.Drawing.Point(431, 352);
+            this.BackButton2.Name = "BackButton2";
+            this.BackButton2.Size = new System.Drawing.Size(75, 23);
+            this.BackButton2.TabIndex = 9;
+            this.BackButton2.Text = "Back";
+            this.BackButton2.UseVisualStyleBackColor = true;
+            this.BackButton2.Click += new System.EventHandler(this.BackButton2_Click);
+            // 
+            // ContinueButton2
+            // 
+            this.ContinueButton2.Location = new System.Drawing.Point(311, 352);
+            this.ContinueButton2.Name = "ContinueButton2";
+            this.ContinueButton2.Size = new System.Drawing.Size(75, 23);
+            this.ContinueButton2.TabIndex = 8;
+            this.ContinueButton2.Text = "Continue";
+            this.ContinueButton2.UseVisualStyleBackColor = true;
+            this.ContinueButton2.Click += new System.EventHandler(this.ContinueButton2_Click);
+            // 
+            // AutoSelectSeatsButton
+            // 
+            this.AutoSelectSeatsButton.Location = new System.Drawing.Point(453, 108);
+            this.AutoSelectSeatsButton.Name = "AutoSelectSeatsButton";
+            this.AutoSelectSeatsButton.Size = new System.Drawing.Size(75, 23);
+            this.AutoSelectSeatsButton.TabIndex = 7;
+            this.AutoSelectSeatsButton.Text = "AutoSelect";
+            this.AutoSelectSeatsButton.UseVisualStyleBackColor = true;
+            this.AutoSelectSeatsButton.Click += new System.EventHandler(this.AutoSelectSeatsButton_Click);
+            // 
             // SelectedSeatsLabel
             // 
             this.SelectedSeatsLabel.AutoSize = true;
@@ -638,35 +683,107 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Select Seats";
             // 
-            // AutoSelectSeatsButton
+            // CancelSeatPage
             // 
-            this.AutoSelectSeatsButton.Location = new System.Drawing.Point(453, 108);
-            this.AutoSelectSeatsButton.Name = "AutoSelectSeatsButton";
-            this.AutoSelectSeatsButton.Size = new System.Drawing.Size(75, 23);
-            this.AutoSelectSeatsButton.TabIndex = 7;
-            this.AutoSelectSeatsButton.Text = "AutoSelect";
-            this.AutoSelectSeatsButton.UseVisualStyleBackColor = true;
-            this.AutoSelectSeatsButton.Click += new System.EventHandler(this.AutoSelectSeatsButton_Click);
+            this.CancelSeatPage.Controls.Add(this.CancelBookingBackButton);
+            this.CancelSeatPage.Controls.Add(this.CancelBookingButton);
+            this.CancelSeatPage.Controls.Add(this.CancelBookingTable);
+            this.CancelSeatPage.Controls.Add(this.label22);
+            this.CancelSeatPage.Controls.Add(this.label21);
+            this.CancelSeatPage.Location = new System.Drawing.Point(4, 22);
+            this.CancelSeatPage.Name = "CancelSeatPage";
+            this.CancelSeatPage.Size = new System.Drawing.Size(806, 442);
+            this.CancelSeatPage.TabIndex = 5;
+            this.CancelSeatPage.Text = "Cancel Seat";
+            this.CancelSeatPage.UseVisualStyleBackColor = true;
             // 
-            // ContinueButton2
+            // CancelBookingBackButton
             // 
-            this.ContinueButton2.Location = new System.Drawing.Point(311, 352);
-            this.ContinueButton2.Name = "ContinueButton2";
-            this.ContinueButton2.Size = new System.Drawing.Size(75, 23);
-            this.ContinueButton2.TabIndex = 8;
-            this.ContinueButton2.Text = "Continue";
-            this.ContinueButton2.UseVisualStyleBackColor = true;
-            this.ContinueButton2.Click += new System.EventHandler(this.ContinueButton2_Click);
+            this.CancelBookingBackButton.Location = new System.Drawing.Point(433, 384);
+            this.CancelBookingBackButton.Name = "CancelBookingBackButton";
+            this.CancelBookingBackButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelBookingBackButton.TabIndex = 4;
+            this.CancelBookingBackButton.Text = "Back";
+            this.CancelBookingBackButton.UseVisualStyleBackColor = true;
+            this.CancelBookingBackButton.Click += new System.EventHandler(this.CancelBookingBackButton_Click);
             // 
-            // BackButton2
+            // CancelBookingButton
             // 
-            this.BackButton2.Location = new System.Drawing.Point(431, 352);
-            this.BackButton2.Name = "BackButton2";
-            this.BackButton2.Size = new System.Drawing.Size(75, 23);
-            this.BackButton2.TabIndex = 9;
-            this.BackButton2.Text = "Back";
-            this.BackButton2.UseVisualStyleBackColor = true;
-            this.BackButton2.Click += new System.EventHandler(this.BackButton2_Click);
+            this.CancelBookingButton.Location = new System.Drawing.Point(299, 384);
+            this.CancelBookingButton.Name = "CancelBookingButton";
+            this.CancelBookingButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelBookingButton.TabIndex = 3;
+            this.CancelBookingButton.Text = "Cancel";
+            this.CancelBookingButton.UseVisualStyleBackColor = true;
+            this.CancelBookingButton.Click += new System.EventHandler(this.CancelBookingButton_Click);
+            // 
+            // CancelBookingTable
+            // 
+            this.CancelBookingTable.AllowUserToAddRows = false;
+            this.CancelBookingTable.AllowUserToDeleteRows = false;
+            this.CancelBookingTable.AllowUserToResizeRows = false;
+            this.CancelBookingTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CancelBookingTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CancelBookingTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SeatNoColumn,
+            this.DateOfBookingColumn,
+            this.StartTimeColumn,
+            this.EndTimeColumn,
+            this.AmountPaidColumn});
+            this.CancelBookingTable.Location = new System.Drawing.Point(47, 86);
+            this.CancelBookingTable.Name = "CancelBookingTable";
+            this.CancelBookingTable.ReadOnly = true;
+            this.CancelBookingTable.Size = new System.Drawing.Size(715, 283);
+            this.CancelBookingTable.TabIndex = 2;
+            // 
+            // SeatNoColumn
+            // 
+            this.SeatNoColumn.HeaderText = "Seat Number";
+            this.SeatNoColumn.Name = "SeatNoColumn";
+            this.SeatNoColumn.ReadOnly = true;
+            // 
+            // DateOfBookingColumn
+            // 
+            this.DateOfBookingColumn.HeaderText = "Date of Booking";
+            this.DateOfBookingColumn.Name = "DateOfBookingColumn";
+            this.DateOfBookingColumn.ReadOnly = true;
+            // 
+            // StartTimeColumn
+            // 
+            this.StartTimeColumn.HeaderText = "Start Time";
+            this.StartTimeColumn.Name = "StartTimeColumn";
+            this.StartTimeColumn.ReadOnly = true;
+            // 
+            // EndTimeColumn
+            // 
+            this.EndTimeColumn.HeaderText = "End Time";
+            this.EndTimeColumn.Name = "EndTimeColumn";
+            this.EndTimeColumn.ReadOnly = true;
+            // 
+            // AmountPaidColumn
+            // 
+            this.AmountPaidColumn.HeaderText = "Amount Paid";
+            this.AmountPaidColumn.Name = "AmountPaidColumn";
+            this.AmountPaidColumn.ReadOnly = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(296, 55);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(200, 13);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Following is the list of all active bookings.";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(161, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(492, 55);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Cancel Seat Booking";
             // 
             // Form1
             // 
@@ -689,6 +806,9 @@
             this.BookSeatsPage.PerformLayout();
             this.BookSeatsPage2.ResumeLayout(false);
             this.BookSeatsPage2.PerformLayout();
+            this.CancelSeatPage.ResumeLayout(false);
+            this.CancelSeatPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -749,6 +869,17 @@
         private System.Windows.Forms.Button AutoSelectSeatsButton;
         private System.Windows.Forms.Button BackButton2;
         private System.Windows.Forms.Button ContinueButton2;
+        private System.Windows.Forms.TabPage CancelSeatPage;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button CancelBookingBackButton;
+        private System.Windows.Forms.Button CancelBookingButton;
+        private System.Windows.Forms.DataGridView CancelBookingTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatNoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateOfBookingColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartTimeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndTimeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AmountPaidColumn;
+        private System.Windows.Forms.Label label22;
     }
 }
 

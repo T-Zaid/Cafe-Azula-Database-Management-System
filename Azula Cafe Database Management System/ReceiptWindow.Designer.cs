@@ -44,6 +44,9 @@ namespace Azula_Cafe_Database_Management_System
             this.EndTime_Label = new System.Windows.Forms.Label();
             this.OKButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
+            this.AmountPaidColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TotalAmountLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,10 +119,11 @@ namespace Azula_Cafe_Database_Management_System
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SerialNo,
-            this.SeatNum});
-            this.dataGridView1.Location = new System.Drawing.Point(110, 177);
+            this.SeatNum,
+            this.AmountPaidColumn});
+            this.dataGridView1.Location = new System.Drawing.Point(64, 196);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(249, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 150);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -177,7 +181,7 @@ namespace Azula_Cafe_Database_Management_System
             // OKButton
             // 
             this.OKButton.ForeColor = System.Drawing.Color.Black;
-            this.OKButton.Location = new System.Drawing.Point(138, 333);
+            this.OKButton.Location = new System.Drawing.Point(138, 352);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(75, 23);
             this.OKButton.TabIndex = 11;
@@ -188,7 +192,7 @@ namespace Azula_Cafe_Database_Management_System
             // PrintButton
             // 
             this.PrintButton.ForeColor = System.Drawing.Color.Black;
-            this.PrintButton.Location = new System.Drawing.Point(254, 333);
+            this.PrintButton.Location = new System.Drawing.Point(254, 352);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(75, 23);
             this.PrintButton.TabIndex = 12;
@@ -196,12 +200,38 @@ namespace Azula_Cafe_Database_Management_System
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
+            // AmountPaidColumn
+            // 
+            this.AmountPaidColumn.HeaderText = "Amount Paid";
+            this.AmountPaidColumn.Name = "AmountPaidColumn";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(172, 168);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Total Amount:";
+            // 
+            // TotalAmountLabel
+            // 
+            this.TotalAmountLabel.AutoSize = true;
+            this.TotalAmountLabel.Location = new System.Drawing.Point(251, 168);
+            this.TotalAmountLabel.Name = "TotalAmountLabel";
+            this.TotalAmountLabel.Size = new System.Drawing.Size(35, 13);
+            this.TotalAmountLabel.TabIndex = 14;
+            this.TotalAmountLabel.Text = "label8";
+            // 
             // ReceiptWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(470, 364);
+            this.ClientSize = new System.Drawing.Size(470, 384);
+            this.Controls.Add(this.TotalAmountLabel);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.EndTime_Label);
@@ -242,5 +272,8 @@ namespace Azula_Cafe_Database_Management_System
         private System.Windows.Forms.Label EndTime_Label;
         private System.Windows.Forms.Button OKButton;
         private System.Windows.Forms.Button PrintButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AmountPaidColumn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label TotalAmountLabel;
     }
 }

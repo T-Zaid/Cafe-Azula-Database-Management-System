@@ -14,15 +14,17 @@ namespace Azula_Cafe_Database_Management_System
         private SqlDataReader reader;
         private SqlConnection cnn;
         private string errorString;
+        private List<int> AmountPaidList;
         //DateTime currentDateTime = DateTime.Now;
         public TicketingSystem(SqlConnection connection)
         {
             cnn = connection;
             errorString = "";
+            AmountPaidList = new List<int>();
         }
         public bool BookSeat(int SeatNo, DateTime Start_Time, DateTime End_Time, int CustomerID)
         {
-            double Amount_Paid;
+            int Amount_Paid;
 
             string queryString = "SELECT Premium_YES_NO FROM Seats WHERE SeatNo = " + SeatNo.ToString();
             cmd = new SqlCommand(queryString, cnn); // check seat no invalid error exception
@@ -31,11 +33,13 @@ namespace Azula_Cafe_Database_Management_System
             if (reader.Read())
             {
                 TimeSpan HoursBooked = End_Time - Start_Time;
-                Amount_Paid = HoursBooked.TotalHours * 100;
+                Amount_Paid = Convert.ToInt32(HoursBooked.TotalHours * 100);
 
                 bool premiumFlag = Convert.ToBoolean(reader["Premium_YES_NO"]);
                 if (premiumFlag)
                     Amount_Paid += 200;
+
+                AmountPaidList.Add(Amount_Paid);
             }
             else
             {
@@ -127,7 +131,7 @@ namespace Azula_Cafe_Database_Management_System
                     receiptSeatNums.Add(SeatNums[i]);
             }
 
-            ReceiptWindow ticketReceipt = new ReceiptWindow(CustomerID, receiptSeatNums.Count(), receiptSeatNums, Start_Time, End_Time, DateTime.Now);
+            ReceiptWindow ticketReceipt = new ReceiptWindow(CustomerID, receiptSeatNums.Count(), receiptSeatNums, Start_Time, End_Time, DateTime.Now, AmountPaidList);
             ticketReceipt.ShowDialog();
         }
 

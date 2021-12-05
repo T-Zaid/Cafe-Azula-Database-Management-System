@@ -19,8 +19,9 @@ namespace Azula_Cafe_Database_Management_System
         private DateTime Start, End;
         private DateTime bookingDate;
         private PrintDocument printDocument1 = new PrintDocument();
+        private List<int> AmountPaidList;
 
-        public ReceiptWindow(int custID, int numSeats, List<int> SeatNums, DateTime start, DateTime end, DateTime booking)
+        public ReceiptWindow(int custID, int numSeats, List<int> SeatNums, DateTime start, DateTime end, DateTime booking, List<int> AmountPaid)
         {
             InitializeComponent();
             CustomerID = custID;
@@ -30,6 +31,7 @@ namespace Azula_Cafe_Database_Management_System
             this.numSeats = numSeats;
             this.SeatNums = SeatNums;
             printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            AmountPaidList = AmountPaid;
         }
 
         Bitmap memoryImage;
@@ -71,10 +73,11 @@ namespace Azula_Cafe_Database_Management_System
             BookingTime_Label.Text = bookingDate.ToString("yyyy-MM-dd");
             StartTime_Label.Text = Start.ToString("yyyy-MM-dd HH:mm:ss");
             EndTime_Label.Text = End.ToString("yyyy-MM-dd HH:mm:ss");
+            TotalAmountLabel.Text = AmountPaidList.Sum().ToString();
 
             for (int i = 0; i < numSeats; i++)
             {
-                string[] row = { (i + 1).ToString(), SeatNums[i].ToString() };
+                string[] row = { (i + 1).ToString(), SeatNums[i].ToString(), AmountPaidList[i].ToString() };
 
                 dataGridView1.Rows.Add(row);
             }

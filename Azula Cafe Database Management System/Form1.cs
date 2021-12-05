@@ -306,6 +306,57 @@ namespace Azula_Cafe_Database_Management_System
             tabControl1.SelectedTab = CustomerPage;
         }
 
+        private void CancelSeatBookingButton_Click(object sender, EventArgs e)
+        {
+            CancelBookingPageCall();
+        }
+
+        private void CancelBookingPageCall()
+        {
+            CancelBookingTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND Start_Time > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                CancelBookingTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            tabControl1.SelectedTab = CancelSeatPage;
+        }
+
+        private void CancelBookingBackButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = CustomerPage;
+        }
+
+        private void CancelBookingButton_Click(object sender, EventArgs e)
+        {
+            if(CancelBookingTable.RowCount != 0)
+            {
+                var yesNo = MessageBox.Show("Are you sure you want to cancel this seat booking?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (yesNo == DialogResult.Yes)
+                {
+                    string newQuery = "DELETE FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() +
+                                        " AND SeatNo = " + CancelBookingTable.CurrentRow.Cells[0].Value.ToString() +
+                                        " AND Start_Time = '" + Convert.ToDateTime(CancelBookingTable.CurrentRow.Cells[2].Value).ToString("yyyy-MM-dd HH:mm:ss") +
+                                        "' AND End_Time = '" + Convert.ToDateTime(CancelBookingTable.CurrentRow.Cells[3].Value).ToString("yyyy-MM-dd HH:mm:ss") + "'";
+                    SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Booking successfully cancelled.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CancelBookingPageCall();
+                }
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             
