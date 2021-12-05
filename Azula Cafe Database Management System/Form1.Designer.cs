@@ -39,6 +39,18 @@
             this.AccountPassword = new System.Windows.Forms.TextBox();
             this.AccountName = new System.Windows.Forms.TextBox();
             this.CustAccReg = new System.Windows.Forms.TabPage();
+            this.MovetoLoginPage = new System.Windows.Forms.Button();
+            this.CustCreateAccount = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.CustPassword = new System.Windows.Forms.TextBox();
+            this.CustUsername = new System.Windows.Forms.TextBox();
+            this.CustPhone = new System.Windows.Forms.TextBox();
+            this.CustName = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.CustomerPage = new System.Windows.Forms.TabPage();
             this.ViewEventsButton = new System.Windows.Forms.Button();
             this.CancelSeatBookingButton = new System.Windows.Forms.Button();
@@ -60,19 +72,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.BookSeatsPage2 = new System.Windows.Forms.TabPage();
+            this.SelectedSeatsLabel = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.RemoveSeatButton = new System.Windows.Forms.Button();
+            this.AddSeatButton = new System.Windows.Forms.Button();
+            this.SeatPicker = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.CustName = new System.Windows.Forms.TextBox();
-            this.CustPhone = new System.Windows.Forms.TextBox();
-            this.CustUsername = new System.Windows.Forms.TextBox();
-            this.CustPassword = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.CustCreateAccount = new System.Windows.Forms.Button();
-            this.MovetoLoginPage = new System.Windows.Forms.Button();
+            this.AutoSelectSeatsButton = new System.Windows.Forms.Button();
+            this.ContinueButton2 = new System.Windows.Forms.Button();
+            this.BackButton2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -213,6 +222,115 @@
             this.CustAccReg.Text = "Register Customer Account";
             this.CustAccReg.UseVisualStyleBackColor = true;
             // 
+            // MovetoLoginPage
+            // 
+            this.MovetoLoginPage.Location = new System.Drawing.Point(273, 350);
+            this.MovetoLoginPage.Name = "MovetoLoginPage";
+            this.MovetoLoginPage.Size = new System.Drawing.Size(75, 23);
+            this.MovetoLoginPage.TabIndex = 12;
+            this.MovetoLoginPage.Text = "Back";
+            this.MovetoLoginPage.UseVisualStyleBackColor = true;
+            // 
+            // CustCreateAccount
+            // 
+            this.CustCreateAccount.Location = new System.Drawing.Point(436, 351);
+            this.CustCreateAccount.Name = "CustCreateAccount";
+            this.CustCreateAccount.Size = new System.Drawing.Size(75, 23);
+            this.CustCreateAccount.TabIndex = 11;
+            this.CustCreateAccount.Text = "Register";
+            this.CustCreateAccount.UseVisualStyleBackColor = true;
+            this.CustCreateAccount.Click += new System.EventHandler(this.CustCreateAccount_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(267, 281);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(87, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Enter Password :";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(267, 215);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Enter Username : ";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(270, 162);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(112, 13);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Enter Phone Number :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(270, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(69, 13);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Enter Name :";
+            // 
+            // CustPassword
+            // 
+            this.CustPassword.Location = new System.Drawing.Point(406, 278);
+            this.CustPassword.MaxLength = 15;
+            this.CustPassword.Name = "CustPassword";
+            this.CustPassword.PasswordChar = '*';
+            this.CustPassword.Size = new System.Drawing.Size(146, 20);
+            this.CustPassword.TabIndex = 6;
+            // 
+            // CustUsername
+            // 
+            this.CustUsername.Location = new System.Drawing.Point(406, 212);
+            this.CustUsername.MaxLength = 25;
+            this.CustUsername.Name = "CustUsername";
+            this.CustUsername.Size = new System.Drawing.Size(146, 20);
+            this.CustUsername.TabIndex = 5;
+            // 
+            // CustPhone
+            // 
+            this.CustPhone.Location = new System.Drawing.Point(406, 159);
+            this.CustPhone.MaxLength = 11;
+            this.CustPhone.Name = "CustPhone";
+            this.CustPhone.Size = new System.Drawing.Size(146, 20);
+            this.CustPhone.TabIndex = 4;
+            this.CustPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustPhone_KeyPress);
+            // 
+            // CustName
+            // 
+            this.CustName.Location = new System.Drawing.Point(406, 104);
+            this.CustName.MaxLength = 50;
+            this.CustName.Name = "CustName";
+            this.CustName.Size = new System.Drawing.Size(146, 20);
+            this.CustName.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(266, 39);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(245, 20);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Enter the form to register yourself";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(196, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(400, 39);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Welcome to Cafe Azula";
+            // 
             // CustomerPage
             // 
             this.CustomerPage.Controls.Add(this.ViewEventsButton);
@@ -274,13 +392,13 @@
             // 
             // CustomerNameLabel
             // 
-            this.CustomerNameLabel.AutoSize = true;
             this.CustomerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerNameLabel.Location = new System.Drawing.Point(330, 39);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
             this.CustomerNameLabel.Size = new System.Drawing.Size(124, 20);
             this.CustomerNameLabel.TabIndex = 1;
             this.CustomerNameLabel.Text = "Cusomter Name";
+            this.CustomerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -349,6 +467,7 @@
             this.BackFromBookSeatsButton.TabIndex = 8;
             this.BackFromBookSeatsButton.Text = "Back";
             this.BackFromBookSeatsButton.UseVisualStyleBackColor = true;
+            this.BackFromBookSeatsButton.Click += new System.EventHandler(this.BackFromBookSeatsButton_Click);
             // 
             // NumHoursDropDown
             // 
@@ -436,6 +555,15 @@
             // 
             // BookSeatsPage2
             // 
+            this.BookSeatsPage2.Controls.Add(this.BackButton2);
+            this.BookSeatsPage2.Controls.Add(this.ContinueButton2);
+            this.BookSeatsPage2.Controls.Add(this.AutoSelectSeatsButton);
+            this.BookSeatsPage2.Controls.Add(this.SelectedSeatsLabel);
+            this.BookSeatsPage2.Controls.Add(this.label20);
+            this.BookSeatsPage2.Controls.Add(this.RemoveSeatButton);
+            this.BookSeatsPage2.Controls.Add(this.AddSeatButton);
+            this.BookSeatsPage2.Controls.Add(this.SeatPicker);
+            this.BookSeatsPage2.Controls.Add(this.label19);
             this.BookSeatsPage2.Controls.Add(this.label12);
             this.BookSeatsPage2.Location = new System.Drawing.Point(4, 22);
             this.BookSeatsPage2.Name = "BookSeatsPage2";
@@ -443,6 +571,62 @@
             this.BookSeatsPage2.TabIndex = 4;
             this.BookSeatsPage2.Text = "Book Seats 2";
             this.BookSeatsPage2.UseVisualStyleBackColor = true;
+            // 
+            // SelectedSeatsLabel
+            // 
+            this.SelectedSeatsLabel.AutoSize = true;
+            this.SelectedSeatsLabel.Location = new System.Drawing.Point(365, 208);
+            this.SelectedSeatsLabel.Name = "SelectedSeatsLabel";
+            this.SelectedSeatsLabel.Size = new System.Drawing.Size(41, 13);
+            this.SelectedSeatsLabel.TabIndex = 6;
+            this.SelectedSeatsLabel.Text = "label21";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(280, 208);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(82, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Selected Seats:";
+            // 
+            // RemoveSeatButton
+            // 
+            this.RemoveSeatButton.Location = new System.Drawing.Point(372, 137);
+            this.RemoveSeatButton.Name = "RemoveSeatButton";
+            this.RemoveSeatButton.Size = new System.Drawing.Size(75, 23);
+            this.RemoveSeatButton.TabIndex = 4;
+            this.RemoveSeatButton.Text = "Remove";
+            this.RemoveSeatButton.UseVisualStyleBackColor = true;
+            this.RemoveSeatButton.Click += new System.EventHandler(this.RemoveSeatButton_Click);
+            // 
+            // AddSeatButton
+            // 
+            this.AddSeatButton.Location = new System.Drawing.Point(372, 108);
+            this.AddSeatButton.Name = "AddSeatButton";
+            this.AddSeatButton.Size = new System.Drawing.Size(75, 23);
+            this.AddSeatButton.TabIndex = 3;
+            this.AddSeatButton.Text = "Add";
+            this.AddSeatButton.UseVisualStyleBackColor = true;
+            this.AddSeatButton.Click += new System.EventHandler(this.AddSeatButton_Click);
+            // 
+            // SeatPicker
+            // 
+            this.SeatPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SeatPicker.FormattingEnabled = true;
+            this.SeatPicker.Location = new System.Drawing.Point(323, 110);
+            this.SeatPicker.Name = "SeatPicker";
+            this.SeatPicker.Size = new System.Drawing.Size(43, 21);
+            this.SeatPicker.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(280, 113);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Seats:";
             // 
             // label12
             // 
@@ -454,114 +638,35 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Select Seats";
             // 
-            // label13
+            // AutoSelectSeatsButton
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(196, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(400, 39);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Welcome to Cafe Azula";
+            this.AutoSelectSeatsButton.Location = new System.Drawing.Point(453, 108);
+            this.AutoSelectSeatsButton.Name = "AutoSelectSeatsButton";
+            this.AutoSelectSeatsButton.Size = new System.Drawing.Size(75, 23);
+            this.AutoSelectSeatsButton.TabIndex = 7;
+            this.AutoSelectSeatsButton.Text = "AutoSelect";
+            this.AutoSelectSeatsButton.UseVisualStyleBackColor = true;
+            this.AutoSelectSeatsButton.Click += new System.EventHandler(this.AutoSelectSeatsButton_Click);
             // 
-            // label14
+            // ContinueButton2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(266, 39);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(245, 20);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Enter the form to register yourself";
+            this.ContinueButton2.Location = new System.Drawing.Point(311, 352);
+            this.ContinueButton2.Name = "ContinueButton2";
+            this.ContinueButton2.Size = new System.Drawing.Size(75, 23);
+            this.ContinueButton2.TabIndex = 8;
+            this.ContinueButton2.Text = "Continue";
+            this.ContinueButton2.UseVisualStyleBackColor = true;
+            this.ContinueButton2.Click += new System.EventHandler(this.ContinueButton2_Click);
             // 
-            // CustName
+            // BackButton2
             // 
-            this.CustName.Location = new System.Drawing.Point(406, 104);
-            this.CustName.MaxLength = 50;
-            this.CustName.Name = "CustName";
-            this.CustName.Size = new System.Drawing.Size(146, 20);
-            this.CustName.TabIndex = 3;
-            // 
-            // CustPhone
-            // 
-            this.CustPhone.Location = new System.Drawing.Point(406, 159);
-            this.CustPhone.MaxLength = 11;
-            this.CustPhone.Name = "CustPhone";
-            this.CustPhone.Size = new System.Drawing.Size(146, 20);
-            this.CustPhone.TabIndex = 4;
-            this.CustPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustPhone_KeyPress);
-            // 
-            // CustUsername
-            // 
-            this.CustUsername.Location = new System.Drawing.Point(406, 212);
-            this.CustUsername.MaxLength = 25;
-            this.CustUsername.Name = "CustUsername";
-            this.CustUsername.Size = new System.Drawing.Size(146, 20);
-            this.CustUsername.TabIndex = 5;
-            // 
-            // CustPassword
-            // 
-            this.CustPassword.Location = new System.Drawing.Point(406, 278);
-            this.CustPassword.MaxLength = 15;
-            this.CustPassword.Name = "CustPassword";
-            this.CustPassword.PasswordChar = '*';
-            this.CustPassword.Size = new System.Drawing.Size(146, 20);
-            this.CustPassword.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(270, 104);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 13);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Enter Name :";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(270, 162);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(112, 13);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "Enter Phone Number :";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(267, 215);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 13);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Enter Username : ";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(267, 281);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(87, 13);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Enter Password :";
-            // 
-            // CustCreateAccount
-            // 
-            this.CustCreateAccount.Location = new System.Drawing.Point(436, 351);
-            this.CustCreateAccount.Name = "CustCreateAccount";
-            this.CustCreateAccount.Size = new System.Drawing.Size(75, 23);
-            this.CustCreateAccount.TabIndex = 11;
-            this.CustCreateAccount.Text = "Register";
-            this.CustCreateAccount.UseVisualStyleBackColor = true;
-            this.CustCreateAccount.Click += new System.EventHandler(this.CustCreateAccount_Click);
-            // 
-            // MovetoLoginPage
-            // 
-            this.MovetoLoginPage.Location = new System.Drawing.Point(273, 350);
-            this.MovetoLoginPage.Name = "MovetoLoginPage";
-            this.MovetoLoginPage.Size = new System.Drawing.Size(75, 23);
-            this.MovetoLoginPage.TabIndex = 12;
-            this.MovetoLoginPage.Text = "Back";
-            this.MovetoLoginPage.UseVisualStyleBackColor = true;
+            this.BackButton2.Location = new System.Drawing.Point(431, 352);
+            this.BackButton2.Name = "BackButton2";
+            this.BackButton2.Size = new System.Drawing.Size(75, 23);
+            this.BackButton2.TabIndex = 9;
+            this.BackButton2.Text = "Back";
+            this.BackButton2.UseVisualStyleBackColor = true;
+            this.BackButton2.Click += new System.EventHandler(this.BackButton2_Click);
             // 
             // Form1
             // 
@@ -635,6 +740,15 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button CustCreateAccount;
         private System.Windows.Forms.Button MovetoLoginPage;
+        private System.Windows.Forms.ComboBox SeatPicker;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label SelectedSeatsLabel;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button RemoveSeatButton;
+        private System.Windows.Forms.Button AddSeatButton;
+        private System.Windows.Forms.Button AutoSelectSeatsButton;
+        private System.Windows.Forms.Button BackButton2;
+        private System.Windows.Forms.Button ContinueButton2;
     }
 }
 
