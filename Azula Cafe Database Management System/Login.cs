@@ -62,11 +62,11 @@ namespace Azula_Cafe_Database_Management_System
 
         public int CustomerAccountCreate(string Name, string phone, string username, string password)
         {
-            string sql = "select * from Accounts where Username = " + username;
+            string sql = "select * from Accounts where Username = '" + username + "'";
             cmd = new SqlCommand(sql, cnn);
             reader = cmd.ExecuteReader();
             int existingUserName = (reader.Read()) ? 1 : 0; //1 if the account with the specific username exists, 0 if not
-            if (existingUserName != 0)
+            if (existingUserName != 1)
             {
                 string sql1 = "select max(AccountNo) from Accounts", sql2 = "select max(CustomerID) from Customers";
                 cmd = new SqlCommand(sql1, cnn);

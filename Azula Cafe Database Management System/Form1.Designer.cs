@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AccountPassword = new System.Windows.Forms.TextBox();
             this.AccountName = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CustAccReg = new System.Windows.Forms.TabPage();
             this.CustomerPage = new System.Windows.Forms.TabPage();
             this.ViewEventsButton = new System.Windows.Forms.Button();
             this.CancelSeatBookingButton = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.CustomerNameLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.BookSeatsPage = new System.Windows.Forms.TabPage();
+            this.StartingTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.ContinueBookSeatsButton = new System.Windows.Forms.Button();
             this.BackFromBookSeatsButton = new System.Windows.Forms.Button();
@@ -58,11 +59,23 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.StartingTimePicker = new System.Windows.Forms.DateTimePicker();
             this.BookSeatsPage2 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.CustName = new System.Windows.Forms.TextBox();
+            this.CustPhone = new System.Windows.Forms.TextBox();
+            this.CustUsername = new System.Windows.Forms.TextBox();
+            this.CustPassword = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.CustCreateAccount = new System.Windows.Forms.Button();
+            this.MovetoLoginPage = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
+            this.CustAccReg.SuspendLayout();
             this.CustomerPage.SuspendLayout();
             this.BookSeatsPage.SuspendLayout();
             this.BookSeatsPage2.SuspendLayout();
@@ -71,7 +84,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.LoginPage);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.CustAccReg);
             this.tabControl1.Controls.Add(this.CustomerPage);
             this.tabControl1.Controls.Add(this.BookSeatsPage);
             this.tabControl1.Controls.Add(this.BookSeatsPage2);
@@ -107,6 +120,7 @@
             this.Register.TabIndex = 7;
             this.Register.Text = "Register";
             this.Register.UseVisualStyleBackColor = true;
+            this.Register.Click += new System.EventHandler(this.Register_Click);
             // 
             // label4
             // 
@@ -177,15 +191,27 @@
             this.AccountName.TabIndex = 0;
             this.AccountName.TextChanged += new System.EventHandler(this.AccountName_TextChanged);
             // 
-            // tabPage2
+            // CustAccReg
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(806, 442);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Welcome";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.CustAccReg.Controls.Add(this.MovetoLoginPage);
+            this.CustAccReg.Controls.Add(this.CustCreateAccount);
+            this.CustAccReg.Controls.Add(this.label18);
+            this.CustAccReg.Controls.Add(this.label17);
+            this.CustAccReg.Controls.Add(this.label16);
+            this.CustAccReg.Controls.Add(this.label15);
+            this.CustAccReg.Controls.Add(this.CustPassword);
+            this.CustAccReg.Controls.Add(this.CustUsername);
+            this.CustAccReg.Controls.Add(this.CustPhone);
+            this.CustAccReg.Controls.Add(this.CustName);
+            this.CustAccReg.Controls.Add(this.label14);
+            this.CustAccReg.Controls.Add(this.label13);
+            this.CustAccReg.Location = new System.Drawing.Point(4, 22);
+            this.CustAccReg.Name = "CustAccReg";
+            this.CustAccReg.Padding = new System.Windows.Forms.Padding(3);
+            this.CustAccReg.Size = new System.Drawing.Size(806, 442);
+            this.CustAccReg.TabIndex = 1;
+            this.CustAccReg.Text = "Register Customer Account";
+            this.CustAccReg.UseVisualStyleBackColor = true;
             // 
             // CustomerPage
             // 
@@ -287,6 +313,14 @@
             this.BookSeatsPage.Text = "Book Seats";
             this.BookSeatsPage.UseVisualStyleBackColor = true;
             this.BookSeatsPage.Click += new System.EventHandler(this.BookSeatsPage_Click);
+            // 
+            // StartingTimePicker
+            // 
+            this.StartingTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.StartingTimePicker.Location = new System.Drawing.Point(473, 278);
+            this.StartingTimePicker.Name = "StartingTimePicker";
+            this.StartingTimePicker.Size = new System.Drawing.Size(92, 20);
+            this.StartingTimePicker.TabIndex = 11;
             // 
             // label11
             // 
@@ -400,14 +434,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Book Seats";
             // 
-            // StartingTimePicker
-            // 
-            this.StartingTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.StartingTimePicker.Location = new System.Drawing.Point(473, 278);
-            this.StartingTimePicker.Name = "StartingTimePicker";
-            this.StartingTimePicker.Size = new System.Drawing.Size(92, 20);
-            this.StartingTimePicker.TabIndex = 11;
-            // 
             // BookSeatsPage2
             // 
             this.BookSeatsPage2.Controls.Add(this.label12);
@@ -428,6 +454,115 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Select Seats";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(196, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(400, 39);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Welcome to Cafe Azula";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(266, 39);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(245, 20);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Enter the form to register yourself";
+            // 
+            // CustName
+            // 
+            this.CustName.Location = new System.Drawing.Point(406, 104);
+            this.CustName.MaxLength = 50;
+            this.CustName.Name = "CustName";
+            this.CustName.Size = new System.Drawing.Size(146, 20);
+            this.CustName.TabIndex = 3;
+            // 
+            // CustPhone
+            // 
+            this.CustPhone.Location = new System.Drawing.Point(406, 159);
+            this.CustPhone.MaxLength = 11;
+            this.CustPhone.Name = "CustPhone";
+            this.CustPhone.Size = new System.Drawing.Size(146, 20);
+            this.CustPhone.TabIndex = 4;
+            this.CustPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustPhone_KeyPress);
+            // 
+            // CustUsername
+            // 
+            this.CustUsername.Location = new System.Drawing.Point(406, 212);
+            this.CustUsername.MaxLength = 25;
+            this.CustUsername.Name = "CustUsername";
+            this.CustUsername.Size = new System.Drawing.Size(146, 20);
+            this.CustUsername.TabIndex = 5;
+            // 
+            // CustPassword
+            // 
+            this.CustPassword.Location = new System.Drawing.Point(406, 278);
+            this.CustPassword.MaxLength = 15;
+            this.CustPassword.Name = "CustPassword";
+            this.CustPassword.PasswordChar = '*';
+            this.CustPassword.Size = new System.Drawing.Size(146, 20);
+            this.CustPassword.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(270, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(69, 13);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Enter Name :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(270, 162);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(112, 13);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Enter Phone Number :";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(267, 215);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Enter Username : ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(267, 281);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(87, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Enter Password :";
+            // 
+            // CustCreateAccount
+            // 
+            this.CustCreateAccount.Location = new System.Drawing.Point(436, 351);
+            this.CustCreateAccount.Name = "CustCreateAccount";
+            this.CustCreateAccount.Size = new System.Drawing.Size(75, 23);
+            this.CustCreateAccount.TabIndex = 11;
+            this.CustCreateAccount.Text = "Register";
+            this.CustCreateAccount.UseVisualStyleBackColor = true;
+            this.CustCreateAccount.Click += new System.EventHandler(this.CustCreateAccount_Click);
+            // 
+            // MovetoLoginPage
+            // 
+            this.MovetoLoginPage.Location = new System.Drawing.Point(273, 350);
+            this.MovetoLoginPage.Name = "MovetoLoginPage";
+            this.MovetoLoginPage.Size = new System.Drawing.Size(75, 23);
+            this.MovetoLoginPage.TabIndex = 12;
+            this.MovetoLoginPage.Text = "Back";
+            this.MovetoLoginPage.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +576,8 @@
             this.tabControl1.ResumeLayout(false);
             this.LoginPage.ResumeLayout(false);
             this.LoginPage.PerformLayout();
+            this.CustAccReg.ResumeLayout(false);
+            this.CustAccReg.PerformLayout();
             this.CustomerPage.ResumeLayout(false);
             this.CustomerPage.PerformLayout();
             this.BookSeatsPage.ResumeLayout(false);
@@ -455,7 +592,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage LoginPage;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage CustAccReg;
         private System.Windows.Forms.Button Register;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button LoginButton;
@@ -486,6 +623,18 @@
         private System.Windows.Forms.DateTimePicker StartingTimePicker;
         private System.Windows.Forms.TabPage BookSeatsPage2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox CustPassword;
+        private System.Windows.Forms.TextBox CustUsername;
+        private System.Windows.Forms.TextBox CustPhone;
+        private System.Windows.Forms.TextBox CustName;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button CustCreateAccount;
+        private System.Windows.Forms.Button MovetoLoginPage;
     }
 }
 

@@ -23,8 +23,8 @@ namespace Azula_Cafe_Database_Management_System
             InitializeComponent();
             umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
-            //cnn = new SqlConnection(connectionString);
-            cnn = new SqlConnection(umer_connectionString);
+            cnn = new SqlConnection(connectionString);
+            //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
 
@@ -59,7 +59,8 @@ namespace Azula_Cafe_Database_Management_System
                 int[] flag = new int[2];
                 flag = log.checkaccount(AccountName.Text.ToString(), AccountPassword.Text.ToString());
                 if (flag[0] == 1)
-                    tabControl1.SelectedTab = tabPage2;
+                    MessageBox.Show("Welcome Staff");
+                //tabControl1.SelectedTab = CustAccReg;
                 else if (flag[0] == 0)
                 {
                     customerID_Form1 = flag[1];
@@ -154,6 +155,33 @@ namespace Azula_Cafe_Database_Management_System
 
             // MessageBox.Show(availableSeatNums.Count().ToString() + availableSeatNums[0].ToString() + availableSeatNums[1].ToString() + availableSeatNums[2].ToString() + availableSeatNums[3].ToString(), "DEBUG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             tabControl1.SelectedTab = BookSeatsPage2;
+        }
+
+        private void Register_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = CustAccReg;
+        }
+
+        private void CustPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void CustCreateAccount_Click(object sender, EventArgs e)
+        {
+            Login log = new Login(cnn);
+            if (CustName.Text.Length > 0 && CustPhone.Text.Length > 0 && CustPassword.Text.Length > 0 && CustUsername.Text.Length > 0)
+            {
+                int success = log.CustomerAccountCreate(CustName.Text, CustPhone.Text, CustUsername.Text, CustPassword.Text);
+                if (success == 1)
+                {
+                    MessageBox.Show("Congratulations !! Account Created");
+                    tabControl1.SelectedTab = LoginPage;
+                }
+                else
+                    MessageBox.Show("The Username is already in use. Try Another One!\nThe world is small, but the combinations are immense");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
