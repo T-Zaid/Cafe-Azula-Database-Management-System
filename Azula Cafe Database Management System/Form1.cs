@@ -144,11 +144,11 @@ namespace Azula_Cafe_Database_Management_System
                 int success = log.CustomerAccountCreate(CustName.Text, CustPhone.Text, CustUsername.Text, CustPassword.Text);
                 if (success == 1)
                 {
-                    MessageBox.Show("Congratulations !! Account Created");
+                    MessageBox.Show("Congratulations !! Account Created", "Creation Successfull");
                     tabControl1.SelectedTab = LoginPage;
                 }
                 else
-                    MessageBox.Show("The Username is already in use. Try Another One!\nThe world is small, but the combinations are immense");
+                    MessageBox.Show("The Username is already in use. Try Another One!\nThe world is small, but the combinations are immense", "Account exists with this Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
         }
 

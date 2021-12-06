@@ -93,6 +93,9 @@
             this.AmountPaidColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.StaffPage = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -101,6 +104,7 @@
             this.BookSeatsPage2.SuspendLayout();
             this.CancelSeatPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).BeginInit();
+            this.StaffPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -111,6 +115,7 @@
             this.tabControl1.Controls.Add(this.BookSeatsPage);
             this.tabControl1.Controls.Add(this.BookSeatsPage2);
             this.tabControl1.Controls.Add(this.CancelSeatPage);
+            this.tabControl1.Controls.Add(this.StaffPage);
             this.tabControl1.Location = new System.Drawing.Point(-7, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -785,6 +790,37 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Cancel Seat Booking";
             // 
+            // StaffPage
+            // 
+            this.StaffPage.Controls.Add(this.label23);
+            this.StaffPage.Controls.Add(this.label24);
+            this.StaffPage.Location = new System.Drawing.Point(4, 22);
+            this.StaffPage.Name = "StaffPage";
+            this.StaffPage.Size = new System.Drawing.Size(806, 442);
+            this.StaffPage.TabIndex = 6;
+            this.StaffPage.Text = "Staff";
+            this.StaffPage.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(330, 39);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(124, 20);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Staff Name";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(128, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(532, 39);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Cafe Azula Management Studio";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -809,6 +845,8 @@
             this.CancelSeatPage.ResumeLayout(false);
             this.CancelSeatPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).EndInit();
+            this.StaffPage.ResumeLayout(false);
+            this.StaffPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -880,6 +918,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EndTimeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn AmountPaidColumn;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TabPage StaffPage;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }
 
