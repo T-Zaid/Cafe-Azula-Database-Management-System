@@ -67,6 +67,7 @@ namespace Azula_Cafe_Database_Management_System
             else
             {
                 errorString = "Seat Number: " + SeatNo.ToString() + " is not available at the specified time.\n";
+                AmountPaidList.Remove(Amount_Paid);
                 return false;
             }
         }
@@ -131,8 +132,11 @@ namespace Azula_Cafe_Database_Management_System
                     receiptSeatNums.Add(SeatNums[i]);
             }
 
-            ReceiptWindow ticketReceipt = new ReceiptWindow(CustomerID, receiptSeatNums.Count(), receiptSeatNums, Start_Time, End_Time, DateTime.Now, AmountPaidList);
-            ticketReceipt.ShowDialog();
+            if (receiptSeatNums.Count() > 0)
+            {
+                ReceiptWindow ticketReceipt = new ReceiptWindow(CustomerID, receiptSeatNums.Count(), receiptSeatNums, Start_Time, End_Time, DateTime.Now, AmountPaidList);
+                ticketReceipt.ShowDialog();
+            }
         }
 
         public void CancelTicket(int SeatNo, DateTime Start_Time, DateTime End_Time, int CustomerID)

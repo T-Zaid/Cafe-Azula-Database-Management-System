@@ -117,6 +117,8 @@
             this.SearchCancelDateDropDown = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.ComputerInfoBookingLabel = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -567,6 +569,7 @@
             this.NumSeatsDropDown.Name = "NumSeatsDropDown";
             this.NumSeatsDropDown.Size = new System.Drawing.Size(36, 21);
             this.NumSeatsDropDown.TabIndex = 3;
+            this.NumSeatsDropDown.SelectedIndexChanged += new System.EventHandler(this.NumSeatsDropDown_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -600,6 +603,8 @@
             // 
             // BookSeatsPage2
             // 
+            this.BookSeatsPage2.Controls.Add(this.ComputerInfoBookingLabel);
+            this.BookSeatsPage2.Controls.Add(this.label30);
             this.BookSeatsPage2.Controls.Add(this.BackButton2);
             this.BookSeatsPage2.Controls.Add(this.ContinueButton2);
             this.BookSeatsPage2.Controls.Add(this.AutoSelectSeatsButton);
@@ -650,7 +655,7 @@
             // SelectedSeatsLabel
             // 
             this.SelectedSeatsLabel.AutoSize = true;
-            this.SelectedSeatsLabel.Location = new System.Drawing.Point(365, 208);
+            this.SelectedSeatsLabel.Location = new System.Drawing.Point(365, 270);
             this.SelectedSeatsLabel.Name = "SelectedSeatsLabel";
             this.SelectedSeatsLabel.Size = new System.Drawing.Size(41, 13);
             this.SelectedSeatsLabel.TabIndex = 6;
@@ -659,7 +664,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(280, 208);
+            this.label20.Location = new System.Drawing.Point(280, 270);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 13);
             this.label20.TabIndex = 5;
@@ -693,6 +698,7 @@
             this.SeatPicker.Name = "SeatPicker";
             this.SeatPicker.Size = new System.Drawing.Size(43, 21);
             this.SeatPicker.TabIndex = 2;
+            this.SeatPicker.SelectedIndexChanged += new System.EventHandler(this.SeatPicker_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -1052,6 +1058,24 @@
             this.label29.TabIndex = 18;
             this.label29.Text = "Search by Seat Number:";
             // 
+            // ComputerInfoBookingLabel
+            // 
+            this.ComputerInfoBookingLabel.AutoSize = true;
+            this.ComputerInfoBookingLabel.Location = new System.Drawing.Point(341, 179);
+            this.ComputerInfoBookingLabel.Name = "ComputerInfoBookingLabel";
+            this.ComputerInfoBookingLabel.Size = new System.Drawing.Size(27, 13);
+            this.ComputerInfoBookingLabel.TabIndex = 15;
+            this.ComputerInfoBookingLabel.Text = "N/A";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(280, 179);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(55, 13);
+            this.label30.TabIndex = 14;
+            this.label30.Text = "Computer:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1176,6 +1200,8 @@
         private System.Windows.Forms.DateTimePicker SearchCancelDateDropDown;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label ComputerInfoBookingLabel;
+        private System.Windows.Forms.Label label30;
     }
 }
 

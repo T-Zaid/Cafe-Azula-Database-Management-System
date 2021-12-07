@@ -107,6 +107,7 @@ namespace Azula_Cafe_Database_Management_System
             NumHoursDropDown.SelectedIndex = 0;
             StartTimeSelect.Value = DateTime.Now;
             StartingTimePicker.Value = DateTime.Now.AddMinutes(5);
+
             tabControl1.SelectedTab = BookSeatsPage;
         }
 
@@ -202,10 +203,21 @@ namespace Azula_Cafe_Database_Management_System
         private void SeatBookingPage2()
         {
             selectedSeats.Clear();
+            ComputerInfoBookingLabel.Text = "N/A";
             SeatPicker.SelectedIndex = 0;
             SelectedSeatsLabel.Text = "";
             RemoveSeatButton.Enabled = false;
             AddSeatButton.Enabled = true;
+
+            string newQuery = "SELECT CPU, GPU, RAM, NetSpeed FROM Computers AS C JOIN Seats AS S ON C.ComputerID = S.ComputerID WHERE SeatNo = " + SeatPicker.SelectedItem.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                ComputerInfoBookingLabel.Text = reader["CPU"].ToString() + "\n" + reader["GPU"].ToString() + "\n" + reader["RAM"] + "GB RAM\n" + reader["NetSpeed"].ToString() + "MB/s";
+            }
+
             tabControl1.SelectedTab = BookSeatsPage2;
         }
 
@@ -278,7 +290,7 @@ namespace Azula_Cafe_Database_Management_System
             selectedSeats.Clear();
             for(int i = 0; i < Convert.ToInt32(NumSeatsDropDown.SelectedItem); i++)
             {
-                selectedSeats.Add(Convert.ToInt32(NumSeatsDropDown.Items[i]));
+                selectedSeats.Add(Convert.ToInt32(SeatPicker.Items[i]));
             }
 
             SelectedSeatsLabel.Text = "";
@@ -539,6 +551,36 @@ namespace Azula_Cafe_Database_Management_System
 
             reader.Close();
             cmd.Dispose();
+        }
+
+        private void NumSeatsDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string newQuery = "SELECT CPU, GPU, RAM, NetSpeed FROM Computers as C JOIN Seats as S ON C.ComputerID = S.ComputerID WHERE SeatNo = " + NumSeatsDropDown.SelectedItem.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                ComputerInfoBookingLabel.Text = reader["CPU"].ToString() + "\n" + reader["GPU"].ToString() + "\n" + reader["RAM"].ToString() + "GB RAM\n" + reader["NetSpeed"].ToString() + "MB/s";
+            }
+            else
+            {
+                ComputerInfoBookingLabel.Text = "N/A";
+            }
+        }
+
+        private void SeatPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComputerInfoBookingLabel.Text = "N/A";
+
+            string newQuery = "SELECT CPU, GPU, RAM, NetSpeed FROM Computers AS C JOIN Seats AS S ON C.ComputerID = S.ComputerID WHERE SeatNo = " + SeatPicker.SelectedItem.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                ComputerInfoBookingLabel.Text = reader["CPU"].ToString() + "\n" + reader["GPU"].ToString() + "\n" + reader["RAM"] + "GB RAM\n" + reader["NetSpeed"].ToString() + "MB/s";
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
