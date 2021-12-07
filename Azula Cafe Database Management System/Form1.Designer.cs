@@ -96,6 +96,19 @@
             this.StaffPage = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.ViewBookingsPage = new System.Windows.Forms.TabPage();
+            this.BookingHistoryBackButton = new System.Windows.Forms.Button();
+            this.CustomerActiveBookingsButton = new System.Windows.Forms.Button();
+            this.BookingHistoryTable = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label26 = new System.Windows.Forms.Label();
+            this.CustomerPastBookingsButton = new System.Windows.Forms.Button();
+            this.CustomerAllBookingsButton = new System.Windows.Forms.Button();
+            this.BookingHistoryStatementLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -105,6 +118,8 @@
             this.CancelSeatPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).BeginInit();
             this.StaffPage.SuspendLayout();
+            this.ViewBookingsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -115,6 +130,7 @@
             this.tabControl1.Controls.Add(this.BookSeatsPage);
             this.tabControl1.Controls.Add(this.BookSeatsPage2);
             this.tabControl1.Controls.Add(this.CancelSeatPage);
+            this.tabControl1.Controls.Add(this.ViewBookingsPage);
             this.tabControl1.Controls.Add(this.StaffPage);
             this.tabControl1.Location = new System.Drawing.Point(-7, -5);
             this.tabControl1.Name = "tabControl1";
@@ -396,6 +412,7 @@
             this.ViewBookingHistoryButton.TabIndex = 3;
             this.ViewBookingHistoryButton.Text = "Booking History";
             this.ViewBookingHistoryButton.UseVisualStyleBackColor = true;
+            this.ViewBookingHistoryButton.Click += new System.EventHandler(this.ViewBookingHistoryButton_Click);
             // 
             // BookSeatsButton
             // 
@@ -774,9 +791,10 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(296, 55);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(275, 55);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(200, 13);
+            this.label22.Size = new System.Drawing.Size(250, 16);
             this.label22.TabIndex = 1;
             this.label22.Text = "Following is the list of all active bookings.";
             // 
@@ -821,6 +839,131 @@
             this.label24.TabIndex = 2;
             this.label24.Text = "Cafe Azula Management Studio";
             // 
+            // ViewBookingsPage
+            // 
+            this.ViewBookingsPage.Controls.Add(this.BookingHistoryStatementLabel);
+            this.ViewBookingsPage.Controls.Add(this.CustomerAllBookingsButton);
+            this.ViewBookingsPage.Controls.Add(this.CustomerPastBookingsButton);
+            this.ViewBookingsPage.Controls.Add(this.BookingHistoryBackButton);
+            this.ViewBookingsPage.Controls.Add(this.CustomerActiveBookingsButton);
+            this.ViewBookingsPage.Controls.Add(this.BookingHistoryTable);
+            this.ViewBookingsPage.Controls.Add(this.label26);
+            this.ViewBookingsPage.Location = new System.Drawing.Point(4, 22);
+            this.ViewBookingsPage.Name = "ViewBookingsPage";
+            this.ViewBookingsPage.Size = new System.Drawing.Size(806, 442);
+            this.ViewBookingsPage.TabIndex = 7;
+            this.ViewBookingsPage.Text = "Booking History";
+            this.ViewBookingsPage.UseVisualStyleBackColor = true;
+            // 
+            // BookingHistoryBackButton
+            // 
+            this.BookingHistoryBackButton.Location = new System.Drawing.Point(567, 386);
+            this.BookingHistoryBackButton.Name = "BookingHistoryBackButton";
+            this.BookingHistoryBackButton.Size = new System.Drawing.Size(75, 23);
+            this.BookingHistoryBackButton.TabIndex = 9;
+            this.BookingHistoryBackButton.Text = "Back";
+            this.BookingHistoryBackButton.UseVisualStyleBackColor = true;
+            this.BookingHistoryBackButton.Click += new System.EventHandler(this.BookingHistoryBackButton_Click);
+            // 
+            // CustomerActiveBookingsButton
+            // 
+            this.CustomerActiveBookingsButton.Location = new System.Drawing.Point(297, 386);
+            this.CustomerActiveBookingsButton.Name = "CustomerActiveBookingsButton";
+            this.CustomerActiveBookingsButton.Size = new System.Drawing.Size(99, 23);
+            this.CustomerActiveBookingsButton.TabIndex = 8;
+            this.CustomerActiveBookingsButton.Text = "Active Bookings";
+            this.CustomerActiveBookingsButton.UseVisualStyleBackColor = true;
+            this.CustomerActiveBookingsButton.Click += new System.EventHandler(this.CustomerActiveBookingsButton_Click);
+            // 
+            // BookingHistoryTable
+            // 
+            this.BookingHistoryTable.AllowUserToAddRows = false;
+            this.BookingHistoryTable.AllowUserToDeleteRows = false;
+            this.BookingHistoryTable.AllowUserToResizeRows = false;
+            this.BookingHistoryTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.BookingHistoryTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BookingHistoryTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.BookingHistoryTable.Location = new System.Drawing.Point(45, 84);
+            this.BookingHistoryTable.Name = "BookingHistoryTable";
+            this.BookingHistoryTable.ReadOnly = true;
+            this.BookingHistoryTable.Size = new System.Drawing.Size(715, 283);
+            this.BookingHistoryTable.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Seat Number";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date of Booking";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Start Time";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "End Time";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Amount Paid";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(159, -2);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(492, 55);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Seat Booking History";
+            // 
+            // CustomerPastBookingsButton
+            // 
+            this.CustomerPastBookingsButton.Location = new System.Drawing.Point(440, 386);
+            this.CustomerPastBookingsButton.Name = "CustomerPastBookingsButton";
+            this.CustomerPastBookingsButton.Size = new System.Drawing.Size(99, 23);
+            this.CustomerPastBookingsButton.TabIndex = 10;
+            this.CustomerPastBookingsButton.Text = "Past Bookings";
+            this.CustomerPastBookingsButton.UseVisualStyleBackColor = true;
+            this.CustomerPastBookingsButton.Click += new System.EventHandler(this.CustomerPastBookingsButton_Click);
+            // 
+            // CustomerAllBookingsButton
+            // 
+            this.CustomerAllBookingsButton.Location = new System.Drawing.Point(169, 386);
+            this.CustomerAllBookingsButton.Name = "CustomerAllBookingsButton";
+            this.CustomerAllBookingsButton.Size = new System.Drawing.Size(99, 23);
+            this.CustomerAllBookingsButton.TabIndex = 11;
+            this.CustomerAllBookingsButton.Text = "All Bookings";
+            this.CustomerAllBookingsButton.UseVisualStyleBackColor = true;
+            this.CustomerAllBookingsButton.Click += new System.EventHandler(this.CustomerAllBookingsButton_Click);
+            // 
+            // BookingHistoryStatementLabel
+            // 
+            this.BookingHistoryStatementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookingHistoryStatementLabel.Location = new System.Drawing.Point(258, 53);
+            this.BookingHistoryStatementLabel.Name = "BookingHistoryStatementLabel";
+            this.BookingHistoryStatementLabel.Size = new System.Drawing.Size(294, 20);
+            this.BookingHistoryStatementLabel.TabIndex = 12;
+            this.BookingHistoryStatementLabel.Text = "Following is the list of all bookings.";
+            this.BookingHistoryStatementLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -847,6 +990,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).EndInit();
             this.StaffPage.ResumeLayout(false);
             this.StaffPage.PerformLayout();
+            this.ViewBookingsPage.ResumeLayout(false);
+            this.ViewBookingsPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -921,6 +1067,19 @@
         private System.Windows.Forms.TabPage StaffPage;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TabPage ViewBookingsPage;
+        private System.Windows.Forms.Button BookingHistoryBackButton;
+        private System.Windows.Forms.Button CustomerActiveBookingsButton;
+        private System.Windows.Forms.DataGridView BookingHistoryTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button CustomerPastBookingsButton;
+        private System.Windows.Forms.Button CustomerAllBookingsButton;
+        private System.Windows.Forms.Label BookingHistoryStatementLabel;
     }
 }
 

@@ -357,6 +357,89 @@ namespace Azula_Cafe_Database_Management_System
             }
         }
 
+        private void ViewBookingHistoryButton_Click(object sender, EventArgs e)
+        {
+            BookingHistoryStatementLabel.Text = "Following is the list of all bookings.";
+            BookingHistoryTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                BookingHistoryTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            tabControl1.SelectedTab = ViewBookingsPage;
+        }
+
+        private void CustomerActiveBookingsButton_Click(object sender, EventArgs e)
+        {
+            BookingHistoryStatementLabel.Text = "Following is the list of currently active bookings.";
+            BookingHistoryTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND End_Time > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                BookingHistoryTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+        }
+
+        private void CustomerPastBookingsButton_Click(object sender, EventArgs e)
+        {
+            BookingHistoryStatementLabel.Text = "Following is the list of past bookings.";
+            BookingHistoryTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND End_Time < '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                BookingHistoryTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+        }
+
+        private void CustomerAllBookingsButton_Click(object sender, EventArgs e)
+        {
+            BookingHistoryStatementLabel.Text = "Following is the list of all bookings.";
+            BookingHistoryTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                BookingHistoryTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+        }
+
+        private void BookingHistoryBackButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = CustomerPage;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             
