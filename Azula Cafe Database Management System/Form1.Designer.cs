@@ -93,10 +93,12 @@
             this.AmountPaidColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.StaffPage = new System.Windows.Forms.TabPage();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.ViewBookingsPage = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.BookingHistoryStatementLabel = new System.Windows.Forms.Label();
+            this.CustomerAllBookingsButton = new System.Windows.Forms.Button();
+            this.CustomerPastBookingsButton = new System.Windows.Forms.Button();
             this.BookingHistoryBackButton = new System.Windows.Forms.Button();
             this.CustomerActiveBookingsButton = new System.Windows.Forms.Button();
             this.BookingHistoryTable = new System.Windows.Forms.DataGridView();
@@ -106,9 +108,11 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label26 = new System.Windows.Forms.Label();
-            this.CustomerPastBookingsButton = new System.Windows.Forms.Button();
-            this.CustomerAllBookingsButton = new System.Windows.Forms.Button();
-            this.BookingHistoryStatementLabel = new System.Windows.Forms.Label();
+            this.StaffPage = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.SearchDateHistory = new System.Windows.Forms.DateTimePicker();
+            this.SearchSeatDropDown = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -117,9 +121,9 @@
             this.BookSeatsPage2.SuspendLayout();
             this.CancelSeatPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).BeginInit();
-            this.StaffPage.SuspendLayout();
             this.ViewBookingsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).BeginInit();
+            this.StaffPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -808,39 +812,12 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Cancel Seat Booking";
             // 
-            // StaffPage
-            // 
-            this.StaffPage.Controls.Add(this.label23);
-            this.StaffPage.Controls.Add(this.label24);
-            this.StaffPage.Location = new System.Drawing.Point(4, 22);
-            this.StaffPage.Name = "StaffPage";
-            this.StaffPage.Size = new System.Drawing.Size(806, 442);
-            this.StaffPage.TabIndex = 6;
-            this.StaffPage.Text = "Staff";
-            this.StaffPage.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(330, 39);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(124, 20);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Staff Name";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(128, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(532, 39);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Cafe Azula Management Studio";
-            // 
             // ViewBookingsPage
             // 
+            this.ViewBookingsPage.Controls.Add(this.SearchSeatDropDown);
+            this.ViewBookingsPage.Controls.Add(this.SearchDateHistory);
+            this.ViewBookingsPage.Controls.Add(this.label27);
+            this.ViewBookingsPage.Controls.Add(this.label25);
             this.ViewBookingsPage.Controls.Add(this.BookingHistoryStatementLabel);
             this.ViewBookingsPage.Controls.Add(this.CustomerAllBookingsButton);
             this.ViewBookingsPage.Controls.Add(this.CustomerPastBookingsButton);
@@ -855,9 +832,57 @@
             this.ViewBookingsPage.Text = "Booking History";
             this.ViewBookingsPage.UseVisualStyleBackColor = true;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(676, 57);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 13);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "Search by Date:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(42, 57);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(123, 13);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "Search by Seat Number:";
+            // 
+            // BookingHistoryStatementLabel
+            // 
+            this.BookingHistoryStatementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookingHistoryStatementLabel.Location = new System.Drawing.Point(258, 53);
+            this.BookingHistoryStatementLabel.Name = "BookingHistoryStatementLabel";
+            this.BookingHistoryStatementLabel.Size = new System.Drawing.Size(294, 20);
+            this.BookingHistoryStatementLabel.TabIndex = 12;
+            this.BookingHistoryStatementLabel.Text = "Following is the list of all bookings.";
+            this.BookingHistoryStatementLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CustomerAllBookingsButton
+            // 
+            this.CustomerAllBookingsButton.Location = new System.Drawing.Point(169, 397);
+            this.CustomerAllBookingsButton.Name = "CustomerAllBookingsButton";
+            this.CustomerAllBookingsButton.Size = new System.Drawing.Size(99, 23);
+            this.CustomerAllBookingsButton.TabIndex = 11;
+            this.CustomerAllBookingsButton.Text = "All Bookings";
+            this.CustomerAllBookingsButton.UseVisualStyleBackColor = true;
+            this.CustomerAllBookingsButton.Click += new System.EventHandler(this.CustomerAllBookingsButton_Click);
+            // 
+            // CustomerPastBookingsButton
+            // 
+            this.CustomerPastBookingsButton.Location = new System.Drawing.Point(440, 397);
+            this.CustomerPastBookingsButton.Name = "CustomerPastBookingsButton";
+            this.CustomerPastBookingsButton.Size = new System.Drawing.Size(99, 23);
+            this.CustomerPastBookingsButton.TabIndex = 10;
+            this.CustomerPastBookingsButton.Text = "Past Bookings";
+            this.CustomerPastBookingsButton.UseVisualStyleBackColor = true;
+            this.CustomerPastBookingsButton.Click += new System.EventHandler(this.CustomerPastBookingsButton_Click);
+            // 
             // BookingHistoryBackButton
             // 
-            this.BookingHistoryBackButton.Location = new System.Drawing.Point(567, 386);
+            this.BookingHistoryBackButton.Location = new System.Drawing.Point(567, 397);
             this.BookingHistoryBackButton.Name = "BookingHistoryBackButton";
             this.BookingHistoryBackButton.Size = new System.Drawing.Size(75, 23);
             this.BookingHistoryBackButton.TabIndex = 9;
@@ -867,7 +892,7 @@
             // 
             // CustomerActiveBookingsButton
             // 
-            this.CustomerActiveBookingsButton.Location = new System.Drawing.Point(297, 386);
+            this.CustomerActiveBookingsButton.Location = new System.Drawing.Point(297, 397);
             this.CustomerActiveBookingsButton.Name = "CustomerActiveBookingsButton";
             this.CustomerActiveBookingsButton.Size = new System.Drawing.Size(99, 23);
             this.CustomerActiveBookingsButton.TabIndex = 8;
@@ -888,7 +913,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.BookingHistoryTable.Location = new System.Drawing.Point(45, 84);
+            this.BookingHistoryTable.Location = new System.Drawing.Point(45, 95);
             this.BookingHistoryTable.Name = "BookingHistoryTable";
             this.BookingHistoryTable.ReadOnly = true;
             this.BookingHistoryTable.Size = new System.Drawing.Size(715, 283);
@@ -934,35 +959,53 @@
             this.label26.TabIndex = 5;
             this.label26.Text = "Seat Booking History";
             // 
-            // CustomerPastBookingsButton
+            // StaffPage
             // 
-            this.CustomerPastBookingsButton.Location = new System.Drawing.Point(440, 386);
-            this.CustomerPastBookingsButton.Name = "CustomerPastBookingsButton";
-            this.CustomerPastBookingsButton.Size = new System.Drawing.Size(99, 23);
-            this.CustomerPastBookingsButton.TabIndex = 10;
-            this.CustomerPastBookingsButton.Text = "Past Bookings";
-            this.CustomerPastBookingsButton.UseVisualStyleBackColor = true;
-            this.CustomerPastBookingsButton.Click += new System.EventHandler(this.CustomerPastBookingsButton_Click);
+            this.StaffPage.Controls.Add(this.label23);
+            this.StaffPage.Controls.Add(this.label24);
+            this.StaffPage.Location = new System.Drawing.Point(4, 22);
+            this.StaffPage.Name = "StaffPage";
+            this.StaffPage.Size = new System.Drawing.Size(806, 442);
+            this.StaffPage.TabIndex = 6;
+            this.StaffPage.Text = "Staff";
+            this.StaffPage.UseVisualStyleBackColor = true;
             // 
-            // CustomerAllBookingsButton
+            // label23
             // 
-            this.CustomerAllBookingsButton.Location = new System.Drawing.Point(169, 386);
-            this.CustomerAllBookingsButton.Name = "CustomerAllBookingsButton";
-            this.CustomerAllBookingsButton.Size = new System.Drawing.Size(99, 23);
-            this.CustomerAllBookingsButton.TabIndex = 11;
-            this.CustomerAllBookingsButton.Text = "All Bookings";
-            this.CustomerAllBookingsButton.UseVisualStyleBackColor = true;
-            this.CustomerAllBookingsButton.Click += new System.EventHandler(this.CustomerAllBookingsButton_Click);
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(330, 39);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(124, 20);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Staff Name";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BookingHistoryStatementLabel
+            // label24
             // 
-            this.BookingHistoryStatementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookingHistoryStatementLabel.Location = new System.Drawing.Point(258, 53);
-            this.BookingHistoryStatementLabel.Name = "BookingHistoryStatementLabel";
-            this.BookingHistoryStatementLabel.Size = new System.Drawing.Size(294, 20);
-            this.BookingHistoryStatementLabel.TabIndex = 12;
-            this.BookingHistoryStatementLabel.Text = "Following is the list of all bookings.";
-            this.BookingHistoryStatementLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(128, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(532, 39);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Cafe Azula Management Studio";
+            // 
+            // SearchDateHistory
+            // 
+            this.SearchDateHistory.Location = new System.Drawing.Point(626, 73);
+            this.SearchDateHistory.Name = "SearchDateHistory";
+            this.SearchDateHistory.Size = new System.Drawing.Size(134, 20);
+            this.SearchDateHistory.TabIndex = 16;
+            this.SearchDateHistory.ValueChanged += new System.EventHandler(this.SearchDateHistory_ValueChanged);
+            // 
+            // SearchSeatDropDown
+            // 
+            this.SearchSeatDropDown.FormattingEnabled = true;
+            this.SearchSeatDropDown.Location = new System.Drawing.Point(44, 72);
+            this.SearchSeatDropDown.Name = "SearchSeatDropDown";
+            this.SearchSeatDropDown.Size = new System.Drawing.Size(43, 21);
+            this.SearchSeatDropDown.TabIndex = 17;
+            this.SearchSeatDropDown.SelectedIndexChanged += new System.EventHandler(this.SearchSeatDropDown_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -988,11 +1031,11 @@
             this.CancelSeatPage.ResumeLayout(false);
             this.CancelSeatPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).EndInit();
-            this.StaffPage.ResumeLayout(false);
-            this.StaffPage.PerformLayout();
             this.ViewBookingsPage.ResumeLayout(false);
             this.ViewBookingsPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).EndInit();
+            this.StaffPage.ResumeLayout(false);
+            this.StaffPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1080,6 +1123,10 @@
         private System.Windows.Forms.Button CustomerPastBookingsButton;
         private System.Windows.Forms.Button CustomerAllBookingsButton;
         private System.Windows.Forms.Label BookingHistoryStatementLabel;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DateTimePicker SearchDateHistory;
+        private System.Windows.Forms.ComboBox SearchSeatDropDown;
     }
 }
 

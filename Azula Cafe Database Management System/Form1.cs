@@ -375,6 +375,20 @@ namespace Azula_Cafe_Database_Management_System
             reader.Close();
             cmd.Dispose();
 
+            SearchSeatDropDown.Items.Clear();
+
+            newQuery = "SELECT SeatNo FROM Seats";
+            cmd = new SqlCommand(newQuery, cnn);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                SearchSeatDropDown.Items.Add(reader["SeatNo"]);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
             tabControl1.SelectedTab = ViewBookingsPage;
         }
 
@@ -438,6 +452,42 @@ namespace Azula_Cafe_Database_Management_System
         private void BookingHistoryBackButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = CustomerPage;
+        }
+
+        private void SearchDateHistory_ValueChanged(object sender, EventArgs e)
+        {
+            BookingHistoryTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND Date_of_Booking = '" + SearchDateHistory.Value.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                BookingHistoryTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+        }
+
+        private void SearchSeatDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BookingHistoryTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND SeatNo = " + SearchSeatDropDown.SelectedItem;
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                BookingHistoryTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
         }
 
         private void Form1_Load(object sender, EventArgs e)
