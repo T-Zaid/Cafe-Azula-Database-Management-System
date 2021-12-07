@@ -314,6 +314,7 @@ namespace Azula_Cafe_Database_Management_System
         private void CancelBookingPageCall()
         {
             CancelBookingTable.Rows.Clear();
+            SearchCancelSeatDropdown.Items.Clear();
 
             string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND Start_Time > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
             SqlCommand cmd = new SqlCommand(newQuery, cnn);
@@ -323,6 +324,20 @@ namespace Azula_Cafe_Database_Management_System
             {
                 string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
                 CancelBookingTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            SearchSeatDropDown.Items.Clear();
+
+            newQuery = "SELECT SeatNo FROM Seats";
+            cmd = new SqlCommand(newQuery, cnn);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                SearchCancelSeatDropdown.Items.Add(reader["SeatNo"]);
             }
 
             reader.Close();
@@ -484,6 +499,42 @@ namespace Azula_Cafe_Database_Management_System
             {
                 string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
                 BookingHistoryTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+        }
+
+        private void SearchCancelSeatDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CancelBookingTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND Start_Time > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' AND SeatNo = " + SearchCancelSeatDropdown.SelectedItem;
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                CancelBookingTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+        }
+
+        private void SearchCancelDateDropDown_ValueChanged(object sender, EventArgs e)
+        {
+            CancelBookingTable.Rows.Clear();
+
+            string newQuery = "SELECT * FROM Bookings WHERE CustomerID = " + customerID_Form1.ToString() + " AND Start_Time > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' AND Date_of_Booking = '" + SearchCancelDateDropDown.Value.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["SeatNo"].ToString(), reader["Date_of_Booking"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Amount_Paid"].ToString() };
+                CancelBookingTable.Rows.Add(row);
             }
 
             reader.Close();

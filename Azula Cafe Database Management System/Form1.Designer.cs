@@ -113,6 +113,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.SearchDateHistory = new System.Windows.Forms.DateTimePicker();
             this.SearchSeatDropDown = new System.Windows.Forms.ComboBox();
+            this.SearchCancelSeatDropdown = new System.Windows.Forms.ComboBox();
+            this.SearchCancelDateDropDown = new System.Windows.Forms.DateTimePicker();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -711,6 +715,10 @@
             // 
             // CancelSeatPage
             // 
+            this.CancelSeatPage.Controls.Add(this.SearchCancelSeatDropdown);
+            this.CancelSeatPage.Controls.Add(this.SearchCancelDateDropDown);
+            this.CancelSeatPage.Controls.Add(this.label28);
+            this.CancelSeatPage.Controls.Add(this.label29);
             this.CancelSeatPage.Controls.Add(this.CancelBookingBackButton);
             this.CancelSeatPage.Controls.Add(this.CancelBookingButton);
             this.CancelSeatPage.Controls.Add(this.CancelBookingTable);
@@ -725,7 +733,7 @@
             // 
             // CancelBookingBackButton
             // 
-            this.CancelBookingBackButton.Location = new System.Drawing.Point(433, 384);
+            this.CancelBookingBackButton.Location = new System.Drawing.Point(433, 395);
             this.CancelBookingBackButton.Name = "CancelBookingBackButton";
             this.CancelBookingBackButton.Size = new System.Drawing.Size(75, 23);
             this.CancelBookingBackButton.TabIndex = 4;
@@ -735,7 +743,7 @@
             // 
             // CancelBookingButton
             // 
-            this.CancelBookingButton.Location = new System.Drawing.Point(299, 384);
+            this.CancelBookingButton.Location = new System.Drawing.Point(299, 395);
             this.CancelBookingButton.Name = "CancelBookingButton";
             this.CancelBookingButton.Size = new System.Drawing.Size(75, 23);
             this.CancelBookingButton.TabIndex = 3;
@@ -756,7 +764,7 @@
             this.StartTimeColumn,
             this.EndTimeColumn,
             this.AmountPaidColumn});
-            this.CancelBookingTable.Location = new System.Drawing.Point(47, 86);
+            this.CancelBookingTable.Location = new System.Drawing.Point(47, 97);
             this.CancelBookingTable.Name = "CancelBookingTable";
             this.CancelBookingTable.ReadOnly = true;
             this.CancelBookingTable.Size = new System.Drawing.Size(715, 283);
@@ -1000,12 +1008,49 @@
             // 
             // SearchSeatDropDown
             // 
+            this.SearchSeatDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SearchSeatDropDown.FormattingEnabled = true;
             this.SearchSeatDropDown.Location = new System.Drawing.Point(44, 72);
             this.SearchSeatDropDown.Name = "SearchSeatDropDown";
             this.SearchSeatDropDown.Size = new System.Drawing.Size(43, 21);
             this.SearchSeatDropDown.TabIndex = 17;
             this.SearchSeatDropDown.SelectedIndexChanged += new System.EventHandler(this.SearchSeatDropDown_SelectedIndexChanged);
+            // 
+            // SearchCancelSeatDropdown
+            // 
+            this.SearchCancelSeatDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SearchCancelSeatDropdown.FormattingEnabled = true;
+            this.SearchCancelSeatDropdown.Location = new System.Drawing.Point(46, 70);
+            this.SearchCancelSeatDropdown.Name = "SearchCancelSeatDropdown";
+            this.SearchCancelSeatDropdown.Size = new System.Drawing.Size(43, 21);
+            this.SearchCancelSeatDropdown.TabIndex = 21;
+            this.SearchCancelSeatDropdown.SelectedIndexChanged += new System.EventHandler(this.SearchCancelSeatDropdown_SelectedIndexChanged);
+            // 
+            // SearchCancelDateDropDown
+            // 
+            this.SearchCancelDateDropDown.Location = new System.Drawing.Point(628, 71);
+            this.SearchCancelDateDropDown.Name = "SearchCancelDateDropDown";
+            this.SearchCancelDateDropDown.Size = new System.Drawing.Size(134, 20);
+            this.SearchCancelDateDropDown.TabIndex = 20;
+            this.SearchCancelDateDropDown.ValueChanged += new System.EventHandler(this.SearchCancelDateDropDown_ValueChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(678, 55);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(84, 13);
+            this.label28.TabIndex = 19;
+            this.label28.Text = "Search by Date:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(44, 55);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(123, 13);
+            this.label29.TabIndex = 18;
+            this.label29.Text = "Search by Seat Number:";
             // 
             // Form1
             // 
@@ -1127,6 +1172,10 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DateTimePicker SearchDateHistory;
         private System.Windows.Forms.ComboBox SearchSeatDropDown;
+        private System.Windows.Forms.ComboBox SearchCancelSeatDropdown;
+        private System.Windows.Forms.DateTimePicker SearchCancelDateDropDown;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
     }
 }
 
