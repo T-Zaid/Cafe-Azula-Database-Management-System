@@ -15,7 +15,7 @@ namespace Azula_Cafe_Database_Management_System
     {
         string connectionString, umer_connectionString;
         SqlConnection cnn;
-        int customerID_Form1, staffID_From1;
+        int customerID_Form1, staffID_From1, staff_accessibility;
         List<int> selectedSeats;
         //SqlCommand cmd;
         //SqlDataReader reader;
@@ -24,7 +24,7 @@ namespace Azula_Cafe_Database_Management_System
             InitializeComponent();
             umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
-            cnn = new SqlConnection(umer_connectionString);
+            cnn = new SqlConnection(connectionString);
             //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
@@ -40,28 +40,22 @@ namespace Azula_Cafe_Database_Management_System
             Login log = new Login(cnn);
             if (AccountName.Text.Length > 0 && AccountPassword.Text.Length > 0)
             {
-                //string sql = "select * from Accounts where Username = '" + AccountName.Text.ToString() + "' and AccPassword = '" + AccountPassword.Text.ToString() + "'";
-                //cmd = new SqlCommand(sql, cnn);
-                //reader = cmd.ExecuteReader();
-                //if (reader.Read()) //if the account exists
-                //{
-                //        int AccNo = Convert.ToInt32(reader["AccountNo"]);
-                //        reader.Close();
-                //        cmd.Dispose();
-                //        tabControl1.SelectedTab = tabPage2;
-                //}
-                //else
-                //{
-                //    reader.Close();
-                //    cmd.Dispose();
-                //    MessageBox.Show("Invalid Credentials");
-                //}
-                //Login log = new Login(connectionString);
                 int[] flag = new int[2];
                 flag = log.checkaccount(AccountName.Text.ToString(), AccountPassword.Text.ToString());
                 if (flag[0] == 1)
-                    MessageBox.Show("Welcome Staff");
-                //tabControl1.SelectedTab = CustAccReg;
+                {
+                    staffID_From1 = flag[1];
+                    string newQuery = "SELECT StaffName, Position FROM Staff WHERE StaffID = " + staffID_From1.ToString();
+                    SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    StaffLabelName.Text = reader["StaffName"].ToString();
+                    staff_accessibility = log.positions.FindIndex(x => x == (reader["Position"].ToString()));
+                    reader.Close();
+                    cmd.Dispose();
+                    tabControl1.SelectedTab = StaffPage;
+                }
                 else if (flag[0] == 0)
                 {
                     customerID_Form1 = flag[1];
@@ -142,7 +136,7 @@ namespace Azula_Cafe_Database_Management_System
             Login log = new Login(cnn);
             if (CustName.Text.Length > 0 && CustPhone.Text.Length > 0 && CustPassword.Text.Length > 0 && CustUsername.Text.Length > 0)
             {
-                int success = log.CustomerAccountCreate(CustName.Text, CustPhone.Text, CustUsername.Text, CustPassword.Text);
+                int success = log.CustomerAccountCreate(CustName.Text.ToString(), CustPhone.Text.ToString(), CustUsername.Text.ToString(), CustPassword.Text.ToString());
                 if (success == 1)
                 {
                     MessageBox.Show("Congratulations !! Account Created", "Creation Successfull");
@@ -581,6 +575,177 @@ namespace Azula_Cafe_Database_Management_System
             {
                 ComputerInfoBookingLabel.Text = reader["CPU"].ToString() + "\n" + reader["GPU"].ToString() + "\n" + reader["RAM"] + "GB RAM\n" + reader["NetSpeed"].ToString() + "MB/s";
             }
+        }
+
+        private void StaffAccReg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StaffRegisterAccount_Click(object sender, EventArgs e)
+        {
+            Login log = new Login(cnn);
+            if (StaffName.Text.Length > 0 && StaffPhone.Text.Length > 0 && StaffPassword.Text.Length > 0 && StaffUsername.Text.Length > 0 && StaffSalary.Text.Length > 0 && StaffPosition.Text.Length > 0)
+            {
+                int success = log.StaffAccountCreate(StaffName.Text.ToString(), StaffUsername.Text.ToString(), StaffPassword.Text.ToString(), StaffPhone.Text.ToString(), StaffPosition.Text.ToString(), StaffSupervisor.Text.ToString(), Convert.ToInt32(StaffSalary.Text));
+                if (success == 1)
+                {
+                    MessageBox.Show("Welcome Onboard Captain !!", "Creation Successfull");
+                    tabControl1.SelectedTab = StaffPage;
+                }
+                else
+                    MessageBox.Show("The Username is already in use. Try Another One!\nThe world is small, but the combinations are immense", "Account exists with this Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            }
+            else
+                MessageBox.Show("Field(s) Empty", "Filling all the fields are mandatory", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void StaffSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void StaffPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void AddGameButton_Click(object sender, EventArgs e)
+        {
+            CafeFeatures feats = new CafeFeatures(cnn);
+            if (GameName.Text.Length > 0)
+            {
+                int success = feats.InsertGame(GameName.Text.ToString(), GameGenre.Text.ToString(), GameDesc.Text.ToString(), Convert.ToInt32(PopularityUpdown.Value));
+                if (success == 1)
+                {
+                    MessageBox.Show("Game '" + GameName + "' has been successfully added", "Game Added", MessageBoxButtons.OK);
+                    tabControl1.SelectedTab = StaffPage;
+                }
+                else
+                    MessageBox.Show("This Game is already in database");
+            }
+            else
+                MessageBox.Show("Game Name Field is Empty", "Entering the Game name is mandatory !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void CreateNewGame_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = Game_Add;
+        }
+
+        private void RAM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void Netspeed_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar!='.')
+                e.Handled = true;
+        }
+
+        private void AddComputerButton_Click(object sender, EventArgs e)
+        {
+            CafeFeatures feats = new CafeFeatures(cnn);
+            if(CPUname.Text.Length > 0 && GPUname.Text.Length > 0 && RAM.Text.Length > 0 && Netspeed.Text.Length > 0)
+            {
+                int success = feats.InsertComputers(GPUname.Text.ToString(), CPUname.Text.ToString(), Convert.ToInt32(RAM.Text), (float)Convert.ToDouble(Netspeed.Text));
+                if (success == 1)
+                {
+                    MessageBox.Show("Computer Added to Cafe", "Operation Successfull");
+                    tabControl1.SelectedTab = StaffPage;
+                }
+                else
+                    MessageBox.Show("Computer with this specs are already in the database", "Duplicate Item", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+                MessageBox.Show("Filling all the fields is Mandatory", "Field(s) Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void CreateNewComputer_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = Computer_Add;
+        }
+
+        private void AddLeaderBoardButton_Click(object sender, EventArgs e)
+        {
+            CafeFeatures feats = new CafeFeatures(cnn);
+            if(Gamedropdown.Text.Length > 0 && CustNameDropDown.Text.Length > 0 && Rank_ig.Text.Length > 0)
+            {
+                int success = feats.InsertinLeaderboard(Gamedropdown.Text.ToString(), CustNameDropDown.Text.ToString(), Convert.ToInt32(Rank_ig.Text));
+                if(success == 1)
+                {
+                    MessageBox.Show("Congratulations on getting a position !", "LeaderBoard Added", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;
+                    tabControl1.SelectedTab = StaffPage;
+                }
+                else
+                {
+                    MessageBox.Show("This record has already been stored", "Duplicate Operation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Entering all the fields are mandatory", "Field(s) Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void LeaderboardOperations_Click(object sender, EventArgs e)
+        {
+            string Query = "select GameName from Games", Query1 = "select CustName from Customers";
+            SqlCommand cmd = new SqlCommand(Query, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Gamedropdown.Items.Clear();
+            while(reader.Read())
+            {
+                Gamedropdown.Items.Add(reader["GameName"]);
+            }
+
+            cmd = new SqlCommand(Query1, cnn);
+            reader = cmd.ExecuteReader();
+            CustNameDropDown.Items.Clear();
+            while(reader.Read())
+            {
+                CustNameDropDown.Items.Add(reader["CustName"]);
+            }
+
+            reader.Close();
+            tabControl1.SelectedTab = LeaderBoard_Add;
+        }
+
+        private void StaffCreateAccount_Click(object sender, EventArgs e)
+        {
+            string Query = "select StaffName from Staff";
+            SqlCommand cmd = new SqlCommand(Query, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            cmd.Dispose();
+
+            StaffSupervisor.Items.Clear();
+            while(reader.Read())
+            {
+                StaffSupervisor.Items.Add(reader["StaffName"]);
+            }
+            StaffSupervisor.SelectedIndex = 0;
+            reader.Close();
+
+            Login log = new Login(cnn);
+
+            StaffPosition.Items.Clear();
+            for(int i=0; i<log.positions.Count; i++)
+            {
+                StaffPosition.Items.Add(log.positions[i]);
+            }
+            StaffPosition.SelectedIndex = 0;
+
+            //foreach(Control c in tabControl1.TabPages)
+            //{
+            //    if (c is TextBox)
+            //        c.Text = "";
+            //}
+
+            tabControl1.SelectedTab = StaffAccReg;
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace Azula_Cafe_Database_Management_System
         private SqlConnection cnn;
         private SqlCommand cmd;
         private SqlDataReader reader;
-
+        public List<string> positions = new List<string>() { "Chairman", "CEO", "Manager", "Accounts", "HR Department", "Event Manager", "Seat Planner" };
 
         //public Login(string connstring)
         //{
@@ -86,7 +86,7 @@ namespace Azula_Cafe_Database_Management_System
             return 0;
         }
 
-        public int StaffAccountCreate(string Name, string username, string password, string phone, string Position, string salary)
+        public int StaffAccountCreate(string Name, string username, string password, string phone, string Position, string supervisorName, int salary)
         {
             string sql = "select * from Accounts where Username = '" + username + "'";
             cmd = new SqlCommand(sql, cnn);
@@ -94,14 +94,18 @@ namespace Azula_Cafe_Database_Management_System
             int existingUserName = (reader.Read()) ? 1 : 0; //1 if the account with the specific username exists, 0 if not
             if (existingUserName != 1)
             {
-                string sql1 = "select max(AccountNo) from Accounts", sql2 = "select max(StaffID) from Staff";
+                string sql1 = "select max(AccountNo) from Accounts", sql2 = "select max(StaffID) from Staff",
+                    sql3 = "select staffID from Staff where staffName = '" + supervisorName + "'";
+
                 cmd = new SqlCommand(sql1, cnn);
                 int MaxAcc = Convert.ToInt32(cmd.ExecuteScalar());
                 cmd = new SqlCommand(sql2, cnn);
                 int MaxStf = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd = new SqlCommand(sql3, cnn);
+                int Supervisor = Convert.ToInt32(cmd.ExecuteScalar());
 
                 sql1 = "Insert into Accounts (AccountNo, Username, AccPassword) values (" + (MaxAcc + 1) + ", '" + username + "', '" + password + "')";
-                sql2 = "Insert into Staff (StaffID, StaffName, PhoneNo, Salary, AccountNo, Position) values (" + (MaxStf + 1) + ", '" + Name + "', '" + phone + "', " + salary + ", " + (MaxAcc + 1) + ", " + Position + ")";
+                sql2 = "Insert into Staff (StaffID, StaffName, PhoneNo, Salary, AccountNo, Position, Supervisor_ID) values (" + (MaxStf + 1) + ", '" + Name + "', '" + phone + "', " + salary + ", " + (MaxAcc + 1) + ", '" + Position + "', " + Supervisor + ")";
                 cmd = new SqlCommand(sql1, cnn);
                 cmd.ExecuteNonQuery();
                 cmd = new SqlCommand(sql2, cnn);

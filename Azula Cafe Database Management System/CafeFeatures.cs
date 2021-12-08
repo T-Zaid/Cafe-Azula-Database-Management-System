@@ -23,7 +23,7 @@ namespace Azula_Cafe_Database_Management_System
             string sql = "select * from Games where GameName = '" + gamename + "'";
             cmd = new SqlCommand(sql, cnn);
             reader = cmd.ExecuteReader();
-            int existingUserName = (reader.Read()) ? 1 : 0; //1 if the account with the specific username exists, 0 if not
+            int existingUserName = (reader.Read()) ? 1 : 0; //1 if the game with the specific gamename exists, 0 if not
 
             if (existingUserName != 1)
             {
@@ -95,15 +95,35 @@ namespace Azula_Cafe_Database_Management_System
             cmd = new SqlCommand(sql2, cnn);
             int cid = Convert.ToInt32(cmd.ExecuteScalar());
 
-            string sql = "Select * from Leaderboard where GameID = " + gid + " and CustomerID = " + cid;
+            string sql = "Select * from Leaderboard where GameID = " + gid + " and CustomerID = " + cid + " and GameRank = " + gamerank;
             cmd = new SqlCommand(sql, cnn);
-
-            if(!reader.Read())
+            reader = cmd.ExecuteReader();
+            int existingRecord = (!reader.Read()) ? 1 : 0;
+            reader.Close();
+            if(existingRecord == 1)
             {
-                sql = "Insert into Leaderboard values (" + gid + ", " + cid + ", " + gamerank + ")";
+                sql = "select customerID from Leaderboard where GameID = " + gid + " and CustomerID = " + cid;
                 cmd = new SqlCommand(sql, cnn);
-                cmd.ExecuteNonQuery();
-                return 1;
+                object obj = cmd.ExecuteScalar();
+                if(obj == null || DBNull.Value == obj)  //null if there are no rows matching the WHERE clause, DBNull.Value if the first matching row has a NULL value in Col1
+                {
+                    sql = "Insert into Leaderboard values (" + gid + ", " + cid + ", " + gamerank + ")";
+                    cmd = new SqlCommand(sql, cnn);
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                else
+                {
+                    sql = "Update Leaderboard set GameRank = " + gamerank + " where GameID = " + gid + " and CustomerID = " + cid;
+                    cmd = new SqlCommand(sql, cnn);
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+
+                //sql = "Insert into Leaderboard values (" + gid + ", " + cid + ", " + gamerank + ")";
+                //cmd = new SqlCommand(sql, cnn);
+                //cmd.ExecuteNonQuery();
+                //return 1;
             }
             return 0;
         }
