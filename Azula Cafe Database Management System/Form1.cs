@@ -715,6 +715,67 @@ namespace Azula_Cafe_Database_Management_System
             tabControl1.SelectedTab = LeaderBoard_Add;
         }
 
+        private void MaxParticipants_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void AddEventButton_Click(object sender, EventArgs e)
+        {
+            CafeFeatures feats = new CafeFeatures(cnn);
+            if(EventName.Text.Length > 0 && MaxParticipants.Text.Length > 0 && EventDuration.Text.Length > 0)
+            {
+                DateTime start = new DateTime(EventStartDate.Value.Year, EventStartDate.Value.Month, EventStartDate.Value.Day, EventStartTime.Value.Hour, EventStartTime.Value.Minute, EventStartTime.Value.Second);
+                DateTime end = start.AddHours(Convert.ToInt32(EventDuration.Text));
+
+                if (start < DateTime.Now)
+                {
+                    MessageBox.Show("Please enter a time after current time.", "Input Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int success = feats.InsertEvent(EventName.Text.ToString(), start, end, GameDropEvent.Text.ToString(), Convert.ToInt32(MaxParticipants.Text), ImageLocation.Text.ToString());
+                if (success == 1)
+                    MessageBox.Show("Event successfully added to Cafe Azula", "Event Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("This event is already registered !!", "Event Duplicated", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void BrowseImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Image Files| *.jpg;*.jpeg;*.png";
+            dialog.InitialDirectory = @"E:\Azula Cafe Database Management System";
+            dialog.Title = "Select the Image File for Event";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+                ImageLocation.Text = dialog.FileName;
+        }
+
+        private void CreateNewEvent_Click(object sender, EventArgs e)
+        {
+            string Query = "select GameName from Games";
+            SqlCommand cmd = new SqlCommand(Query, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            GameDropEvent.Items.Clear();
+            while (reader.Read())
+            {
+                GameDropEvent.Items.Add(reader["GameName"]);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+            tabControl1.SelectedTab = Event_Add;
+        }
+
         private void StaffCreateAccount_Click(object sender, EventArgs e)
         {
             string Query = "select StaffName from Staff";

@@ -70,9 +70,19 @@ namespace Azula_Cafe_Database_Management_System
             {
                 string sql1 = "select max(AccountNo) from Accounts", sql2 = "select max(CustomerID) from Customers";
                 cmd = new SqlCommand(sql1, cnn);
-                int MaxAcc = Convert.ToInt32(cmd.ExecuteScalar());
+                int MaxAcc, MaxCum;
+                object obj = cmd.ExecuteScalar();
+                if (obj == null || DBNull.Value == obj)
+                    MaxAcc = 0;
+                else
+                    MaxAcc = Convert.ToInt32(obj);
+                
                 cmd = new SqlCommand(sql2, cnn);
-                int MaxCum = Convert.ToInt32(cmd.ExecuteScalar());
+                obj = cmd.ExecuteScalar();
+                if (obj == null || DBNull.Value == obj)
+                    MaxCum = 0;
+                else
+                    MaxCum = Convert.ToInt32(obj);
 
                 sql1 = "Insert into Accounts (AccountNo, Username, AccPassword) values (" + (MaxAcc + 1) + ", '" + username + "', '" + password + "')";
                 sql2 = "Insert into Customers (CustomerID, CustName, PhoneNo, AccountNo) values (" + (MaxCum + 1) + ", '" + Name + "', '" + phone + "', " + (MaxAcc + 1) + ")";
@@ -98,9 +108,21 @@ namespace Azula_Cafe_Database_Management_System
                     sql3 = "select staffID from Staff where staffName = '" + supervisorName + "'";
 
                 cmd = new SqlCommand(sql1, cnn);
-                int MaxAcc = Convert.ToInt32(cmd.ExecuteScalar());
+                object obj = cmd.ExecuteScalar();
+
+                int MaxAcc, MaxStf;
+                if (obj == null || DBNull.Value == obj)
+                    MaxAcc = 0;
+                else
+                    MaxAcc = Convert.ToInt32(obj);
+
                 cmd = new SqlCommand(sql2, cnn);
-                int MaxStf = Convert.ToInt32(cmd.ExecuteScalar());
+                obj = cmd.ExecuteScalar();
+                if (obj == null || DBNull.Value == obj)
+                    MaxStf = 0;
+                else
+                    MaxStf = Convert.ToInt32(obj);
+
                 cmd = new SqlCommand(sql3, cnn);
                 int Supervisor = Convert.ToInt32(cmd.ExecuteScalar());
 

@@ -29,7 +29,13 @@ namespace Azula_Cafe_Database_Management_System
             {
                 string sql1 = "Select max(GameID) from Games";
                 cmd = new SqlCommand(sql1, cnn);
-                int Maxid = Convert.ToInt32(cmd.ExecuteScalar());
+                
+                int Maxid;
+                object obj = cmd.ExecuteScalar();
+                if (obj == null || DBNull.Value == obj)
+                    Maxid = 0;
+                else
+                    Maxid = Convert.ToInt32(obj);
 
                 sql = "Insert into Games values (" + (Maxid + 1) + ", '" + gamename + "', '" + genre + "', '" + gamedesc + "', " + popular + ")";
                 cmd = new SqlCommand(sql, cnn);
@@ -47,18 +53,24 @@ namespace Azula_Cafe_Database_Management_System
             }
 
             string sql1 = "Select gameid from Games where GameName = '" + gamename + "'", sql2 = "select max(EventID) from Events",
-                sql3 = "select * from Games where GameName = '" + gamename + "'";
+                sql3 = "select * from Events where EventName = '" + EventName + "' and Start_Time = '" + start_time.ToString("yyyy-MM-dd HH:mm:ss") + "'";
             cmd = new SqlCommand(sql1, cnn);
             int gid = Convert.ToInt32(cmd.ExecuteScalar());
             cmd = new SqlCommand(sql2, cnn);
-            int eid = Convert.ToInt32(cmd.ExecuteScalar());
+
+            int eid;
+            object obj = cmd.ExecuteScalar();
+            if(obj == null || DBNull.Value == obj)
+                eid = 0;
+            else
+                eid = Convert.ToInt32(obj);
             
             cmd = new SqlCommand(sql3, cnn);
             reader = cmd.ExecuteReader();
 
             if (!reader.Read())
             {
-                string sql = "Insert into Games values (" + (eid + 1) + ", '" + EventName + "', " + start_time.ToString("yyyy-MM-dd HH:mm:ss") + ", " + end_time.ToString("yyyy-MM-dd HH:mm:ss") + ", " + gid + ", " + max + ", '" + imagename + "'";
+                string sql = "Insert into Events values (" + (eid + 1) + ", '" + EventName + "', '" + start_time.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + end_time.ToString("yyyy-MM-dd HH:mm:ss") + "', " + gid + ", " + max + ", '" + imagename + "')";
                 cmd = new SqlCommand(sql, cnn);
                 cmd.ExecuteNonQuery();
                 return 1;
@@ -77,7 +89,13 @@ namespace Azula_Cafe_Database_Management_System
             {
                 string sql1 = "Select max(ComputerID) from Computers";
                 cmd = new SqlCommand(sql1, cnn);
-                int cid = Convert.ToInt32(cmd.ExecuteScalar());
+                
+                int cid;
+                object obj = cmd.ExecuteScalar();
+                if (obj == null || DBNull.Value == obj)
+                    cid = 0;
+                else
+                    cid = Convert.ToInt32(obj);
 
                 sql = "Insert into Computers values (" + (cid+1) + ", '" + cpu + "', '" + gpu + "', " + ram + ", " + netspeed + ")";
                 cmd = new SqlCommand(sql, cnn);
