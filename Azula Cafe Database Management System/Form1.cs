@@ -24,7 +24,7 @@ namespace Azula_Cafe_Database_Management_System
             InitializeComponent();
             umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(umer_connectionString);
             //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
@@ -620,7 +620,7 @@ namespace Azula_Cafe_Database_Management_System
                 int success = feats.InsertGame(GameName.Text.ToString(), GameGenre.Text.ToString(), GameDesc.Text.ToString(), Convert.ToInt32(PopularityUpdown.Value));
                 if (success == 1)
                 {
-                    MessageBox.Show("Game '" + GameName + "' has been successfully added", "Game Added", MessageBoxButtons.OK);
+                    MessageBox.Show("Game '" + GameName.Text.ToString() + "' has been successfully added", "Game Added", MessageBoxButtons.OK);
                     tabControl1.SelectedTab = StaffPage;
                 }
                 else

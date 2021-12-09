@@ -56,6 +56,9 @@ namespace Azula_Cafe_Database_Management_System
                 }
                 return Staff_or_Cust;
             }
+            reader.Close();
+            cmd.Dispose();
+
             Staff_or_Cust[0] = -1;
             return Staff_or_Cust;
         }
@@ -90,9 +93,13 @@ namespace Azula_Cafe_Database_Management_System
                 cmd.ExecuteNonQuery();
                 cmd = new SqlCommand(sql2, cnn);
                 cmd.ExecuteNonQuery();
+                reader.Close();
+                cmd.Dispose();
                 return 1;
 
             }
+            reader.Close();
+            cmd.Dispose();
             return 0;
         }
 
@@ -132,17 +139,19 @@ namespace Azula_Cafe_Database_Management_System
                 cmd.ExecuteNonQuery();
                 cmd = new SqlCommand(sql2, cnn);
                 cmd.ExecuteNonQuery();
+                reader.Close();
+                cmd.Dispose();
                 return 1;
 
             }
+            reader.Close();
+            cmd.Dispose();
             return 0;
         }
 
         ~Login()
         {
-            if(reader.HasRows)  //if it wasn't open, there's no point in closing it...
-                reader.Close();
-            cmd.Dispose();
+            //cmd.Dispose();
             //cnn.Close();
         }
     }

@@ -117,6 +117,8 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label26 = new System.Windows.Forms.Label();
             this.StaffPage = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.CreateNewEvent = new System.Windows.Forms.Button();
             this.CreateNewGame = new System.Windows.Forms.Button();
             this.LeaderboardOperations = new System.Windows.Forms.Button();
             this.CreateNewComputer = new System.Windows.Forms.Button();
@@ -179,13 +181,14 @@
             this.Rank_ig = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.CreateNewEvent = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.Event_Add = new System.Windows.Forms.TabPage();
-            this.EventStartTime = new System.Windows.Forms.DateTimePicker();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.EventStartDate = new System.Windows.Forms.DateTimePicker();
+            this.BrowseImage = new System.Windows.Forms.Button();
+            this.label64 = new System.Windows.Forms.Label();
+            this.ImageLocation = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.EventDuration = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.EventName = new System.Windows.Forms.TextBox();
             this.GameDropEvent = new System.Windows.Forms.ComboBox();
             this.AddEventButton = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -194,13 +197,10 @@
             this.MaxParticipants = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.EventName = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.EventDuration = new System.Windows.Forms.TextBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.ImageLocation = new System.Windows.Forms.TextBox();
-            this.BrowseImage = new System.Windows.Forms.Button();
+            this.EventStartTime = new System.Windows.Forms.DateTimePicker();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.EventStartDate = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -256,7 +256,7 @@
             this.LoginPage.Padding = new System.Windows.Forms.Padding(3);
             this.LoginPage.Size = new System.Drawing.Size(806, 442);
             this.LoginPage.TabIndex = 0;
-            this.LoginPage.Text = "Login Page";
+            this.LoginPage.Text = "w";
             this.LoginPage.UseVisualStyleBackColor = true;
             // 
             // Register
@@ -1155,6 +1155,27 @@
             this.StaffPage.Text = "Staff";
             this.StaffPage.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(543, 188);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(220, 101);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Add New Computers";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // CreateNewEvent
+            // 
+            this.CreateNewEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateNewEvent.Location = new System.Drawing.Point(288, 188);
+            this.CreateNewEvent.Name = "CreateNewEvent";
+            this.CreateNewEvent.Size = new System.Drawing.Size(220, 101);
+            this.CreateNewEvent.TabIndex = 9;
+            this.CreateNewEvent.Text = "Add Events";
+            this.CreateNewEvent.UseVisualStyleBackColor = true;
+            this.CreateNewEvent.Click += new System.EventHandler(this.CreateNewEvent_Click);
+            // 
             // CreateNewGame
             // 
             this.CreateNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1784,27 +1805,6 @@
             this.label56.TabIndex = 60;
             this.label56.Text = "Cafe Azula Management Studio";
             // 
-            // CreateNewEvent
-            // 
-            this.CreateNewEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateNewEvent.Location = new System.Drawing.Point(288, 188);
-            this.CreateNewEvent.Name = "CreateNewEvent";
-            this.CreateNewEvent.Size = new System.Drawing.Size(220, 101);
-            this.CreateNewEvent.TabIndex = 9;
-            this.CreateNewEvent.Text = "Add Events";
-            this.CreateNewEvent.UseVisualStyleBackColor = true;
-            this.CreateNewEvent.Click += new System.EventHandler(this.CreateNewEvent_Click);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(543, 188);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 101);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Add New Computers";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // Event_Add
             // 
             this.Event_Add.Controls.Add(this.BrowseImage);
@@ -1833,38 +1833,67 @@
             this.Event_Add.Text = "Add Event";
             this.Event_Add.UseVisualStyleBackColor = true;
             // 
-            // EventStartTime
+            // BrowseImage
             // 
-            this.EventStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.EventStartTime.Location = new System.Drawing.Point(400, 268);
-            this.EventStartTime.Name = "EventStartTime";
-            this.EventStartTime.Size = new System.Drawing.Size(92, 20);
-            this.EventStartTime.TabIndex = 15;
+            this.BrowseImage.Location = new System.Drawing.Point(625, 324);
+            this.BrowseImage.Name = "BrowseImage";
+            this.BrowseImage.Size = new System.Drawing.Size(75, 23);
+            this.BrowseImage.TabIndex = 89;
+            this.BrowseImage.Text = "Browse";
+            this.BrowseImage.UseVisualStyleBackColor = true;
+            this.BrowseImage.Click += new System.EventHandler(this.BrowseImage_Click);
             // 
-            // label51
+            // label64
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(291, 291);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(149, 13);
-            this.label51.TabIndex = 14;
-            this.label51.Text = "(Default is set to Current Time)";
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(168, 329);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(213, 13);
+            this.label64.TabIndex = 88;
+            this.label64.Text = "Select Image to set as Event Background : ";
             // 
-            // label57
+            // ImageLocation
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(168, 268);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(72, 13);
-            this.label57.TabIndex = 13;
-            this.label57.Text = "Starting Time:";
+            this.ImageLocation.Location = new System.Drawing.Point(387, 326);
+            this.ImageLocation.MaxLength = 2;
+            this.ImageLocation.Name = "ImageLocation";
+            this.ImageLocation.Size = new System.Drawing.Size(232, 20);
+            this.ImageLocation.TabIndex = 87;
             // 
-            // EventStartDate
+            // label63
             // 
-            this.EventStartDate.Location = new System.Drawing.Point(248, 268);
-            this.EventStartDate.Name = "EventStartDate";
-            this.EventStartDate.Size = new System.Drawing.Size(146, 20);
-            this.EventStartDate.TabIndex = 12;
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(168, 228);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(175, 13);
+            this.label63.TabIndex = 86;
+            this.label63.Text = "Event Duration of Event (in Hours) :";
+            // 
+            // EventDuration
+            // 
+            this.EventDuration.Location = new System.Drawing.Point(360, 225);
+            this.EventDuration.MaxLength = 2;
+            this.EventDuration.Name = "EventDuration";
+            this.EventDuration.Size = new System.Drawing.Size(92, 20);
+            this.EventDuration.TabIndex = 85;
+            this.EventDuration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(168, 99);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(100, 13);
+            this.label58.TabIndex = 84;
+            this.label58.Text = "Enter Event Name :";
+            // 
+            // EventName
+            // 
+            this.EventName.Location = new System.Drawing.Point(308, 96);
+            this.EventName.MaxLength = 50;
+            this.EventName.Name = "EventName";
+            this.EventName.Size = new System.Drawing.Size(144, 20);
+            this.EventName.TabIndex = 83;
             // 
             // GameDropEvent
             // 
@@ -1941,67 +1970,38 @@
             this.label62.TabIndex = 74;
             this.label62.Text = "Cafe Azula Management Studio";
             // 
-            // label58
+            // EventStartTime
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(168, 99);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(100, 13);
-            this.label58.TabIndex = 84;
-            this.label58.Text = "Enter Event Name :";
+            this.EventStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.EventStartTime.Location = new System.Drawing.Point(400, 268);
+            this.EventStartTime.Name = "EventStartTime";
+            this.EventStartTime.Size = new System.Drawing.Size(92, 20);
+            this.EventStartTime.TabIndex = 15;
             // 
-            // EventName
+            // label51
             // 
-            this.EventName.Location = new System.Drawing.Point(308, 96);
-            this.EventName.MaxLength = 50;
-            this.EventName.Name = "EventName";
-            this.EventName.Size = new System.Drawing.Size(144, 20);
-            this.EventName.TabIndex = 83;
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(291, 291);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(149, 13);
+            this.label51.TabIndex = 14;
+            this.label51.Text = "(Default is set to Current Time)";
             // 
-            // label63
+            // label57
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(168, 228);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(175, 13);
-            this.label63.TabIndex = 86;
-            this.label63.Text = "Event Duration of Event (in Hours) :";
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(168, 268);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(72, 13);
+            this.label57.TabIndex = 13;
+            this.label57.Text = "Starting Time:";
             // 
-            // EventDuration
+            // EventStartDate
             // 
-            this.EventDuration.Location = new System.Drawing.Point(360, 225);
-            this.EventDuration.MaxLength = 2;
-            this.EventDuration.Name = "EventDuration";
-            this.EventDuration.Size = new System.Drawing.Size(92, 20);
-            this.EventDuration.TabIndex = 85;
-            this.EventDuration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(168, 329);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(213, 13);
-            this.label64.TabIndex = 88;
-            this.label64.Text = "Select Image to set as Event Background : ";
-            // 
-            // ImageLocation
-            // 
-            this.ImageLocation.Location = new System.Drawing.Point(387, 326);
-            this.ImageLocation.MaxLength = 2;
-            this.ImageLocation.Name = "ImageLocation";
-            this.ImageLocation.Size = new System.Drawing.Size(232, 20);
-            this.ImageLocation.TabIndex = 87;
-            // 
-            // BrowseImage
-            // 
-            this.BrowseImage.Location = new System.Drawing.Point(625, 324);
-            this.BrowseImage.Name = "BrowseImage";
-            this.BrowseImage.Size = new System.Drawing.Size(75, 23);
-            this.BrowseImage.TabIndex = 89;
-            this.BrowseImage.Text = "Browse";
-            this.BrowseImage.UseVisualStyleBackColor = true;
-            this.BrowseImage.Click += new System.EventHandler(this.BrowseImage_Click);
+            this.EventStartDate.Location = new System.Drawing.Point(248, 268);
+            this.EventStartDate.Name = "EventStartDate";
+            this.EventStartDate.Size = new System.Drawing.Size(146, 20);
+            this.EventStartDate.TabIndex = 12;
             // 
             // Form1
             // 
