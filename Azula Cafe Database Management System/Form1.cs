@@ -17,6 +17,8 @@ namespace Azula_Cafe_Database_Management_System
         SqlConnection cnn;
         int customerID_Form1, staffID_From1, staff_accessibility;
         List<int> selectedSeats;
+        List<string> EventImageLocations;
+        string previousPageFlag;
         //SqlCommand cmd;
         //SqlDataReader reader;
         public Form1()
@@ -96,6 +98,9 @@ namespace Azula_Cafe_Database_Management_System
             {
                 NumSeatsDropDown.Items.Add(i + 1);
             }
+            NumHoursDropDown.Items.Clear();
+            string[] hourRange = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+            NumHoursDropDown.Items.AddRange(hourRange);
 
             NumSeatsDropDown.SelectedIndex = 0;
             NumHoursDropDown.SelectedIndex = 0;
@@ -191,6 +196,7 @@ namespace Azula_Cafe_Database_Management_System
                 SeatPicker.Items.Add(availableSeatNums[i]);
             }
 
+            previousPageFlag = "BookSeatsPage";
             SeatBookingPage2();
         }
 
@@ -293,7 +299,12 @@ namespace Azula_Cafe_Database_Management_System
 
         private void BackButton2_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = BookSeatsPage;
+            if (previousPageFlag == "BookSeatsPage")
+                tabControl1.SelectedTab = BookSeatsPage;
+            else if (previousPageFlag == "BookEventsPage")
+                tabControl1.SelectedTab = BookEventsPage;
+            else
+                tabControl1.SelectedTab = CustomerPage;
         }
 
         private void ContinueButton2_Click(object sender, EventArgs e)
@@ -774,6 +785,101 @@ namespace Azula_Cafe_Database_Management_System
             reader.Close();
             cmd.Dispose();
             tabControl1.SelectedTab = Event_Add;
+        }
+
+        private void ViewEventsButton_Click(object sender, EventArgs e)
+        {
+            EventViewerTable.Rows.Clear();
+            EventImageLocations = new List<string>();
+            string newQuery = "SELECT * FROM Events AS E LEFT OUTER JOIN Games AS G ON E.GameID = G.GameID WHERE Start_Time > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while(reader.Read())
+            {
+                string[] row = { reader["EventName"].ToString(), reader["GameName"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Max_Participants"].ToString() };
+                EventViewerTable.Rows.Add(row);
+                EventImageLocations.Add(reader["Poster_link"].ToString());
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            if(EventViewerTable.RowCount != 0)
+            {
+                Bitmap Poster = new Bitmap(EventImageLocations[0]);
+
+                EventPosterImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                EventPosterImage.Image = (Image)Poster;
+            }    
+
+            tabControl1.SelectedTab = BookEventsPage;
+        }
+
+        private void EventViewerTable_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == BookEventsPage && EventViewerTable.RowCount != 0)
+            {
+                Bitmap Poster = new Bitmap(EventImageLocations[EventViewerTable.CurrentRow.Index]);
+
+                EventPosterImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                EventPosterImage.Image = (Image)Poster;
+            }
+        }
+
+        private void EventBackButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = CustomerPage;
+        }
+
+        private void EventBookButton_Click(object sender, EventArgs e)
+        {
+            List<int> availableSeatNums = new List<int>();
+            TicketingSystem seatCheck = new TicketingSystem(cnn);
+            DateTime start = Convert.ToDateTime(EventViewerTable.CurrentRow.Cells[2].Value.ToString());
+            DateTime end = Convert.ToDateTime(EventViewerTable.CurrentRow.Cells[3].Value.ToString());
+
+            string newQuery = "SELECT SeatNo FROM Seats";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int sNum = Convert.ToInt32(reader["SeatNo"]);
+
+                if (seatCheck.CheckSeatAvailability(sNum, start, end))
+                {
+                    availableSeatNums.Add(sNum);
+                }
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            if (availableSeatNums.Count() < Convert.ToInt32(EventViewerTable.CurrentRow.Cells[4].Value))
+            {
+                MessageBox.Show("Not enough seats remain for selected event.", "Seats Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            NumSeatsDropDown.Items.Clear();
+            NumSeatsDropDown.Items.Add(Convert.ToInt32(EventViewerTable.CurrentRow.Cells[4].Value));
+            NumSeatsDropDown.SelectedIndex = 0;
+            int hours = end.Hour - start.Hour;
+            NumHoursDropDown.Items.Clear();
+            NumHoursDropDown.Items.Add(hours.ToString());
+            NumHoursDropDown.SelectedIndex = 0;
+            StartTimeSelect.Value = start;
+            StartingTimePicker.Value = start;
+            previousPageFlag = "BookEventsPage";
+            SeatPicker.Items.Clear();
+            for (int i = 0; i < availableSeatNums.Count(); i++)
+            {
+                SeatPicker.Items.Add(availableSeatNums[i]);
+            }
+            selectedSeats = new List<int>();
+
+            SeatBookingPage2();
         }
 
         private void StaffCreateAccount_Click(object sender, EventArgs e)

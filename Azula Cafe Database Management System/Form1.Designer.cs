@@ -116,6 +116,19 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label26 = new System.Windows.Forms.Label();
+            this.BookEventsPage = new System.Windows.Forms.TabPage();
+            this.EventPosterImage = new System.Windows.Forms.PictureBox();
+            this.EventBackButton = new System.Windows.Forms.Button();
+            this.EventBookButton = new System.Windows.Forms.Button();
+            this.label67 = new System.Windows.Forms.Label();
+            this.EventViewerTable = new System.Windows.Forms.DataGridView();
+            this.EventNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventGameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventStartTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventEndTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParticipantsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
             this.StaffPage = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.CreateNewEvent = new System.Windows.Forms.Button();
@@ -211,6 +224,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.CancelBookingTable)).BeginInit();
             this.ViewBookingsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).BeginInit();
+            this.BookEventsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventViewerTable)).BeginInit();
             this.StaffPage.SuspendLayout();
             this.StaffAccReg.SuspendLayout();
             this.Game_Add.SuspendLayout();
@@ -229,6 +245,7 @@
             this.tabControl1.Controls.Add(this.BookSeatsPage2);
             this.tabControl1.Controls.Add(this.CancelSeatPage);
             this.tabControl1.Controls.Add(this.ViewBookingsPage);
+            this.tabControl1.Controls.Add(this.BookEventsPage);
             this.tabControl1.Controls.Add(this.StaffPage);
             this.tabControl1.Controls.Add(this.StaffAccReg);
             this.tabControl1.Controls.Add(this.Game_Add);
@@ -494,6 +511,7 @@
             this.ViewEventsButton.TabIndex = 5;
             this.ViewEventsButton.Text = "View Events";
             this.ViewEventsButton.UseVisualStyleBackColor = true;
+            this.ViewEventsButton.Click += new System.EventHandler(this.ViewEventsButton_Click);
             // 
             // CancelSeatBookingButton
             // 
@@ -1137,6 +1155,131 @@
             this.label26.Size = new System.Drawing.Size(492, 55);
             this.label26.TabIndex = 5;
             this.label26.Text = "Seat Booking History";
+            // 
+            // BookEventsPage
+            // 
+            this.BookEventsPage.Controls.Add(this.EventPosterImage);
+            this.BookEventsPage.Controls.Add(this.EventBackButton);
+            this.BookEventsPage.Controls.Add(this.EventBookButton);
+            this.BookEventsPage.Controls.Add(this.label67);
+            this.BookEventsPage.Controls.Add(this.EventViewerTable);
+            this.BookEventsPage.Controls.Add(this.label66);
+            this.BookEventsPage.Controls.Add(this.label65);
+            this.BookEventsPage.Location = new System.Drawing.Point(4, 22);
+            this.BookEventsPage.Name = "BookEventsPage";
+            this.BookEventsPage.Size = new System.Drawing.Size(806, 442);
+            this.BookEventsPage.TabIndex = 13;
+            this.BookEventsPage.Text = "View/Book Events";
+            this.BookEventsPage.UseVisualStyleBackColor = true;
+            // 
+            // EventPosterImage
+            // 
+            this.EventPosterImage.Location = new System.Drawing.Point(605, 132);
+            this.EventPosterImage.Name = "EventPosterImage";
+            this.EventPosterImage.Size = new System.Drawing.Size(186, 246);
+            this.EventPosterImage.TabIndex = 6;
+            this.EventPosterImage.TabStop = false;
+            // 
+            // EventBackButton
+            // 
+            this.EventBackButton.Location = new System.Drawing.Point(353, 398);
+            this.EventBackButton.Name = "EventBackButton";
+            this.EventBackButton.Size = new System.Drawing.Size(75, 23);
+            this.EventBackButton.TabIndex = 5;
+            this.EventBackButton.Text = "Back";
+            this.EventBackButton.UseVisualStyleBackColor = true;
+            this.EventBackButton.Click += new System.EventHandler(this.EventBackButton_Click);
+            // 
+            // EventBookButton
+            // 
+            this.EventBookButton.Location = new System.Drawing.Point(182, 398);
+            this.EventBookButton.Name = "EventBookButton";
+            this.EventBookButton.Size = new System.Drawing.Size(75, 23);
+            this.EventBookButton.TabIndex = 4;
+            this.EventBookButton.Text = "Book Seats";
+            this.EventBookButton.UseVisualStyleBackColor = true;
+            this.EventBookButton.Click += new System.EventHandler(this.EventBookButton_Click);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(658, 103);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(80, 13);
+            this.label67.TabIndex = 3;
+            this.label67.Text = "Event Poster";
+            // 
+            // EventViewerTable
+            // 
+            this.EventViewerTable.AllowUserToAddRows = false;
+            this.EventViewerTable.AllowUserToDeleteRows = false;
+            this.EventViewerTable.AllowUserToOrderColumns = true;
+            this.EventViewerTable.AllowUserToResizeColumns = false;
+            this.EventViewerTable.AllowUserToResizeRows = false;
+            this.EventViewerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EventViewerTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EventNameColumn,
+            this.EventGameColumn,
+            this.EventStartTimeColumn,
+            this.EventEndTimeColumn,
+            this.ParticipantsColumn});
+            this.EventViewerTable.Location = new System.Drawing.Point(15, 92);
+            this.EventViewerTable.Name = "EventViewerTable";
+            this.EventViewerTable.Size = new System.Drawing.Size(584, 295);
+            this.EventViewerTable.TabIndex = 2;
+            this.EventViewerTable.CurrentCellChanged += new System.EventHandler(this.EventViewerTable_CurrentCellChanged);
+            // 
+            // EventNameColumn
+            // 
+            this.EventNameColumn.HeaderText = "Event Name";
+            this.EventNameColumn.Name = "EventNameColumn";
+            this.EventNameColumn.ReadOnly = true;
+            // 
+            // EventGameColumn
+            // 
+            this.EventGameColumn.HeaderText = "Game";
+            this.EventGameColumn.Name = "EventGameColumn";
+            this.EventGameColumn.ReadOnly = true;
+            // 
+            // EventStartTimeColumn
+            // 
+            this.EventStartTimeColumn.HeaderText = "Start Time";
+            this.EventStartTimeColumn.Name = "EventStartTimeColumn";
+            this.EventStartTimeColumn.ReadOnly = true;
+            this.EventStartTimeColumn.Width = 120;
+            // 
+            // EventEndTimeColumn
+            // 
+            this.EventEndTimeColumn.HeaderText = "End Time";
+            this.EventEndTimeColumn.Name = "EventEndTimeColumn";
+            this.EventEndTimeColumn.ReadOnly = true;
+            this.EventEndTimeColumn.Width = 120;
+            // 
+            // ParticipantsColumn
+            // 
+            this.ParticipantsColumn.HeaderText = "Participants /Team";
+            this.ParticipantsColumn.Name = "ParticipantsColumn";
+            this.ParticipantsColumn.ReadOnly = true;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(244, 55);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(320, 13);
+            this.label66.TabIndex = 1;
+            this.label66.Text = "Check out our special game events and register seats accordingly.";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(188, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(436, 55);
+            this.label65.TabIndex = 0;
+            this.label65.Text = "Azula Cafe Events";
             // 
             // StaffPage
             // 
@@ -2030,6 +2173,10 @@
             this.ViewBookingsPage.ResumeLayout(false);
             this.ViewBookingsPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).EndInit();
+            this.BookEventsPage.ResumeLayout(false);
+            this.BookEventsPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventViewerTable)).EndInit();
             this.StaffPage.ResumeLayout(false);
             this.StaffPage.PerformLayout();
             this.StaffAccReg.ResumeLayout(false);
@@ -2222,6 +2369,19 @@
         private System.Windows.Forms.Button BrowseImage;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.TextBox ImageLocation;
+        private System.Windows.Forms.TabPage BookEventsPage;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.DataGridView EventViewerTable;
+        private System.Windows.Forms.PictureBox EventPosterImage;
+        private System.Windows.Forms.Button EventBackButton;
+        private System.Windows.Forms.Button EventBookButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventGameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventStartTimeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventEndTimeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ParticipantsColumn;
     }
 }
 
