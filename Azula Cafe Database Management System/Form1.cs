@@ -38,6 +38,21 @@ namespace Azula_Cafe_Database_Management_System
             
         }
 
+        public void ClearTextBoxes(Control.ControlCollection ctrlCollection)
+        {
+            foreach (Control ctrl in ctrlCollection)
+            {
+                if (ctrl is TextBoxBase)
+                {
+                    ctrl.Text = String.Empty;
+                }
+                else
+                {
+                    ClearTextBoxes(ctrl.Controls);
+                }
+            }
+        }
+
         private void LoginButton_Click(object sender, EventArgs e)
         {
             //Login log = new Login(connectionString);
@@ -646,6 +661,7 @@ namespace Azula_Cafe_Database_Management_System
         private void CreateNewGame_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = Game_Add;
+            ClearTextBoxes(this.Controls);
         }
 
         private void RAM_KeyPress(object sender, KeyPressEventArgs e)
@@ -681,6 +697,7 @@ namespace Azula_Cafe_Database_Management_System
         private void CreateNewComputer_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = Computer_Add;
+            ClearTextBoxes(this.Controls);
         }
 
         private void AddLeaderBoardButton_Click(object sender, EventArgs e)
@@ -707,6 +724,7 @@ namespace Azula_Cafe_Database_Management_System
 
         private void LeaderboardOperations_Click(object sender, EventArgs e)
         {
+            ClearTextBoxes(this.Controls);
             string Query = "select GameName from Games", Query1 = "select CustomerID, CustName from Customers";
             SqlCommand cmd = new SqlCommand(Query, cnn);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -777,6 +795,7 @@ namespace Azula_Cafe_Database_Management_System
 
         private void CreateNewEvent_Click(object sender, EventArgs e)
         {
+            ClearTextBoxes(this.Controls);
             string Query = "select GameName from Games";
             SqlCommand cmd = new SqlCommand(Query, cnn);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -910,8 +929,34 @@ namespace Azula_Cafe_Database_Management_System
             ShowCustGamerTag.Text = "Gamer Tag : " + cmd.ExecuteScalar().ToString();
         }
 
+        private void FromRegStaffTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPage;
+        }
+
+        private void FromAddGameTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPage;
+        }
+
+        private void FromAddCompsTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPage;
+        }
+
+        private void FromaddLeaderBoardTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPage;
+        }
+
+        private void FromaddEventTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPage;
+        }
+
         private void StaffCreateAccount_Click(object sender, EventArgs e)
         {
+            ClearTextBoxes(this.Controls);
             string Query = "select StaffID, StaffName from Staff where Position in ('Chairman', 'CEO', 'Manager')";
             SqlCommand cmd = new SqlCommand(Query, cnn);
             SqlDataReader reader = cmd.ExecuteReader();

@@ -165,7 +165,7 @@
             this.StaffRegisterAccount = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.StaffSalary = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FromRegStaffTOStaffPage = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -179,7 +179,7 @@
             this.Game_Add = new System.Windows.Forms.TabPage();
             this.PopularityUpdown = new System.Windows.Forms.NumericUpDown();
             this.AddGameButton = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.FromAddGameTOStaffPage = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -195,7 +195,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.GPUname = new System.Windows.Forms.TextBox();
             this.AddComputerButton = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.FromAddCompsTOStaffPage = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.RAM = new System.Windows.Forms.TextBox();
@@ -207,7 +207,7 @@
             this.Gamedropdown = new System.Windows.Forms.ComboBox();
             this.label52 = new System.Windows.Forms.Label();
             this.AddLeaderBoardButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.FromaddLeaderBoardTOStaffPage = new System.Windows.Forms.Button();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.Rank_ig = new System.Windows.Forms.TextBox();
@@ -223,7 +223,7 @@
             this.EventName = new System.Windows.Forms.TextBox();
             this.GameDropEvent = new System.Windows.Forms.ComboBox();
             this.AddEventButton = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.FromaddEventTOStaffPage = new System.Windows.Forms.Button();
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.MaxParticipants = new System.Windows.Forms.TextBox();
@@ -1597,7 +1597,7 @@
             this.StaffAccReg.Controls.Add(this.StaffRegisterAccount);
             this.StaffAccReg.Controls.Add(this.label36);
             this.StaffAccReg.Controls.Add(this.StaffSalary);
-            this.StaffAccReg.Controls.Add(this.button1);
+            this.StaffAccReg.Controls.Add(this.FromRegStaffTOStaffPage);
             this.StaffAccReg.Controls.Add(this.label23);
             this.StaffAccReg.Controls.Add(this.label31);
             this.StaffAccReg.Controls.Add(this.label32);
@@ -1681,14 +1681,15 @@
             this.StaffSalary.TabIndex = 25;
             this.StaffSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StaffSalary_KeyPress);
             // 
-            // button1
+            // FromRegStaffTOStaffPage
             // 
-            this.button1.Location = new System.Drawing.Point(246, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.FromRegStaffTOStaffPage.Location = new System.Drawing.Point(246, 380);
+            this.FromRegStaffTOStaffPage.Name = "FromRegStaffTOStaffPage";
+            this.FromRegStaffTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromRegStaffTOStaffPage.TabIndex = 24;
+            this.FromRegStaffTOStaffPage.Text = "Back";
+            this.FromRegStaffTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromRegStaffTOStaffPage.Click += new System.EventHandler(this.FromRegStaffTOStaffPage_Click);
             // 
             // label23
             // 
@@ -1784,7 +1785,7 @@
             // 
             this.Game_Add.Controls.Add(this.PopularityUpdown);
             this.Game_Add.Controls.Add(this.AddGameButton);
-            this.Game_Add.Controls.Add(this.button5);
+            this.Game_Add.Controls.Add(this.FromAddGameTOStaffPage);
             this.Game_Add.Controls.Add(this.label40);
             this.Game_Add.Controls.Add(this.label41);
             this.Game_Add.Controls.Add(this.label42);
@@ -1823,14 +1824,15 @@
             this.AddGameButton.UseVisualStyleBackColor = true;
             this.AddGameButton.Click += new System.EventHandler(this.AddGameButton_Click);
             // 
-            // button5
+            // FromAddGameTOStaffPage
             // 
-            this.button5.Location = new System.Drawing.Point(247, 362);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = true;
+            this.FromAddGameTOStaffPage.Location = new System.Drawing.Point(247, 362);
+            this.FromAddGameTOStaffPage.Name = "FromAddGameTOStaffPage";
+            this.FromAddGameTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromAddGameTOStaffPage.TabIndex = 40;
+            this.FromAddGameTOStaffPage.Text = "Back";
+            this.FromAddGameTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromAddGameTOStaffPage.Click += new System.EventHandler(this.FromAddGameTOStaffPage_Click);
             // 
             // label40
             // 
@@ -1920,7 +1922,7 @@
             this.Computer_Add.Controls.Add(this.label39);
             this.Computer_Add.Controls.Add(this.GPUname);
             this.Computer_Add.Controls.Add(this.AddComputerButton);
-            this.Computer_Add.Controls.Add(this.button6);
+            this.Computer_Add.Controls.Add(this.FromAddCompsTOStaffPage);
             this.Computer_Add.Controls.Add(this.label46);
             this.Computer_Add.Controls.Add(this.label48);
             this.Computer_Add.Controls.Add(this.RAM);
@@ -1979,14 +1981,15 @@
             this.AddComputerButton.UseVisualStyleBackColor = true;
             this.AddComputerButton.Click += new System.EventHandler(this.AddComputerButton_Click);
             // 
-            // button6
+            // FromAddCompsTOStaffPage
             // 
-            this.button6.Location = new System.Drawing.Point(230, 322);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 54;
-            this.button6.Text = "Back";
-            this.button6.UseVisualStyleBackColor = true;
+            this.FromAddCompsTOStaffPage.Location = new System.Drawing.Point(230, 322);
+            this.FromAddCompsTOStaffPage.Name = "FromAddCompsTOStaffPage";
+            this.FromAddCompsTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromAddCompsTOStaffPage.TabIndex = 54;
+            this.FromAddCompsTOStaffPage.Text = "Back";
+            this.FromAddCompsTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromAddCompsTOStaffPage.Click += new System.EventHandler(this.FromAddCompsTOStaffPage_Click);
             // 
             // label46
             // 
@@ -2050,7 +2053,7 @@
             this.LeaderBoard_Add.Controls.Add(this.Gamedropdown);
             this.LeaderBoard_Add.Controls.Add(this.label52);
             this.LeaderBoard_Add.Controls.Add(this.AddLeaderBoardButton);
-            this.LeaderBoard_Add.Controls.Add(this.button3);
+            this.LeaderBoard_Add.Controls.Add(this.FromaddLeaderBoardTOStaffPage);
             this.LeaderBoard_Add.Controls.Add(this.label53);
             this.LeaderBoard_Add.Controls.Add(this.label54);
             this.LeaderBoard_Add.Controls.Add(this.Rank_ig);
@@ -2101,14 +2104,15 @@
             this.AddLeaderBoardButton.UseVisualStyleBackColor = true;
             this.AddLeaderBoardButton.Click += new System.EventHandler(this.AddLeaderBoardButton_Click);
             // 
-            // button3
+            // FromaddLeaderBoardTOStaffPage
             // 
-            this.button3.Location = new System.Drawing.Point(238, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 66;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
+            this.FromaddLeaderBoardTOStaffPage.Location = new System.Drawing.Point(238, 322);
+            this.FromaddLeaderBoardTOStaffPage.Name = "FromaddLeaderBoardTOStaffPage";
+            this.FromaddLeaderBoardTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromaddLeaderBoardTOStaffPage.TabIndex = 66;
+            this.FromaddLeaderBoardTOStaffPage.Text = "Back";
+            this.FromaddLeaderBoardTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromaddLeaderBoardTOStaffPage.Click += new System.EventHandler(this.FromaddLeaderBoardTOStaffPage_Click);
             // 
             // label53
             // 
@@ -2167,7 +2171,7 @@
             this.Event_Add.Controls.Add(this.EventName);
             this.Event_Add.Controls.Add(this.GameDropEvent);
             this.Event_Add.Controls.Add(this.AddEventButton);
-            this.Event_Add.Controls.Add(this.button8);
+            this.Event_Add.Controls.Add(this.FromaddEventTOStaffPage);
             this.Event_Add.Controls.Add(this.label59);
             this.Event_Add.Controls.Add(this.label60);
             this.Event_Add.Controls.Add(this.MaxParticipants);
@@ -2265,14 +2269,15 @@
             this.AddEventButton.UseVisualStyleBackColor = true;
             this.AddEventButton.Click += new System.EventHandler(this.AddEventButton_Click);
             // 
-            // button8
+            // FromaddEventTOStaffPage
             // 
-            this.button8.Location = new System.Drawing.Point(238, 363);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 79;
-            this.button8.Text = "Back";
-            this.button8.UseVisualStyleBackColor = true;
+            this.FromaddEventTOStaffPage.Location = new System.Drawing.Point(238, 363);
+            this.FromaddEventTOStaffPage.Name = "FromaddEventTOStaffPage";
+            this.FromaddEventTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromaddEventTOStaffPage.TabIndex = 79;
+            this.FromaddEventTOStaffPage.Text = "Back";
+            this.FromaddEventTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromaddEventTOStaffPage.Click += new System.EventHandler(this.FromaddEventTOStaffPage_Click);
             // 
             // label59
             // 
@@ -2521,7 +2526,7 @@
         private System.Windows.Forms.Button StaffCreateAccount;
         private System.Windows.Forms.Button CreateNewGame;
         private System.Windows.Forms.TabPage StaffAccReg;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button FromRegStaffTOStaffPage;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
@@ -2538,7 +2543,7 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TabPage Game_Add;
         private System.Windows.Forms.Button AddGameButton;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button FromAddGameTOStaffPage;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
@@ -2558,7 +2563,7 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox GPUname;
         private System.Windows.Forms.Button AddComputerButton;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button FromAddCompsTOStaffPage;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox RAM;
@@ -2568,7 +2573,7 @@
         private System.Windows.Forms.TabPage LeaderBoard_Add;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Button AddLeaderBoardButton;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button FromaddLeaderBoardTOStaffPage;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.TextBox Rank_ig;
@@ -2585,7 +2590,7 @@
         private System.Windows.Forms.DateTimePicker EventStartDate;
         private System.Windows.Forms.ComboBox GameDropEvent;
         private System.Windows.Forms.Button AddEventButton;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button FromaddEventTOStaffPage;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox MaxParticipants;
