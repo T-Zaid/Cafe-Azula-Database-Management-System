@@ -882,6 +882,18 @@ namespace Azula_Cafe_Database_Management_System
             SeatBookingPage2();
         }
 
+        private void ViewLeaderboardButton_Click(object sender, EventArgs e)
+        {
+            string newQuery = "SELECT * FROM Leaderboard_Details"; // Leaderboard_Details is a view
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while(reader.Read())
+            {
+
+            }
+        }
+
         private void StaffCreateAccount_Click(object sender, EventArgs e)
         {
             string Query = "select StaffName from Staff";
