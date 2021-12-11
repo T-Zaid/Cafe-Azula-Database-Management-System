@@ -28,7 +28,7 @@ namespace Azula_Cafe_Database_Management_System
             InitializeComponent();
             umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(umer_connectionString);
             //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
@@ -888,9 +888,9 @@ namespace Azula_Cafe_Database_Management_System
             NumSeatsDropDown.Items.Clear();
             NumSeatsDropDown.Items.Add(Convert.ToInt32(EventViewerTable.CurrentRow.Cells[4].Value));
             NumSeatsDropDown.SelectedIndex = 0;
-            int hours = end.Hour - start.Hour;
+            TimeSpan hours = end - start;
             NumHoursDropDown.Items.Clear();
-            NumHoursDropDown.Items.Add(hours.ToString());
+            NumHoursDropDown.Items.Add(hours.TotalHours.ToString());
             NumHoursDropDown.SelectedIndex = 0;
             StartTimeSelect.Value = start;
             StartingTimePicker.Value = start;
@@ -907,14 +907,51 @@ namespace Azula_Cafe_Database_Management_System
 
         private void ViewLeaderboardButton_Click(object sender, EventArgs e)
         {
-            string newQuery = "SELECT * FROM Leaderboard_Details"; // Leaderboard_Details is a view
+            ViewLeaderboard();
+        }
+
+        private void ViewLeaderboard()
+        {
+            ViewLeaderboardTable.Rows.Clear();
+            SearchGameDropDown.Items.Clear();
+            SearchNameDropDown.Items.Clear();
+            SearchGamerTagDropDown.Items.Clear();
+            SearchRankDropDown.Items.Clear();
+
+            for (int i = 0; i < 10; i++)
+            {
+                SearchRankDropDown.Items.Add((i + 1).ToString());
+            }
+
+            string newQuery = "SELECT * FROM Leaderboard_Details ORDER BY Rank asc"; // Leaderboard_Details is a view
             SqlCommand cmd = new SqlCommand(newQuery, cnn);
             SqlDataReader reader = cmd.ExecuteReader();
 
-            while(reader.Read())
+            while (reader.Read())
             {
+                string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                ViewLeaderboardTable.Rows.Add(row);
 
+                if (!SearchGameDropDown.Items.Contains(reader["Game"].ToString()))
+                {
+                    SearchGameDropDown.Items.Add(reader["Game"].ToString());
+                }
+
+                if (!SearchGamerTagDropDown.Items.Contains(reader["Gamer Tag"].ToString()))
+                {
+                    SearchGamerTagDropDown.Items.Add(reader["Gamer Tag"].ToString());
+                }
+
+                if (!SearchNameDropDown.Items.Contains(reader["Name"].ToString()))
+                {
+                    SearchNameDropDown.Items.Add(reader["Name"].ToString());
+                }
             }
+
+            reader.Close();
+            cmd.Dispose();
+
+            tabControl1.SelectedTab = ViewLeaderboardPage;
         }
 
         private void StaffSupervisor_SelectedIndexChanged(object sender, EventArgs e)
@@ -952,6 +989,199 @@ namespace Azula_Cafe_Database_Management_System
         private void FromaddEventTOStaffPage_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = StaffPage;
+        }
+
+        private void ViewLeaderboardBackButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = CustomerPage;
+        }
+
+        private void SearchGameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SearchGameDropDown.SelectedIndex != -1)
+            {
+                ViewLeaderboardTable.Rows.Clear();
+                SearchGamerTagDropDown.SelectedIndex = -1;
+                SearchNameDropDown.SelectedIndex = -1;
+                SearchRankDropDown.SelectedIndex = -1;
+
+                string newQuery = "SELECT * FROM Leaderboard_Details WHERE Game like '" + SearchGameDropDown.SelectedItem.ToString() + "%' ORDER BY Rank asc";
+                SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                    ViewLeaderboardTable.Rows.Add(row);
+                }
+
+                reader.Close();
+                cmd.Dispose();
+            }
+        }
+
+        private void SearchRankDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SearchRankDropDown.SelectedIndex != -1)
+            {
+                ViewLeaderboardTable.Rows.Clear();
+                SearchGamerTagDropDown.SelectedIndex = -1;
+                SearchNameDropDown.SelectedIndex = -1;
+                SearchGameDropDown.SelectedIndex = -1;
+
+                string newQuery = "SELECT * FROM Leaderboard_Details WHERE Rank = " + SearchRankDropDown.SelectedItem.ToString() + " ORDER BY Rank asc";
+                SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                    ViewLeaderboardTable.Rows.Add(row);
+                }
+
+                reader.Close();
+                cmd.Dispose();
+            }
+        }
+
+        private void SearchGamerTagDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SearchGamerTagDropDown.SelectedIndex != -1)
+            {
+                ViewLeaderboardTable.Rows.Clear();
+                SearchGameDropDown.SelectedIndex = -1;
+                SearchNameDropDown.SelectedIndex = -1;
+                SearchRankDropDown.SelectedIndex = -1;
+
+                string newQuery = "SELECT * FROM Leaderboard_Details WHERE \"Gamer Tag\" like '" + SearchGamerTagDropDown.SelectedItem.ToString() + "%' ORDER BY Rank asc";
+                SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                    ViewLeaderboardTable.Rows.Add(row);
+                }
+
+                reader.Close();
+                cmd.Dispose();
+            }
+        }
+
+        private void SearchNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SearchNameDropDown.SelectedIndex != -1)
+            {
+                ViewLeaderboardTable.Rows.Clear();
+                SearchGameDropDown.SelectedIndex = -1;
+                SearchGamerTagDropDown.SelectedIndex = -1;
+                SearchRankDropDown.SelectedIndex = -1;
+
+                string newQuery = "SELECT * FROM Leaderboard_Details WHERE Name like '" + SearchNameDropDown.SelectedItem.ToString() + "%'  ORDER BY Rank asc";
+                SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                    ViewLeaderboardTable.Rows.Add(row);
+                }
+
+                reader.Close();
+                cmd.Dispose();
+            }
+        }
+
+        private void LeaderboardResetButton_Click(object sender, EventArgs e)
+        {
+            ViewLeaderboard();
+        }
+
+        private void MyRanksButton_Click(object sender, EventArgs e)
+        {
+            ViewLeaderboardTable.Rows.Clear();
+            SearchGameDropDown.SelectedIndex = -1;
+            SearchGamerTagDropDown.SelectedIndex = -1;
+            SearchRankDropDown.SelectedIndex = -1;
+            SearchNameDropDown.SelectedIndex = -1;
+
+            string newQuery = "SELECT * FROM Leaderboard_Details WHERE \"Gamer Tag\" = (SELECT CP.Username FROM Customer_Profile AS CP WHERE CP.CustomerID = " + customerID_Form1.ToString() + ") ORDER BY Rank asc";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                ViewLeaderboardTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+        }
+
+        private void CustomerProfileButton_Click(object sender, EventArgs e)
+        {
+            CustomerProfile();
+        }
+
+        private void CustomerProfile()
+        {
+            string newQuery = "SELECT * FROM Customer_Profile WHERE CustomerID = " + customerID_Form1.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            reader.Read();
+
+            ProfileNameLabel.Text = reader["CustName"].ToString();
+            ProfilePhoneNumberLabel.Text = reader["PhoneNo"].ToString();
+            ProfileUsernameLabel.Text = reader["Username"].ToString();
+
+            reader.Close();
+            cmd.Dispose();
+
+            tabControl1.SelectedTab = ViewProfilePage;
+        }
+
+        private void EditNameButton_Click(object sender, EventArgs e)
+        {
+            CustomerChangeNameForm changeName = new CustomerChangeNameForm(cnn, customerID_Form1, "Name");
+            changeName.ShowDialog();
+
+            string newQuery = "SELECT CustName FROM Customers WHERE CustomerID = " + customerID_Form1.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+
+            CustomerNameLabel.Text = reader["CustName"].ToString();
+
+            reader.Close();
+            cmd.Dispose();
+
+            CustomerProfile();
+        }
+
+        private void ProfilePageBackButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = CustomerPage;
+        }
+
+        private void EditPhoneNumberButton_Click(object sender, EventArgs e)
+        {
+            CustomerChangeNameForm changePhone = new CustomerChangeNameForm(cnn, customerID_Form1, "Phone Number");
+            changePhone.ShowDialog();
+            CustomerProfile();
+        }
+
+        private void ChangePasswordButton_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm changePassword = new ChangePasswordForm(cnn, customerID_Form1);
+            changePassword.ShowDialog();
+            CustomerProfile();
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
 
         private void StaffCreateAccount_Click(object sender, EventArgs e)
