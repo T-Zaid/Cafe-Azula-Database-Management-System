@@ -234,6 +234,7 @@
             this.label57 = new System.Windows.Forms.Label();
             this.EventStartDate = new System.Windows.Forms.DateTimePicker();
             this.StaffSupervisorID = new System.Windows.Forms.Label();
+            this.ShowCustGamerTag = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -2044,6 +2045,7 @@
             // 
             // LeaderBoard_Add
             // 
+            this.LeaderBoard_Add.Controls.Add(this.ShowCustGamerTag);
             this.LeaderBoard_Add.Controls.Add(this.CustNameDropDown);
             this.LeaderBoard_Add.Controls.Add(this.Gamedropdown);
             this.LeaderBoard_Add.Controls.Add(this.label52);
@@ -2069,6 +2071,7 @@
             this.CustNameDropDown.Name = "CustNameDropDown";
             this.CustNameDropDown.Size = new System.Drawing.Size(145, 21);
             this.CustNameDropDown.TabIndex = 73;
+            this.CustNameDropDown.SelectedIndexChanged += new System.EventHandler(this.CustNameDropDown_SelectedIndexChanged);
             // 
             // Gamedropdown
             // 
@@ -2360,6 +2363,15 @@
             this.StaffSupervisorID.TabIndex = 34;
             this.StaffSupervisorID.Text = "StaffID : ??";
             // 
+            // ShowCustGamerTag
+            // 
+            this.ShowCustGamerTag.AutoSize = true;
+            this.ShowCustGamerTag.Location = new System.Drawing.Point(558, 176);
+            this.ShowCustGamerTag.Name = "ShowCustGamerTag";
+            this.ShowCustGamerTag.Size = new System.Drawing.Size(99, 13);
+            this.ShowCustGamerTag.TabIndex = 74;
+            this.ShowCustGamerTag.Text = "Gamer Tag : ?????";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2619,6 +2631,7 @@
         private System.Windows.Forms.ComboBox SearchRankDropDown;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label StaffSupervisorID;
+        private System.Windows.Forms.Label ShowCustGamerTag;
     }
 }
 

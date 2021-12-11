@@ -19,6 +19,7 @@ namespace Azula_Cafe_Database_Management_System
         List<int> selectedSeats;
         List<string> EventImageLocations;
         List<int> trackid;
+        List<int> trackcusid;
         string previousPageFlag;
         //SqlCommand cmd;
         //SqlDataReader reader;
@@ -687,7 +688,7 @@ namespace Azula_Cafe_Database_Management_System
             CafeFeatures feats = new CafeFeatures(cnn);
             if(Gamedropdown.Text.Length > 0 && CustNameDropDown.Text.Length > 0 && Rank_ig.Text.Length > 0)
             {
-                int success = feats.InsertinLeaderboard(Gamedropdown.Text.ToString(), CustNameDropDown.Text.ToString(), Convert.ToInt32(Rank_ig.Text));
+                int success = feats.InsertinLeaderboard(Gamedropdown.Text.ToString(), trackcusid[CustNameDropDown.SelectedIndex], Convert.ToInt32(Rank_ig.Text));
                 if(success == 1)
                 {
                     MessageBox.Show("Congratulations on getting a position !", "LeaderBoard Added", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;
@@ -706,7 +707,7 @@ namespace Azula_Cafe_Database_Management_System
 
         private void LeaderboardOperations_Click(object sender, EventArgs e)
         {
-            string Query = "select GameName from Games", Query1 = "select CustName from Customers";
+            string Query = "select GameName from Games", Query1 = "select CustomerID, CustName from Customers";
             SqlCommand cmd = new SqlCommand(Query, cnn);
             SqlDataReader reader = cmd.ExecuteReader();
             Gamedropdown.Items.Clear();
@@ -715,11 +716,13 @@ namespace Azula_Cafe_Database_Management_System
                 Gamedropdown.Items.Add(reader["GameName"]);
             }
 
+            trackcusid = new List<int>();
             cmd = new SqlCommand(Query1, cnn);
             reader = cmd.ExecuteReader();
             CustNameDropDown.Items.Clear();
             while(reader.Read())
             {
+                trackcusid.Add(Convert.ToInt32(reader["CustomerID"].ToString()));
                 CustNameDropDown.Items.Add(reader["CustName"]);
             }
 
@@ -898,6 +901,13 @@ namespace Azula_Cafe_Database_Management_System
         private void StaffSupervisor_SelectedIndexChanged(object sender, EventArgs e)
         {
             StaffSupervisorID.Text = "StaffID : " + trackid[StaffSupervisor.SelectedIndex];
+        }
+
+        private void CustNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = "Select Username from Accounts, Customers where Accounts.AccountNo = Customers.AccountNo and Customers.CustomerID = " + trackcusid[CustNameDropDown.SelectedIndex];
+            SqlCommand cmd = new SqlCommand(sql, cnn);
+            ShowCustGamerTag.Text = "Gamer Tag : " + cmd.ExecuteScalar().ToString();
         }
 
         private void StaffCreateAccount_Click(object sender, EventArgs e)

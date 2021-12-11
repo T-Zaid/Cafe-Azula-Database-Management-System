@@ -105,13 +105,11 @@ namespace Azula_Cafe_Database_Management_System
             return 0;
         }
 
-        public int InsertinLeaderboard(string gamename, string custname, int gamerank)
+        public int InsertinLeaderboard(string gamename, int cid, int gamerank)
         {
-            string sql1 = "select GameID from Games where GameName = '" + gamename + "'", sql2 = "select CustomerID from Customers where CustName = '" + custname + "'";
+            string sql1 = "select GameID from Games where GameName = '" + gamename + "'";
             cmd = new SqlCommand(sql1, cnn);
             int gid = Convert.ToInt32(cmd.ExecuteScalar());
-            cmd = new SqlCommand(sql2, cnn);
-            int cid = Convert.ToInt32(cmd.ExecuteScalar());
 
             string sql = "Select * from Leaderboard where GameID = " + gid + " and CustomerID = " + cid + " and GameRank = " + gamerank;
             cmd = new SqlCommand(sql, cnn);
