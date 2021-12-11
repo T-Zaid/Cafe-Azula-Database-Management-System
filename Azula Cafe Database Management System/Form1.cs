@@ -18,6 +18,7 @@ namespace Azula_Cafe_Database_Management_System
         int customerID_Form1, staffID_From1, staff_accessibility;
         List<int> selectedSeats;
         List<string> EventImageLocations;
+        List<int> trackid;
         string previousPageFlag;
         //SqlCommand cmd;
         //SqlDataReader reader;
@@ -26,7 +27,7 @@ namespace Azula_Cafe_Database_Management_System
             InitializeComponent();
             umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
-            cnn = new SqlConnection(umer_connectionString);
+            cnn = new SqlConnection(connectionString);
             //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
@@ -598,7 +599,7 @@ namespace Azula_Cafe_Database_Management_System
             Login log = new Login(cnn);
             if (StaffName.Text.Length > 0 && StaffPhone.Text.Length > 0 && StaffPassword.Text.Length > 0 && StaffUsername.Text.Length > 0 && StaffSalary.Text.Length > 0 && StaffPosition.Text.Length > 0)
             {
-                int success = log.StaffAccountCreate(StaffName.Text.ToString(), StaffUsername.Text.ToString(), StaffPassword.Text.ToString(), StaffPhone.Text.ToString(), StaffPosition.Text.ToString(), StaffSupervisor.Text.ToString(), Convert.ToInt32(StaffSalary.Text));
+                int success = log.StaffAccountCreate(StaffName.Text.ToString(), StaffUsername.Text.ToString(), StaffPassword.Text.ToString(), StaffPhone.Text.ToString(), StaffPosition.Text.ToString(), trackid[StaffSupervisor.SelectedIndex], Convert.ToInt32(StaffSalary.Text));
                 if (success == 1)
                 {
                     MessageBox.Show("Welcome Onboard Captain !!", "Creation Successfull");
@@ -894,16 +895,23 @@ namespace Azula_Cafe_Database_Management_System
             }
         }
 
+        private void StaffSupervisor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StaffSupervisorID.Text = "StaffID : " + trackid[StaffSupervisor.SelectedIndex];
+        }
+
         private void StaffCreateAccount_Click(object sender, EventArgs e)
         {
-            string Query = "select StaffName from Staff";
+            string Query = "select StaffID, StaffName from Staff where Position in ('Chairman', 'CEO', 'Manager')";
             SqlCommand cmd = new SqlCommand(Query, cnn);
             SqlDataReader reader = cmd.ExecuteReader();
             cmd.Dispose();
 
+            trackid = new List<int> ();
             StaffSupervisor.Items.Clear();
             while(reader.Read())
             {
+                trackid.Add(Convert.ToInt32(reader["StaffID"].ToString()));
                 StaffSupervisor.Items.Add(reader["StaffName"]);
             }
             StaffSupervisor.SelectedIndex = 0;

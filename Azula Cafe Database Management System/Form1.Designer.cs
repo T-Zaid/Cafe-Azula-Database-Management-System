@@ -52,6 +52,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.CustomerPage = new System.Windows.Forms.TabPage();
+            this.ViewLeaderboardButton = new System.Windows.Forms.Button();
+            this.CustomerProfileButton = new System.Windows.Forms.Button();
             this.ViewEventsButton = new System.Windows.Forms.Button();
             this.CancelSeatBookingButton = new System.Windows.Forms.Button();
             this.ViewBookingHistoryButton = new System.Windows.Forms.Button();
@@ -129,6 +131,23 @@
             this.ParticipantsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label66 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
+            this.ViewLeaderboardPage = new System.Windows.Forms.TabPage();
+            this.SearchNameDropDown = new System.Windows.Forms.ComboBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.SearchRankDropDown = new System.Windows.Forms.ComboBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.SearchGamerTagDropDown = new System.Windows.Forms.ComboBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.SearchGameDropDown = new System.Windows.Forms.ComboBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.ViewLeaderboardBackButton = new System.Windows.Forms.Button();
+            this.ViewLeaderboardTable = new System.Windows.Forms.DataGridView();
+            this.RankColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GamerTagColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
             this.StaffPage = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.CreateNewEvent = new System.Windows.Forms.Button();
@@ -214,25 +233,7 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.EventStartDate = new System.Windows.Forms.DateTimePicker();
-            this.CustomerProfileButton = new System.Windows.Forms.Button();
-            this.ViewLeaderboardButton = new System.Windows.Forms.Button();
-            this.ViewLeaderboardPage = new System.Windows.Forms.TabPage();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.ViewLeaderboardTable = new System.Windows.Forms.DataGridView();
-            this.ViewLeaderboardBackButton = new System.Windows.Forms.Button();
-            this.RankColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GamerTagColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label70 = new System.Windows.Forms.Label();
-            this.SearchGameDropDown = new System.Windows.Forms.ComboBox();
-            this.SearchGamerTagDropDown = new System.Windows.Forms.ComboBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.SearchRankDropDown = new System.Windows.Forms.ComboBox();
-            this.label72 = new System.Windows.Forms.Label();
-            this.SearchNameDropDown = new System.Windows.Forms.ComboBox();
-            this.label73 = new System.Windows.Forms.Label();
+            this.StaffSupervisorID = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -246,6 +247,8 @@
             this.BookEventsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventViewerTable)).BeginInit();
+            this.ViewLeaderboardPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewLeaderboardTable)).BeginInit();
             this.StaffPage.SuspendLayout();
             this.StaffAccReg.SuspendLayout();
             this.Game_Add.SuspendLayout();
@@ -253,8 +256,6 @@
             this.Computer_Add.SuspendLayout();
             this.LeaderBoard_Add.SuspendLayout();
             this.Event_Add.SuspendLayout();
-            this.ViewLeaderboardPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewLeaderboardTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -295,7 +296,7 @@
             this.LoginPage.Padding = new System.Windows.Forms.Padding(3);
             this.LoginPage.Size = new System.Drawing.Size(806, 442);
             this.LoginPage.TabIndex = 0;
-            this.LoginPage.Text = "w";
+            this.LoginPage.Text = "Login";
             this.LoginPage.UseVisualStyleBackColor = true;
             // 
             // Register
@@ -525,6 +526,26 @@
             this.CustomerPage.Text = "Customer";
             this.CustomerPage.UseVisualStyleBackColor = true;
             this.CustomerPage.Click += new System.EventHandler(this.CustomerPage_Click);
+            // 
+            // ViewLeaderboardButton
+            // 
+            this.ViewLeaderboardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewLeaderboardButton.Location = new System.Drawing.Point(310, 91);
+            this.ViewLeaderboardButton.Name = "ViewLeaderboardButton";
+            this.ViewLeaderboardButton.Size = new System.Drawing.Size(183, 34);
+            this.ViewLeaderboardButton.TabIndex = 7;
+            this.ViewLeaderboardButton.Text = "View Leaderboard";
+            this.ViewLeaderboardButton.UseVisualStyleBackColor = true;
+            this.ViewLeaderboardButton.Click += new System.EventHandler(this.ViewLeaderboardButton_Click);
+            // 
+            // CustomerProfileButton
+            // 
+            this.CustomerProfileButton.Location = new System.Drawing.Point(366, 62);
+            this.CustomerProfileButton.Name = "CustomerProfileButton";
+            this.CustomerProfileButton.Size = new System.Drawing.Size(75, 23);
+            this.CustomerProfileButton.TabIndex = 6;
+            this.CustomerProfileButton.Text = "Profile";
+            this.CustomerProfileButton.UseVisualStyleBackColor = true;
             // 
             // ViewEventsButton
             // 
@@ -1305,6 +1326,164 @@
             this.label65.TabIndex = 0;
             this.label65.Text = "Azula Cafe Events";
             // 
+            // ViewLeaderboardPage
+            // 
+            this.ViewLeaderboardPage.Controls.Add(this.SearchNameDropDown);
+            this.ViewLeaderboardPage.Controls.Add(this.label73);
+            this.ViewLeaderboardPage.Controls.Add(this.SearchRankDropDown);
+            this.ViewLeaderboardPage.Controls.Add(this.label72);
+            this.ViewLeaderboardPage.Controls.Add(this.SearchGamerTagDropDown);
+            this.ViewLeaderboardPage.Controls.Add(this.label71);
+            this.ViewLeaderboardPage.Controls.Add(this.SearchGameDropDown);
+            this.ViewLeaderboardPage.Controls.Add(this.label70);
+            this.ViewLeaderboardPage.Controls.Add(this.ViewLeaderboardBackButton);
+            this.ViewLeaderboardPage.Controls.Add(this.ViewLeaderboardTable);
+            this.ViewLeaderboardPage.Controls.Add(this.label68);
+            this.ViewLeaderboardPage.Controls.Add(this.label69);
+            this.ViewLeaderboardPage.Location = new System.Drawing.Point(4, 22);
+            this.ViewLeaderboardPage.Name = "ViewLeaderboardPage";
+            this.ViewLeaderboardPage.Size = new System.Drawing.Size(806, 442);
+            this.ViewLeaderboardPage.TabIndex = 14;
+            this.ViewLeaderboardPage.Text = "View Leaderboard";
+            this.ViewLeaderboardPage.UseVisualStyleBackColor = true;
+            // 
+            // SearchNameDropDown
+            // 
+            this.SearchNameDropDown.FormattingEnabled = true;
+            this.SearchNameDropDown.Location = new System.Drawing.Point(657, 325);
+            this.SearchNameDropDown.Name = "SearchNameDropDown";
+            this.SearchNameDropDown.Size = new System.Drawing.Size(121, 21);
+            this.SearchNameDropDown.TabIndex = 13;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(654, 309);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(89, 13);
+            this.label73.TabIndex = 12;
+            this.label73.Text = "Search by Name:";
+            // 
+            // SearchRankDropDown
+            // 
+            this.SearchRankDropDown.FormattingEnabled = true;
+            this.SearchRankDropDown.Location = new System.Drawing.Point(29, 325);
+            this.SearchRankDropDown.Name = "SearchRankDropDown";
+            this.SearchRankDropDown.Size = new System.Drawing.Size(121, 21);
+            this.SearchRankDropDown.TabIndex = 11;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(26, 309);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(87, 13);
+            this.label72.TabIndex = 10;
+            this.label72.Text = "Search by Rank:";
+            // 
+            // SearchGamerTagDropDown
+            // 
+            this.SearchGamerTagDropDown.FormattingEnabled = true;
+            this.SearchGamerTagDropDown.Location = new System.Drawing.Point(657, 156);
+            this.SearchGamerTagDropDown.Name = "SearchGamerTagDropDown";
+            this.SearchGamerTagDropDown.Size = new System.Drawing.Size(121, 21);
+            this.SearchGamerTagDropDown.TabIndex = 9;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(654, 140);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(114, 13);
+            this.label71.TabIndex = 8;
+            this.label71.Text = "Search by Gamer Tag:";
+            // 
+            // SearchGameDropDown
+            // 
+            this.SearchGameDropDown.FormattingEnabled = true;
+            this.SearchGameDropDown.Location = new System.Drawing.Point(29, 156);
+            this.SearchGameDropDown.Name = "SearchGameDropDown";
+            this.SearchGameDropDown.Size = new System.Drawing.Size(121, 21);
+            this.SearchGameDropDown.TabIndex = 7;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(26, 140);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(89, 13);
+            this.label70.TabIndex = 6;
+            this.label70.Text = "Search by Game:";
+            // 
+            // ViewLeaderboardBackButton
+            // 
+            this.ViewLeaderboardBackButton.Location = new System.Drawing.Point(368, 398);
+            this.ViewLeaderboardBackButton.Name = "ViewLeaderboardBackButton";
+            this.ViewLeaderboardBackButton.Size = new System.Drawing.Size(75, 23);
+            this.ViewLeaderboardBackButton.TabIndex = 5;
+            this.ViewLeaderboardBackButton.Text = "Back";
+            this.ViewLeaderboardBackButton.UseVisualStyleBackColor = true;
+            // 
+            // ViewLeaderboardTable
+            // 
+            this.ViewLeaderboardTable.AllowUserToAddRows = false;
+            this.ViewLeaderboardTable.AllowUserToDeleteRows = false;
+            this.ViewLeaderboardTable.AllowUserToResizeColumns = false;
+            this.ViewLeaderboardTable.AllowUserToResizeRows = false;
+            this.ViewLeaderboardTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewLeaderboardTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RankColumn,
+            this.GameColumn,
+            this.GamerTagColumn,
+            this.NameColumn});
+            this.ViewLeaderboardTable.Location = new System.Drawing.Point(180, 88);
+            this.ViewLeaderboardTable.Name = "ViewLeaderboardTable";
+            this.ViewLeaderboardTable.Size = new System.Drawing.Size(443, 304);
+            this.ViewLeaderboardTable.TabIndex = 4;
+            // 
+            // RankColumn
+            // 
+            this.RankColumn.HeaderText = "Rank";
+            this.RankColumn.Name = "RankColumn";
+            this.RankColumn.ReadOnly = true;
+            // 
+            // GameColumn
+            // 
+            this.GameColumn.HeaderText = "Game";
+            this.GameColumn.Name = "GameColumn";
+            this.GameColumn.ReadOnly = true;
+            // 
+            // GamerTagColumn
+            // 
+            this.GamerTagColumn.HeaderText = "Gamer Tag";
+            this.GamerTagColumn.Name = "GamerTagColumn";
+            this.GamerTagColumn.ReadOnly = true;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(291, 55);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(212, 13);
+            this.label68.TabIndex = 3;
+            this.label68.Text = "View the cafe\'s leaderboard for each game.";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(125, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(569, 55);
+            this.label69.TabIndex = 2;
+            this.label69.Text = "Azula Cafe Leaderboard";
+            // 
             // StaffPage
             // 
             this.StaffPage.Controls.Add(this.button4);
@@ -1409,6 +1588,7 @@
             // 
             // StaffAccReg
             // 
+            this.StaffAccReg.Controls.Add(this.StaffSupervisorID);
             this.StaffAccReg.Controls.Add(this.StaffPosition);
             this.StaffAccReg.Controls.Add(this.StaffSupervisor);
             this.StaffAccReg.Controls.Add(this.label38);
@@ -1452,6 +1632,7 @@
             this.StaffSupervisor.Name = "StaffSupervisor";
             this.StaffSupervisor.Size = new System.Drawing.Size(146, 21);
             this.StaffSupervisor.TabIndex = 32;
+            this.StaffSupervisor.SelectedIndexChanged += new System.EventHandler(this.StaffSupervisor_SelectedIndexChanged);
             // 
             // label38
             // 
@@ -2170,183 +2351,14 @@
             this.EventStartDate.Size = new System.Drawing.Size(146, 20);
             this.EventStartDate.TabIndex = 12;
             // 
-            // CustomerProfileButton
+            // StaffSupervisorID
             // 
-            this.CustomerProfileButton.Location = new System.Drawing.Point(366, 62);
-            this.CustomerProfileButton.Name = "CustomerProfileButton";
-            this.CustomerProfileButton.Size = new System.Drawing.Size(75, 23);
-            this.CustomerProfileButton.TabIndex = 6;
-            this.CustomerProfileButton.Text = "Profile";
-            this.CustomerProfileButton.UseVisualStyleBackColor = true;
-            // 
-            // ViewLeaderboardButton
-            // 
-            this.ViewLeaderboardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewLeaderboardButton.Location = new System.Drawing.Point(310, 91);
-            this.ViewLeaderboardButton.Name = "ViewLeaderboardButton";
-            this.ViewLeaderboardButton.Size = new System.Drawing.Size(183, 34);
-            this.ViewLeaderboardButton.TabIndex = 7;
-            this.ViewLeaderboardButton.Text = "View Leaderboard";
-            this.ViewLeaderboardButton.UseVisualStyleBackColor = true;
-            this.ViewLeaderboardButton.Click += new System.EventHandler(this.ViewLeaderboardButton_Click);
-            // 
-            // ViewLeaderboardPage
-            // 
-            this.ViewLeaderboardPage.Controls.Add(this.SearchNameDropDown);
-            this.ViewLeaderboardPage.Controls.Add(this.label73);
-            this.ViewLeaderboardPage.Controls.Add(this.SearchRankDropDown);
-            this.ViewLeaderboardPage.Controls.Add(this.label72);
-            this.ViewLeaderboardPage.Controls.Add(this.SearchGamerTagDropDown);
-            this.ViewLeaderboardPage.Controls.Add(this.label71);
-            this.ViewLeaderboardPage.Controls.Add(this.SearchGameDropDown);
-            this.ViewLeaderboardPage.Controls.Add(this.label70);
-            this.ViewLeaderboardPage.Controls.Add(this.ViewLeaderboardBackButton);
-            this.ViewLeaderboardPage.Controls.Add(this.ViewLeaderboardTable);
-            this.ViewLeaderboardPage.Controls.Add(this.label68);
-            this.ViewLeaderboardPage.Controls.Add(this.label69);
-            this.ViewLeaderboardPage.Location = new System.Drawing.Point(4, 22);
-            this.ViewLeaderboardPage.Name = "ViewLeaderboardPage";
-            this.ViewLeaderboardPage.Size = new System.Drawing.Size(806, 442);
-            this.ViewLeaderboardPage.TabIndex = 14;
-            this.ViewLeaderboardPage.Text = "View Leaderboard";
-            this.ViewLeaderboardPage.UseVisualStyleBackColor = true;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(291, 55);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(212, 13);
-            this.label68.TabIndex = 3;
-            this.label68.Text = "View the cafe\'s leaderboard for each game.";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(125, 0);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(569, 55);
-            this.label69.TabIndex = 2;
-            this.label69.Text = "Azula Cafe Leaderboard";
-            // 
-            // ViewLeaderboardTable
-            // 
-            this.ViewLeaderboardTable.AllowUserToAddRows = false;
-            this.ViewLeaderboardTable.AllowUserToDeleteRows = false;
-            this.ViewLeaderboardTable.AllowUserToResizeColumns = false;
-            this.ViewLeaderboardTable.AllowUserToResizeRows = false;
-            this.ViewLeaderboardTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewLeaderboardTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RankColumn,
-            this.GameColumn,
-            this.GamerTagColumn,
-            this.NameColumn});
-            this.ViewLeaderboardTable.Location = new System.Drawing.Point(180, 88);
-            this.ViewLeaderboardTable.Name = "ViewLeaderboardTable";
-            this.ViewLeaderboardTable.Size = new System.Drawing.Size(443, 304);
-            this.ViewLeaderboardTable.TabIndex = 4;
-            // 
-            // ViewLeaderboardBackButton
-            // 
-            this.ViewLeaderboardBackButton.Location = new System.Drawing.Point(368, 398);
-            this.ViewLeaderboardBackButton.Name = "ViewLeaderboardBackButton";
-            this.ViewLeaderboardBackButton.Size = new System.Drawing.Size(75, 23);
-            this.ViewLeaderboardBackButton.TabIndex = 5;
-            this.ViewLeaderboardBackButton.Text = "Back";
-            this.ViewLeaderboardBackButton.UseVisualStyleBackColor = true;
-            // 
-            // RankColumn
-            // 
-            this.RankColumn.HeaderText = "Rank";
-            this.RankColumn.Name = "RankColumn";
-            this.RankColumn.ReadOnly = true;
-            // 
-            // GameColumn
-            // 
-            this.GameColumn.HeaderText = "Game";
-            this.GameColumn.Name = "GameColumn";
-            this.GameColumn.ReadOnly = true;
-            // 
-            // GamerTagColumn
-            // 
-            this.GamerTagColumn.HeaderText = "Gamer Tag";
-            this.GamerTagColumn.Name = "GamerTagColumn";
-            this.GamerTagColumn.ReadOnly = true;
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.HeaderText = "Name";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(26, 140);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(89, 13);
-            this.label70.TabIndex = 6;
-            this.label70.Text = "Search by Game:";
-            // 
-            // SearchGameDropDown
-            // 
-            this.SearchGameDropDown.FormattingEnabled = true;
-            this.SearchGameDropDown.Location = new System.Drawing.Point(29, 156);
-            this.SearchGameDropDown.Name = "SearchGameDropDown";
-            this.SearchGameDropDown.Size = new System.Drawing.Size(121, 21);
-            this.SearchGameDropDown.TabIndex = 7;
-            // 
-            // SearchGamerTagDropDown
-            // 
-            this.SearchGamerTagDropDown.FormattingEnabled = true;
-            this.SearchGamerTagDropDown.Location = new System.Drawing.Point(657, 156);
-            this.SearchGamerTagDropDown.Name = "SearchGamerTagDropDown";
-            this.SearchGamerTagDropDown.Size = new System.Drawing.Size(121, 21);
-            this.SearchGamerTagDropDown.TabIndex = 9;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(654, 140);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(114, 13);
-            this.label71.TabIndex = 8;
-            this.label71.Text = "Search by Gamer Tag:";
-            // 
-            // SearchRankDropDown
-            // 
-            this.SearchRankDropDown.FormattingEnabled = true;
-            this.SearchRankDropDown.Location = new System.Drawing.Point(29, 325);
-            this.SearchRankDropDown.Name = "SearchRankDropDown";
-            this.SearchRankDropDown.Size = new System.Drawing.Size(121, 21);
-            this.SearchRankDropDown.TabIndex = 11;
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(26, 309);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(87, 13);
-            this.label72.TabIndex = 10;
-            this.label72.Text = "Search by Rank:";
-            // 
-            // SearchNameDropDown
-            // 
-            this.SearchNameDropDown.FormattingEnabled = true;
-            this.SearchNameDropDown.Location = new System.Drawing.Point(657, 325);
-            this.SearchNameDropDown.Name = "SearchNameDropDown";
-            this.SearchNameDropDown.Size = new System.Drawing.Size(121, 21);
-            this.SearchNameDropDown.TabIndex = 13;
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(654, 309);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(89, 13);
-            this.label73.TabIndex = 12;
-            this.label73.Text = "Search by Name:";
+            this.StaffSupervisorID.AutoSize = true;
+            this.StaffSupervisorID.Location = new System.Drawing.Point(527, 182);
+            this.StaffSupervisorID.Name = "StaffSupervisorID";
+            this.StaffSupervisorID.Size = new System.Drawing.Size(61, 13);
+            this.StaffSupervisorID.TabIndex = 34;
+            this.StaffSupervisorID.Text = "StaffID : ??";
             // 
             // Form1
             // 
@@ -2379,6 +2391,9 @@
             this.BookEventsPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventViewerTable)).EndInit();
+            this.ViewLeaderboardPage.ResumeLayout(false);
+            this.ViewLeaderboardPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewLeaderboardTable)).EndInit();
             this.StaffPage.ResumeLayout(false);
             this.StaffPage.PerformLayout();
             this.StaffAccReg.ResumeLayout(false);
@@ -2392,9 +2407,6 @@
             this.LeaderBoard_Add.PerformLayout();
             this.Event_Add.ResumeLayout(false);
             this.Event_Add.PerformLayout();
-            this.ViewLeaderboardPage.ResumeLayout(false);
-            this.ViewLeaderboardPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewLeaderboardTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2606,6 +2618,7 @@
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.ComboBox SearchRankDropDown;
         private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label StaffSupervisorID;
     }
 }
 
