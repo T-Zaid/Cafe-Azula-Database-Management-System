@@ -45,6 +45,14 @@ namespace Azula_Cafe_Database_Management_System
             return 0;
         }
 
+        public int deleteGame(int gameid)
+        {
+            string sql = "Delete from Games where GameID = " + gameid;
+            cmd = new SqlCommand(sql, cnn);
+            cmd.ExecuteNonQuery();
+            return 1;
+        }
+
         public int InsertEvent(string EventName, DateTime start_time, DateTime end_time, string gamename, int max, string imagename)
         {
             if(start_time < DateTime.Now || end_time < DateTime.Now || end_time < start_time)
@@ -105,6 +113,14 @@ namespace Azula_Cafe_Database_Management_System
             return 0;
         }
 
+        public int deleteComputer(int computerid)
+        {
+            string sql = "Delete from Computers where ComputerID = " + computerid;
+            cmd = new SqlCommand(sql, cnn);
+            cmd.ExecuteNonQuery();
+            return 1;
+        }
+
         public int InsertinLeaderboard(string gamename, int cid, int gamerank)
         {
             string sql1 = "select GameID from Games where GameName = '" + gamename + "'";
@@ -142,6 +158,40 @@ namespace Azula_Cafe_Database_Management_System
                 //return 1;
             }
             return 0;
+        }
+
+        public int deletefromLeaderBoard(int gameid, int customerid)
+        {
+            string sql = "Delete from Leaderboard where where GameID = " + gameid + " and CustomerID = " + customerid;
+            cmd = new SqlCommand(sql, cnn);
+            cmd.ExecuteNonQuery();
+            return 1;
+        }
+
+        public int InsertSeat(int ComputerID, int PremiumStatus)
+        {
+            string sql1 = "Select max(SeatNo) from Seats";
+            cmd = new SqlCommand(sql1, cnn);
+
+            int sid;
+            object obj = cmd.ExecuteScalar();
+            if (obj == null || DBNull.Value == obj)
+                sid = 0;
+            else
+                sid = Convert.ToInt32(obj);
+
+            string sql = "Insert into Seats values ( " + (sid+1) + ", " + 0 + ", " + PremiumStatus + ", " + ComputerID + ")";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.ExecuteNonQuery();
+            return 1;
+        }
+
+        public int DeleteSeat(int SeatID)
+        {
+            string sql = "Delete from Seats where SeatNo = " + SeatID;
+            cmd = new SqlCommand(sql, cnn);
+            cmd.ExecuteNonQuery();
+            return 1;
         }
     }
 }

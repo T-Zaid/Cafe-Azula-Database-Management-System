@@ -296,6 +296,7 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.SeatDropTime = new System.Windows.Forms.Timer(this.components);
             this.EventDropTimer = new System.Windows.Forms.Timer(this.components);
+            this.InstalledCompInfo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -2662,6 +2663,7 @@
             // 
             // Seats_Add
             // 
+            this.Seats_Add.Controls.Add(this.InstalledCompInfo);
             this.Seats_Add.Controls.Add(this.comboBox2);
             this.Seats_Add.Controls.Add(this.button1);
             this.Seats_Add.Controls.Add(this.button2);
@@ -2680,14 +2682,14 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(419, 182);
+            this.comboBox2.Location = new System.Drawing.Point(419, 222);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(90, 21);
             this.comboBox2.TabIndex = 99;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(419, 267);
+            this.button1.Location = new System.Drawing.Point(419, 307);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 98;
@@ -2696,7 +2698,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(222, 267);
+            this.button2.Location = new System.Drawing.Point(222, 307);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 97;
@@ -2715,7 +2717,7 @@
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(223, 185);
+            this.label81.Location = new System.Drawing.Point(223, 225);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(151, 13);
             this.label81.TabIndex = 91;
@@ -3044,6 +3046,15 @@
             // EventDropTimer
             // 
             this.EventDropTimer.Tick += new System.EventHandler(this.EventDropTimer_Tick);
+            // 
+            // InstalledCompInfo
+            // 
+            this.InstalledCompInfo.AutoSize = true;
+            this.InstalledCompInfo.Location = new System.Drawing.Point(527, 123);
+            this.InstalledCompInfo.Name = "InstalledCompInfo";
+            this.InstalledCompInfo.Size = new System.Drawing.Size(79, 52);
+            this.InstalledCompInfo.TabIndex = 100;
+            this.InstalledCompInfo.Text = "CPU : ?? \r\nGPU : ??\r\nRam : ??\r\nNet Speed : ??";
             // 
             // Form1
             // 
@@ -3378,6 +3389,7 @@
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer SeatDropTime;
         private System.Windows.Forms.Timer EventDropTimer;
+        private System.Windows.Forms.Label InstalledCompInfo;
     }
 }
 
