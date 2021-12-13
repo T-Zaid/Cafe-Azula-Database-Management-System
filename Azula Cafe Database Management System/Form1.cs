@@ -1411,6 +1411,29 @@ namespace Azula_Cafe_Database_Management_System
 
         }
 
+        private void CreateSeatAdd_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this.Controls);
+            string Query = "select ComputerID from Computers";
+            SqlCommand cmd = new SqlCommand(Query, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            ComputerDropDownSeats.Items.Clear();
+            while (reader.Read())
+            {
+                ComputerDropDownSeats.Items.Add(reader["ComputerID"]);
+            }
+            tabControl1.SelectedTab = Seats_Add;
+        }
+
+        private void ComputerDropDownSeats_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = "select CPU, GPU, RAM, NetSpeed from Computers where ComputerID = " + Convert.ToInt32(ComputerDropDownSeats.Text.ToString());
+            SqlCommand cmd = new SqlCommand(sql, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            InstalledCompInfo.Text = "CPU : " + reader["CPU"].ToString() + "\nGPU: " + reader["GPU"].ToString() + "\nRam : " + reader["RAM"].ToString() + "\nNet Speed: " + reader["NetSpeed"].ToString();
+        }
+
         private void ProfilePageBackButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = CustomerPage;

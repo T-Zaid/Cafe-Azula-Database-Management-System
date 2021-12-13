@@ -256,10 +256,10 @@
             this.label57 = new System.Windows.Forms.Label();
             this.EventStartDate = new System.Windows.Forms.DateTimePicker();
             this.Seats_Add = new System.Windows.Forms.TabPage();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.PremiumStatusSeats = new System.Windows.Forms.ComboBox();
+            this.AddSeatsButton = new System.Windows.Forms.Button();
+            this.FromAddSeatTOStaffPage = new System.Windows.Forms.Button();
+            this.ComputerDropDownSeats = new System.Windows.Forms.ComboBox();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
@@ -2664,10 +2664,10 @@
             // Seats_Add
             // 
             this.Seats_Add.Controls.Add(this.InstalledCompInfo);
-            this.Seats_Add.Controls.Add(this.comboBox2);
-            this.Seats_Add.Controls.Add(this.button1);
-            this.Seats_Add.Controls.Add(this.button2);
-            this.Seats_Add.Controls.Add(this.comboBox1);
+            this.Seats_Add.Controls.Add(this.PremiumStatusSeats);
+            this.Seats_Add.Controls.Add(this.AddSeatsButton);
+            this.Seats_Add.Controls.Add(this.FromAddSeatTOStaffPage);
+            this.Seats_Add.Controls.Add(this.ComputerDropDownSeats);
             this.Seats_Add.Controls.Add(this.label81);
             this.Seats_Add.Controls.Add(this.label82);
             this.Seats_Add.Controls.Add(this.label83);
@@ -2679,40 +2679,45 @@
             this.Seats_Add.Text = "Add Seats";
             this.Seats_Add.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // PremiumStatusSeats
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(419, 222);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(90, 21);
-            this.comboBox2.TabIndex = 99;
+            this.PremiumStatusSeats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PremiumStatusSeats.FormattingEnabled = true;
+            this.PremiumStatusSeats.Items.AddRange(new object[] {
+            "1",
+            "0"});
+            this.PremiumStatusSeats.Location = new System.Drawing.Point(419, 222);
+            this.PremiumStatusSeats.Name = "PremiumStatusSeats";
+            this.PremiumStatusSeats.Size = new System.Drawing.Size(90, 21);
+            this.PremiumStatusSeats.TabIndex = 99;
             // 
-            // button1
+            // AddSeatsButton
             // 
-            this.button1.Location = new System.Drawing.Point(419, 307);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 23);
-            this.button1.TabIndex = 98;
-            this.button1.Text = "Add Event";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddSeatsButton.Location = new System.Drawing.Point(419, 307);
+            this.AddSeatsButton.Name = "AddSeatsButton";
+            this.AddSeatsButton.Size = new System.Drawing.Size(109, 23);
+            this.AddSeatsButton.TabIndex = 98;
+            this.AddSeatsButton.Text = "Add Seats";
+            this.AddSeatsButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // FromAddSeatTOStaffPage
             // 
-            this.button2.Location = new System.Drawing.Point(222, 307);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 97;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
+            this.FromAddSeatTOStaffPage.Location = new System.Drawing.Point(222, 307);
+            this.FromAddSeatTOStaffPage.Name = "FromAddSeatTOStaffPage";
+            this.FromAddSeatTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromAddSeatTOStaffPage.TabIndex = 97;
+            this.FromAddSeatTOStaffPage.Text = "Back";
+            this.FromAddSeatTOStaffPage.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // ComputerDropDownSeats
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(419, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(88, 21);
-            this.comboBox1.TabIndex = 92;
+            this.ComputerDropDownSeats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComputerDropDownSeats.FormattingEnabled = true;
+            this.ComputerDropDownSeats.Location = new System.Drawing.Point(419, 123);
+            this.ComputerDropDownSeats.Name = "ComputerDropDownSeats";
+            this.ComputerDropDownSeats.Size = new System.Drawing.Size(88, 21);
+            this.ComputerDropDownSeats.TabIndex = 92;
+            this.ComputerDropDownSeats.SelectedIndexChanged += new System.EventHandler(this.ComputerDropDownSeats_SelectedIndexChanged);
             // 
             // label81
             // 
@@ -3011,6 +3016,7 @@
             this.CreateSeatAdd.TabIndex = 7;
             this.CreateSeatAdd.Text = "Add";
             this.CreateSeatAdd.UseVisualStyleBackColor = true;
+            this.CreateSeatAdd.Click += new System.EventHandler(this.CreateSeatAdd_Click);
             // 
             // CreateSeatRe
             // 
@@ -3346,10 +3352,10 @@
         private System.Windows.Forms.Button ProfilePageBackButton;
         private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.TabPage Seats_Add;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox PremiumStatusSeats;
+        private System.Windows.Forms.Button AddSeatsButton;
+        private System.Windows.Forms.Button FromAddSeatTOStaffPage;
+        private System.Windows.Forms.ComboBox ComputerDropDownSeats;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label label83;
