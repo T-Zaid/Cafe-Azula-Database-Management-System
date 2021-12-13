@@ -21,6 +21,7 @@ namespace Azula_Cafe_Database_Management_System
         List<int> trackid;
         List<int> trackcusid;
         string previousPageFlag;
+        bool staffCollapse = true, LeaderCollapse = true, GameCollapse = true, EventCollapse = true, SeatCollapse = true, ComputerCollapse = true;
         //SqlCommand cmd;
         //SqlDataReader reader;
         public Form1()
@@ -28,7 +29,7 @@ namespace Azula_Cafe_Database_Management_System
             InitializeComponent();
             umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
-            cnn = new SqlConnection(umer_connectionString);
+            cnn = new SqlConnection(connectionString);
             //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
@@ -69,11 +70,13 @@ namespace Azula_Cafe_Database_Management_System
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     reader.Read();
-                    StaffLabelName.Text = reader["StaffName"].ToString();
+                    //StaffLabelName.Text = reader["StaffName"].ToString();
+                    StaffNameRe.Text = reader["StaffName"].ToString();
                     staff_accessibility = log.positions.FindIndex(x => x == (reader["Position"].ToString()));
                     reader.Close();
                     cmd.Dispose();
-                    tabControl1.SelectedTab = StaffPage;
+                    //tabControl1.SelectedTab = StaffPage;
+                    tabControl1.SelectedTab = StaffPageReloaded;
                 }
                 else if (flag[0] == 0)
                 {
@@ -619,7 +622,8 @@ namespace Azula_Cafe_Database_Management_System
                 if (success == 1)
                 {
                     MessageBox.Show("Welcome Onboard Captain !!", "Creation Successfull");
-                    tabControl1.SelectedTab = StaffPage;
+                    //tabControl1.SelectedTab = StaffPage;
+                    tabControl1.SelectedTab = StaffPageReloaded;
                 }
                 else
                     MessageBox.Show("The Username is already in use. Try Another One!\nThe world is small, but the combinations are immense", "Account exists with this Username", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
@@ -649,7 +653,8 @@ namespace Azula_Cafe_Database_Management_System
                 if (success == 1)
                 {
                     MessageBox.Show("Game '" + GameName.Text.ToString() + "' has been successfully added", "Game Added", MessageBoxButtons.OK);
-                    tabControl1.SelectedTab = StaffPage;
+                    //tabControl1.SelectedTab = StaffPage;
+                    tabControl1.SelectedTab = StaffPageReloaded;
                 }
                 else
                     MessageBox.Show("This Game is already in database");
@@ -685,7 +690,8 @@ namespace Azula_Cafe_Database_Management_System
                 if (success == 1)
                 {
                     MessageBox.Show("Computer Added to Cafe", "Operation Successfull");
-                    tabControl1.SelectedTab = StaffPage;
+                    //tabControl1.SelectedTab = StaffPage;
+                    tabControl1.SelectedTab = StaffPageReloaded;
                 }
                 else
                     MessageBox.Show("Computer with this specs are already in the database", "Duplicate Item", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -709,7 +715,8 @@ namespace Azula_Cafe_Database_Management_System
                 if(success == 1)
                 {
                     MessageBox.Show("Congratulations on getting a position !", "LeaderBoard Added", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;
-                    tabControl1.SelectedTab = StaffPage;
+                    //tabControl1.SelectedTab = StaffPage;
+                    tabControl1.SelectedTab = StaffPageReloaded;
                 }
                 else
                 {
@@ -776,7 +783,10 @@ namespace Azula_Cafe_Database_Management_System
 
                 int success = feats.InsertEvent(EventName.Text.ToString(), start, end, GameDropEvent.Text.ToString(), Convert.ToInt32(MaxParticipants.Text), ImageLocation.Text.ToString());
                 if (success == 1)
+                {
                     MessageBox.Show("Event successfully added to Cafe Azula", "Event Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tabControl1.SelectedTab = StaffPageReloaded;
+                }
                 else
                     MessageBox.Show("This event is already registered !!", "Event Duplicated", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -968,27 +978,32 @@ namespace Azula_Cafe_Database_Management_System
 
         private void FromRegStaffTOStaffPage_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = StaffPage;
+            //tabControl1.SelectedTab = StaffPage;
+            tabControl1.SelectedTab = StaffPageReloaded;
         }
 
         private void FromAddGameTOStaffPage_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = StaffPage;
+            //tabControl1.SelectedTab = StaffPage;
+            tabControl1.SelectedTab = StaffPageReloaded;
         }
 
         private void FromAddCompsTOStaffPage_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = StaffPage;
+            //tabControl1.SelectedTab = StaffPage;
+            tabControl1.SelectedTab = StaffPageReloaded;
         }
 
         private void FromaddLeaderBoardTOStaffPage_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = StaffPage;
+            //tabControl1.SelectedTab = StaffPage;
+            tabControl1.SelectedTab = StaffPageReloaded;
         }
 
         private void FromaddEventTOStaffPage_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = StaffPage;
+            //tabControl1.SelectedTab = StaffPage;
+            tabControl1.SelectedTab = StaffPageReloaded;
         }
 
         private void ViewLeaderboardBackButton_Click(object sender, EventArgs e)
@@ -1160,6 +1175,242 @@ namespace Azula_Cafe_Database_Management_System
             CustomerProfile();
         }
 
+        private void CreateStaffRe_Click(object sender, EventArgs e)
+        {
+            StaffDropTime.Start();
+        }
+
+        private void LeaderDropTIme_Tick(object sender, EventArgs e)
+        {
+            if (LeaderCollapse)
+            {
+                LeaderBoardPanel.Height += 20;
+                if (LeaderBoardPanel.Size == LeaderBoardPanel.MaximumSize)
+                {
+                    LeaderDropTIme.Stop();
+                    LeaderCollapse = false;
+                }
+            }
+            else
+            {
+                LeaderBoardPanel.Height -= 20;
+                if (LeaderBoardPanel.Size == LeaderBoardPanel.MinimumSize)
+                {
+                    LeaderDropTIme.Stop();
+                    LeaderCollapse = true;
+                }
+            }
+        }
+
+        private void GameDropTime_Tick(object sender, EventArgs e)
+        {
+            if (GameCollapse)
+            {
+                GamePanel.Height += 20;
+                if (GamePanel.Size == StaffPanel.MaximumSize)
+                {
+                    GameDropTime.Stop();
+                    GameCollapse = false;
+                }
+            }
+            else
+            {
+                GamePanel.Height -= 20;
+                if (GamePanel.Size == GamePanel.MinimumSize)
+                {
+                    GameDropTime.Stop();
+                    GameCollapse = true;
+                }
+            }
+        }
+
+        private void ComputerDropTime_Tick(object sender, EventArgs e)
+        {
+            if (ComputerCollapse)
+            {
+                ComputerPanel.Height += 20;
+                if (ComputerPanel.Size == ComputerPanel.MaximumSize)
+                {
+                    ComputerDropTime.Stop();
+                    ComputerCollapse = false;
+                }
+            }
+            else
+            {
+                ComputerPanel.Height -= 20;
+                if (ComputerPanel.Size == ComputerPanel.MinimumSize)
+                {
+                    ComputerDropTime.Stop();
+                    ComputerCollapse = true;
+                }
+            }
+        }
+
+        private void SeatDropTime_Tick(object sender, EventArgs e)
+        {
+            if (SeatCollapse)
+            {
+                SeatPanel.Height += 20;
+                if (SeatPanel.Size == SeatPanel.MaximumSize)
+                {
+                    SeatDropTime.Stop();
+                    SeatCollapse = false;
+                }
+            }
+            else
+            {
+                SeatPanel.Height -= 20;
+                if (SeatPanel.Size == SeatPanel.MinimumSize)
+                {
+                    SeatDropTime.Stop();
+                    SeatCollapse = true;
+                }
+            }
+        }
+
+        private void EventDropTimer_Tick(object sender, EventArgs e)
+        {
+            if (EventCollapse)
+            {
+                EventPanel.Height += 20;
+                if (EventPanel.Size == EventPanel.MaximumSize)
+                {
+                    EventDropTimer.Stop();
+                    EventCollapse = false;
+                }
+            }
+            else
+            {
+                EventPanel.Height -= 20;
+                if (EventPanel.Size == EventPanel.MinimumSize)
+                {
+                    EventDropTimer.Stop();
+                    EventCollapse = true;
+                }
+            }
+        }
+
+        private void CreateLeaderBoardRe_Click(object sender, EventArgs e)
+        {
+            LeaderDropTIme.Start();
+        }
+
+        private void CreateGameRe_Click(object sender, EventArgs e)
+        {
+            GameDropTime.Start();
+        }
+
+        private void CreateComputerRe_Click(object sender, EventArgs e)
+        {
+            ComputerDropTime.Start();
+        }
+
+        private void CreateEventRe_Click(object sender, EventArgs e)
+        {
+            EventDropTimer.Start();
+        }
+
+        private void CreateSeatRe_Click(object sender, EventArgs e)
+        {
+            SeatDropTime.Start();
+        }
+
+        private void CreateStaffAdd_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this.Controls);
+            string Query = "select StaffID, StaffName from Staff where Position in ('Chairman', 'CEO', 'Manager')";
+            SqlCommand cmd = new SqlCommand(Query, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            cmd.Dispose();
+
+            trackid = new List<int>();
+            StaffSupervisor.Items.Clear();
+            while (reader.Read())
+            {
+                trackid.Add(Convert.ToInt32(reader["StaffID"].ToString()));
+                StaffSupervisor.Items.Add(reader["StaffName"]);
+            }
+            StaffSupervisor.SelectedIndex = 0;
+            reader.Close();
+
+            Login log = new Login(cnn);
+
+            StaffPosition.Items.Clear();
+            for (int i = 0; i < log.positions.Count; i++)
+            {
+                StaffPosition.Items.Add(log.positions[i]);
+            }
+            StaffPosition.SelectedIndex = 0;
+
+            //foreach(Control c in tabControl1.TabPages)
+            //{
+            //    if (c is TextBox)
+            //        c.Text = "";
+            //}
+
+            tabControl1.SelectedTab = StaffAccReg;
+        }
+
+        private void CreateLeaderBoardAdd_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this.Controls);
+            string Query = "select GameName from Games", Query1 = "select CustomerID, CustName from Customers";
+            SqlCommand cmd = new SqlCommand(Query, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Gamedropdown.Items.Clear();
+            while (reader.Read())
+            {
+                Gamedropdown.Items.Add(reader["GameName"]);
+            }
+
+            trackcusid = new List<int>();
+            cmd = new SqlCommand(Query1, cnn);
+            reader = cmd.ExecuteReader();
+            CustNameDropDown.Items.Clear();
+            while (reader.Read())
+            {
+                trackcusid.Add(Convert.ToInt32(reader["CustomerID"].ToString()));
+                CustNameDropDown.Items.Add(reader["CustName"]);
+            }
+
+            reader.Close();
+            tabControl1.SelectedTab = LeaderBoard_Add;
+        }
+
+        private void CreateGameAdd_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = Game_Add;
+            ClearTextBoxes(this.Controls);
+        }
+
+        private void CreateComputerAdd_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = Computer_Add;
+            ClearTextBoxes(this.Controls);
+        }
+
+        private void CreateEventAdd_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this.Controls);
+            string Query = "select GameName from Games";
+            SqlCommand cmd = new SqlCommand(Query, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            GameDropEvent.Items.Clear();
+            while (reader.Read())
+            {
+                GameDropEvent.Items.Add(reader["GameName"]);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+            tabControl1.SelectedTab = Event_Add;
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void ProfilePageBackButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = CustomerPage;
@@ -1182,6 +1433,28 @@ namespace Azula_Cafe_Database_Management_System
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void StaffDropTime_Tick(object sender, EventArgs e)
+        {
+            if(staffCollapse)
+            {
+                StaffPanel.Height += 20;
+                if(StaffPanel.Size == StaffPanel.MaximumSize)
+                {
+                    StaffDropTime.Stop();
+                    staffCollapse = false;
+                }
+            }
+            else
+            {
+                StaffPanel.Height -= 20;
+                if(StaffPanel.Size == StaffPanel.MinimumSize)
+                {
+                    StaffDropTime.Stop();
+                    staffCollapse = true;
+                }
+            }
         }
 
         private void StaffCreateAccount_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.LoginPage = new System.Windows.Forms.TabPage();
             this.Register = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.CustomerPage = new System.Windows.Forms.TabPage();
+            this.LogoutButton = new System.Windows.Forms.Button();
             this.ViewLeaderboardButton = new System.Windows.Forms.Button();
             this.CustomerProfileButton = new System.Windows.Forms.Button();
             this.ViewEventsButton = new System.Windows.Forms.Button();
@@ -59,6 +61,7 @@
             this.ViewBookingHistoryButton = new System.Windows.Forms.Button();
             this.CustomerNameLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.BookSeatsButton = new System.Windows.Forms.Button();
             this.BookSeatsPage = new System.Windows.Forms.TabPage();
             this.StartingTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -118,6 +121,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label26 = new System.Windows.Forms.Label();
             this.BookEventsPage = new System.Windows.Forms.TabPage();
+            this.EventPosterImage = new System.Windows.Forms.PictureBox();
             this.EventBackButton = new System.Windows.Forms.Button();
             this.EventBookButton = new System.Windows.Forms.Button();
             this.label67 = new System.Windows.Forms.Label();
@@ -148,8 +152,21 @@
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
+            this.ViewProfilePage = new System.Windows.Forms.TabPage();
+            this.ProfilePageBackButton = new System.Windows.Forms.Button();
+            this.ProfileUsernameLabel = new System.Windows.Forms.Label();
+            this.ProfilePhoneNumberLabel = new System.Windows.Forms.Label();
+            this.ProfileNameLabel = new System.Windows.Forms.Label();
+            this.EditPhoneNumberButton = new System.Windows.Forms.Button();
+            this.EditNameButton = new System.Windows.Forms.Button();
+            this.ChangePasswordButton = new System.Windows.Forms.Button();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
             this.StaffPage = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.CreateNewSeats = new System.Windows.Forms.Button();
             this.CreateNewEvent = new System.Windows.Forms.Button();
             this.CreateNewGame = new System.Windows.Forms.Button();
             this.LeaderboardOperations = new System.Windows.Forms.Button();
@@ -157,6 +174,9 @@
             this.StaffCreateAccount = new System.Windows.Forms.Button();
             this.StaffLabelName = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.StaffPageReloaded = new System.Windows.Forms.TabPage();
+            this.StaffNameRe = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
             this.StaffAccReg = new System.Windows.Forms.TabPage();
             this.StaffSupervisorID = new System.Windows.Forms.Label();
             this.StaffPosition = new System.Windows.Forms.ComboBox();
@@ -235,22 +255,47 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.EventStartDate = new System.Windows.Forms.DateTimePicker();
-            this.ViewProfilePage = new System.Windows.Forms.TabPage();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.ChangePasswordButton = new System.Windows.Forms.Button();
-            this.EditNameButton = new System.Windows.Forms.Button();
-            this.EditPhoneNumberButton = new System.Windows.Forms.Button();
-            this.ProfileNameLabel = new System.Windows.Forms.Label();
-            this.ProfilePhoneNumberLabel = new System.Windows.Forms.Label();
-            this.ProfileUsernameLabel = new System.Windows.Forms.Label();
-            this.ProfilePageBackButton = new System.Windows.Forms.Button();
-            this.LogoutButton = new System.Windows.Forms.Button();
-            this.BookSeatsButton = new System.Windows.Forms.Button();
-            this.EventPosterImage = new System.Windows.Forms.PictureBox();
+            this.Seats_Add = new System.Windows.Forms.TabPage();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.StaffPanel = new System.Windows.Forms.Panel();
+            this.CreateStaffRe = new System.Windows.Forms.Button();
+            this.CreateStaffAdd = new System.Windows.Forms.Button();
+            this.CreateStaffDelete = new System.Windows.Forms.Button();
+            this.LeaderBoardPanel = new System.Windows.Forms.Panel();
+            this.CreateLeaderBoardDelete = new System.Windows.Forms.Button();
+            this.CreateLeaderBoardAdd = new System.Windows.Forms.Button();
+            this.CreateLeaderBoardRe = new System.Windows.Forms.Button();
+            this.GamePanel = new System.Windows.Forms.Panel();
+            this.CreateGameDelete = new System.Windows.Forms.Button();
+            this.CreateGameAdd = new System.Windows.Forms.Button();
+            this.CreateGameRe = new System.Windows.Forms.Button();
+            this.ComputerPanel = new System.Windows.Forms.Panel();
+            this.CreateComputerDelete = new System.Windows.Forms.Button();
+            this.CreateComputerAdd = new System.Windows.Forms.Button();
+            this.CreateComputerRe = new System.Windows.Forms.Button();
+            this.EventPanel = new System.Windows.Forms.Panel();
+            this.CreateEventDelete = new System.Windows.Forms.Button();
+            this.CreateEventAdd = new System.Windows.Forms.Button();
+            this.CreateEventRe = new System.Windows.Forms.Button();
+            this.SeatPanel = new System.Windows.Forms.Panel();
+            this.CreateSeatDelete = new System.Windows.Forms.Button();
+            this.CreateSeatAdd = new System.Windows.Forms.Button();
+            this.CreateSeatRe = new System.Windows.Forms.Button();
+            this.StaffDropTime = new System.Windows.Forms.Timer(this.components);
+            this.LeaderDropTIme = new System.Windows.Forms.Timer(this.components);
+            this.GameDropTime = new System.Windows.Forms.Timer(this.components);
+            this.ComputerDropTime = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.SeatDropTime = new System.Windows.Forms.Timer(this.components);
+            this.EventDropTimer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -262,18 +307,27 @@
             this.ViewBookingsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).BeginInit();
             this.BookEventsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventViewerTable)).BeginInit();
             this.ViewLeaderboardPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewLeaderboardTable)).BeginInit();
+            this.ViewProfilePage.SuspendLayout();
             this.StaffPage.SuspendLayout();
+            this.StaffPageReloaded.SuspendLayout();
             this.StaffAccReg.SuspendLayout();
             this.Game_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PopularityUpdown)).BeginInit();
             this.Computer_Add.SuspendLayout();
             this.LeaderBoard_Add.SuspendLayout();
             this.Event_Add.SuspendLayout();
-            this.ViewProfilePage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).BeginInit();
+            this.Seats_Add.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.StaffPanel.SuspendLayout();
+            this.LeaderBoardPanel.SuspendLayout();
+            this.GamePanel.SuspendLayout();
+            this.ComputerPanel.SuspendLayout();
+            this.EventPanel.SuspendLayout();
+            this.SeatPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -289,11 +343,13 @@
             this.tabControl1.Controls.Add(this.ViewLeaderboardPage);
             this.tabControl1.Controls.Add(this.ViewProfilePage);
             this.tabControl1.Controls.Add(this.StaffPage);
+            this.tabControl1.Controls.Add(this.StaffPageReloaded);
             this.tabControl1.Controls.Add(this.StaffAccReg);
             this.tabControl1.Controls.Add(this.Game_Add);
             this.tabControl1.Controls.Add(this.Computer_Add);
             this.tabControl1.Controls.Add(this.LeaderBoard_Add);
             this.tabControl1.Controls.Add(this.Event_Add);
+            this.tabControl1.Controls.Add(this.Seats_Add);
             this.tabControl1.Location = new System.Drawing.Point(-7, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -547,6 +603,16 @@
             this.CustomerPage.UseVisualStyleBackColor = true;
             this.CustomerPage.Click += new System.EventHandler(this.CustomerPage_Click);
             // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Location = new System.Drawing.Point(405, 62);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(89, 23);
+            this.LogoutButton.TabIndex = 8;
+            this.LogoutButton.Text = "Log Out";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
             // ViewLeaderboardButton
             // 
             this.ViewLeaderboardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -620,6 +686,19 @@
             this.label5.Size = new System.Drawing.Size(400, 39);
             this.label5.TabIndex = 0;
             this.label5.Text = "Welcome to Cafe Azula";
+            // 
+            // BookSeatsButton
+            // 
+            this.BookSeatsButton.BackgroundImage = global::Azula_Cafe_Database_Management_System.Properties.Resources.bookSeatButton;
+            this.BookSeatsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookSeatsButton.Location = new System.Drawing.Point(114, 141);
+            this.BookSeatsButton.Name = "BookSeatsButton";
+            this.BookSeatsButton.Size = new System.Drawing.Size(276, 118);
+            this.BookSeatsButton.TabIndex = 2;
+            this.BookSeatsButton.Text = "Book Seats";
+            this.BookSeatsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BookSeatsButton.UseVisualStyleBackColor = true;
+            this.BookSeatsButton.Click += new System.EventHandler(this.BookSeatsButton_Click);
             // 
             // BookSeatsPage
             // 
@@ -1225,6 +1304,14 @@
             this.BookEventsPage.Text = "View/Book Events";
             this.BookEventsPage.UseVisualStyleBackColor = true;
             // 
+            // EventPosterImage
+            // 
+            this.EventPosterImage.Location = new System.Drawing.Point(605, 132);
+            this.EventPosterImage.Name = "EventPosterImage";
+            this.EventPosterImage.Size = new System.Drawing.Size(186, 246);
+            this.EventPosterImage.TabIndex = 6;
+            this.EventPosterImage.TabStop = false;
+            // 
             // EventBackButton
             // 
             this.EventBackButton.Location = new System.Drawing.Point(353, 398);
@@ -1515,9 +1602,143 @@
             this.label69.TabIndex = 2;
             this.label69.Text = "Azula Cafe Leaderboard";
             // 
+            // ViewProfilePage
+            // 
+            this.ViewProfilePage.Controls.Add(this.ProfilePageBackButton);
+            this.ViewProfilePage.Controls.Add(this.ProfileUsernameLabel);
+            this.ViewProfilePage.Controls.Add(this.ProfilePhoneNumberLabel);
+            this.ViewProfilePage.Controls.Add(this.ProfileNameLabel);
+            this.ViewProfilePage.Controls.Add(this.EditPhoneNumberButton);
+            this.ViewProfilePage.Controls.Add(this.EditNameButton);
+            this.ViewProfilePage.Controls.Add(this.ChangePasswordButton);
+            this.ViewProfilePage.Controls.Add(this.label78);
+            this.ViewProfilePage.Controls.Add(this.label77);
+            this.ViewProfilePage.Controls.Add(this.label76);
+            this.ViewProfilePage.Controls.Add(this.label74);
+            this.ViewProfilePage.Controls.Add(this.label75);
+            this.ViewProfilePage.Location = new System.Drawing.Point(4, 22);
+            this.ViewProfilePage.Name = "ViewProfilePage";
+            this.ViewProfilePage.Size = new System.Drawing.Size(806, 442);
+            this.ViewProfilePage.TabIndex = 15;
+            this.ViewProfilePage.Text = "Profile Page";
+            this.ViewProfilePage.UseVisualStyleBackColor = true;
+            // 
+            // ProfilePageBackButton
+            // 
+            this.ProfilePageBackButton.Location = new System.Drawing.Point(360, 371);
+            this.ProfilePageBackButton.Name = "ProfilePageBackButton";
+            this.ProfilePageBackButton.Size = new System.Drawing.Size(75, 23);
+            this.ProfilePageBackButton.TabIndex = 15;
+            this.ProfilePageBackButton.Text = "Back";
+            this.ProfilePageBackButton.UseVisualStyleBackColor = true;
+            this.ProfilePageBackButton.Click += new System.EventHandler(this.ProfilePageBackButton_Click);
+            // 
+            // ProfileUsernameLabel
+            // 
+            this.ProfileUsernameLabel.AutoSize = true;
+            this.ProfileUsernameLabel.Location = new System.Drawing.Point(344, 248);
+            this.ProfileUsernameLabel.Name = "ProfileUsernameLabel";
+            this.ProfileUsernameLabel.Size = new System.Drawing.Size(41, 13);
+            this.ProfileUsernameLabel.TabIndex = 14;
+            this.ProfileUsernameLabel.Text = "label79";
+            // 
+            // ProfilePhoneNumberLabel
+            // 
+            this.ProfilePhoneNumberLabel.AutoSize = true;
+            this.ProfilePhoneNumberLabel.Location = new System.Drawing.Point(344, 176);
+            this.ProfilePhoneNumberLabel.Name = "ProfilePhoneNumberLabel";
+            this.ProfilePhoneNumberLabel.Size = new System.Drawing.Size(41, 13);
+            this.ProfilePhoneNumberLabel.TabIndex = 13;
+            this.ProfilePhoneNumberLabel.Text = "label79";
+            // 
+            // ProfileNameLabel
+            // 
+            this.ProfileNameLabel.AutoSize = true;
+            this.ProfileNameLabel.Location = new System.Drawing.Point(344, 105);
+            this.ProfileNameLabel.Name = "ProfileNameLabel";
+            this.ProfileNameLabel.Size = new System.Drawing.Size(41, 13);
+            this.ProfileNameLabel.TabIndex = 12;
+            this.ProfileNameLabel.Text = "label79";
+            // 
+            // EditPhoneNumberButton
+            // 
+            this.EditPhoneNumberButton.Location = new System.Drawing.Point(345, 201);
+            this.EditPhoneNumberButton.Name = "EditPhoneNumberButton";
+            this.EditPhoneNumberButton.Size = new System.Drawing.Size(120, 23);
+            this.EditPhoneNumberButton.TabIndex = 11;
+            this.EditPhoneNumberButton.Text = "Edit Phone Number";
+            this.EditPhoneNumberButton.UseVisualStyleBackColor = true;
+            this.EditPhoneNumberButton.Click += new System.EventHandler(this.EditPhoneNumberButton_Click);
+            // 
+            // EditNameButton
+            // 
+            this.EditNameButton.Location = new System.Drawing.Point(345, 130);
+            this.EditNameButton.Name = "EditNameButton";
+            this.EditNameButton.Size = new System.Drawing.Size(75, 23);
+            this.EditNameButton.TabIndex = 10;
+            this.EditNameButton.Text = "Edit Name";
+            this.EditNameButton.UseVisualStyleBackColor = true;
+            this.EditNameButton.Click += new System.EventHandler(this.EditNameButton_Click);
+            // 
+            // ChangePasswordButton
+            // 
+            this.ChangePasswordButton.Location = new System.Drawing.Point(345, 327);
+            this.ChangePasswordButton.Name = "ChangePasswordButton";
+            this.ChangePasswordButton.Size = new System.Drawing.Size(103, 23);
+            this.ChangePasswordButton.TabIndex = 9;
+            this.ChangePasswordButton.Text = "Change Password";
+            this.ChangePasswordButton.UseVisualStyleBackColor = true;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(222, 248);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(116, 13);
+            this.label78.TabIndex = 8;
+            this.label78.Text = "Username/Gamer Tag:";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(257, 176);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(81, 13);
+            this.label77.TabIndex = 7;
+            this.label77.Text = "Phone Number:";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(300, 105);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(38, 13);
+            this.label76.TabIndex = 6;
+            this.label76.Text = "Name:";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(327, 64);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(141, 13);
+            this.label74.TabIndex = 5;
+            this.label74.Text = "View your profile information.";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.Location = new System.Drawing.Point(275, 0);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(246, 55);
+            this.label75.TabIndex = 4;
+            this.label75.Text = "My Profile";
+            // 
             // StaffPage
             // 
-            this.StaffPage.Controls.Add(this.button4);
+            this.StaffPage.Controls.Add(this.CreateNewSeats);
             this.StaffPage.Controls.Add(this.CreateNewEvent);
             this.StaffPage.Controls.Add(this.CreateNewGame);
             this.StaffPage.Controls.Add(this.LeaderboardOperations);
@@ -1532,15 +1753,15 @@
             this.StaffPage.Text = "Staff";
             this.StaffPage.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // CreateNewSeats
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(543, 188);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 101);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Add New Computers";
-            this.button4.UseVisualStyleBackColor = true;
+            this.CreateNewSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateNewSeats.Location = new System.Drawing.Point(543, 188);
+            this.CreateNewSeats.Name = "CreateNewSeats";
+            this.CreateNewSeats.Size = new System.Drawing.Size(220, 101);
+            this.CreateNewSeats.TabIndex = 10;
+            this.CreateNewSeats.Text = "Add New Seats";
+            this.CreateNewSeats.UseVisualStyleBackColor = true;
             // 
             // CreateNewEvent
             // 
@@ -1616,6 +1837,38 @@
             this.label24.Size = new System.Drawing.Size(532, 39);
             this.label24.TabIndex = 2;
             this.label24.Text = "Cafe Azula Management Studio";
+            // 
+            // StaffPageReloaded
+            // 
+            this.StaffPageReloaded.Controls.Add(this.flowLayoutPanel1);
+            this.StaffPageReloaded.Controls.Add(this.StaffNameRe);
+            this.StaffPageReloaded.Controls.Add(this.label80);
+            this.StaffPageReloaded.Location = new System.Drawing.Point(4, 22);
+            this.StaffPageReloaded.Name = "StaffPageReloaded";
+            this.StaffPageReloaded.Size = new System.Drawing.Size(806, 442);
+            this.StaffPageReloaded.TabIndex = 17;
+            this.StaffPageReloaded.Text = "StaffReloaded";
+            this.StaffPageReloaded.UseVisualStyleBackColor = true;
+            // 
+            // StaffNameRe
+            // 
+            this.StaffNameRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffNameRe.Location = new System.Drawing.Point(346, 39);
+            this.StaffNameRe.Name = "StaffNameRe";
+            this.StaffNameRe.Size = new System.Drawing.Size(124, 20);
+            this.StaffNameRe.TabIndex = 5;
+            this.StaffNameRe.Text = "Staff Name";
+            this.StaffNameRe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(144, 0);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(532, 39);
+            this.label80.TabIndex = 4;
+            this.label80.Text = "Cafe Azula Management Studio";
             // 
             // StaffAccReg
             // 
@@ -2407,170 +2660,390 @@
             this.EventStartDate.Size = new System.Drawing.Size(146, 20);
             this.EventStartDate.TabIndex = 12;
             // 
-            // ViewProfilePage
+            // Seats_Add
             // 
-            this.ViewProfilePage.Controls.Add(this.ProfilePageBackButton);
-            this.ViewProfilePage.Controls.Add(this.ProfileUsernameLabel);
-            this.ViewProfilePage.Controls.Add(this.ProfilePhoneNumberLabel);
-            this.ViewProfilePage.Controls.Add(this.ProfileNameLabel);
-            this.ViewProfilePage.Controls.Add(this.EditPhoneNumberButton);
-            this.ViewProfilePage.Controls.Add(this.EditNameButton);
-            this.ViewProfilePage.Controls.Add(this.ChangePasswordButton);
-            this.ViewProfilePage.Controls.Add(this.label78);
-            this.ViewProfilePage.Controls.Add(this.label77);
-            this.ViewProfilePage.Controls.Add(this.label76);
-            this.ViewProfilePage.Controls.Add(this.label74);
-            this.ViewProfilePage.Controls.Add(this.label75);
-            this.ViewProfilePage.Location = new System.Drawing.Point(4, 22);
-            this.ViewProfilePage.Name = "ViewProfilePage";
-            this.ViewProfilePage.Size = new System.Drawing.Size(806, 442);
-            this.ViewProfilePage.TabIndex = 15;
-            this.ViewProfilePage.Text = "Profile Page";
-            this.ViewProfilePage.UseVisualStyleBackColor = true;
+            this.Seats_Add.Controls.Add(this.comboBox2);
+            this.Seats_Add.Controls.Add(this.button1);
+            this.Seats_Add.Controls.Add(this.button2);
+            this.Seats_Add.Controls.Add(this.comboBox1);
+            this.Seats_Add.Controls.Add(this.label81);
+            this.Seats_Add.Controls.Add(this.label82);
+            this.Seats_Add.Controls.Add(this.label83);
+            this.Seats_Add.Controls.Add(this.label84);
+            this.Seats_Add.Location = new System.Drawing.Point(4, 22);
+            this.Seats_Add.Name = "Seats_Add";
+            this.Seats_Add.Size = new System.Drawing.Size(806, 442);
+            this.Seats_Add.TabIndex = 16;
+            this.Seats_Add.Text = "Add Seats";
+            this.Seats_Add.UseVisualStyleBackColor = true;
             // 
-            // label74
+            // comboBox2
             // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(327, 64);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(141, 13);
-            this.label74.TabIndex = 5;
-            this.label74.Text = "View your profile information.";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(419, 182);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(90, 21);
+            this.comboBox2.TabIndex = 99;
             // 
-            // label75
+            // button1
             // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(275, 0);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(246, 55);
-            this.label75.TabIndex = 4;
-            this.label75.Text = "My Profile";
+            this.button1.Location = new System.Drawing.Point(419, 267);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 23);
+            this.button1.TabIndex = 98;
+            this.button1.Text = "Add Event";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label76
+            // button2
             // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(300, 105);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(38, 13);
-            this.label76.TabIndex = 6;
-            this.label76.Text = "Name:";
+            this.button2.Location = new System.Drawing.Point(222, 267);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 97;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // label77
+            // comboBox1
             // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(257, 176);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(81, 13);
-            this.label77.TabIndex = 7;
-            this.label77.Text = "Phone Number:";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(419, 123);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(88, 21);
+            this.comboBox1.TabIndex = 92;
             // 
-            // label78
+            // label81
             // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(222, 248);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(116, 13);
-            this.label78.TabIndex = 8;
-            this.label78.Text = "Username/Gamer Tag:";
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(223, 185);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(151, 13);
+            this.label81.TabIndex = 91;
+            this.label81.Text = "Enter Premium Status of Seat: ";
             // 
-            // ChangePasswordButton
+            // label82
             // 
-            this.ChangePasswordButton.Location = new System.Drawing.Point(345, 327);
-            this.ChangePasswordButton.Name = "ChangePasswordButton";
-            this.ChangePasswordButton.Size = new System.Drawing.Size(103, 23);
-            this.ChangePasswordButton.TabIndex = 9;
-            this.ChangePasswordButton.Text = "Change Password";
-            this.ChangePasswordButton.UseVisualStyleBackColor = true;
-            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(223, 126);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(190, 13);
+            this.label82.TabIndex = 90;
+            this.label82.Text = "Select Computer Installed in the Seat  :";
             // 
-            // EditNameButton
+            // label83
             // 
-            this.EditNameButton.Location = new System.Drawing.Point(345, 130);
-            this.EditNameButton.Name = "EditNameButton";
-            this.EditNameButton.Size = new System.Drawing.Size(75, 23);
-            this.EditNameButton.TabIndex = 10;
-            this.EditNameButton.Text = "Edit Name";
-            this.EditNameButton.UseVisualStyleBackColor = true;
-            this.EditNameButton.Click += new System.EventHandler(this.EditNameButton_Click);
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label83.Location = new System.Drawing.Point(298, 39);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(206, 20);
+            this.label83.TabIndex = 88;
+            this.label83.Text = "Enter the form to add Seats";
             // 
-            // EditPhoneNumberButton
+            // label84
             // 
-            this.EditPhoneNumberButton.Location = new System.Drawing.Point(345, 201);
-            this.EditPhoneNumberButton.Name = "EditPhoneNumberButton";
-            this.EditPhoneNumberButton.Size = new System.Drawing.Size(120, 23);
-            this.EditPhoneNumberButton.TabIndex = 11;
-            this.EditPhoneNumberButton.Text = "Edit Phone Number";
-            this.EditPhoneNumberButton.UseVisualStyleBackColor = true;
-            this.EditPhoneNumberButton.Click += new System.EventHandler(this.EditPhoneNumberButton_Click);
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(144, 0);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(532, 39);
+            this.label84.TabIndex = 87;
+            this.label84.Text = "Cafe Azula Management Studio";
             // 
-            // ProfileNameLabel
+            // flowLayoutPanel1
             // 
-            this.ProfileNameLabel.AutoSize = true;
-            this.ProfileNameLabel.Location = new System.Drawing.Point(344, 105);
-            this.ProfileNameLabel.Name = "ProfileNameLabel";
-            this.ProfileNameLabel.Size = new System.Drawing.Size(41, 13);
-            this.ProfileNameLabel.TabIndex = 12;
-            this.ProfileNameLabel.Text = "label79";
+            this.flowLayoutPanel1.Controls.Add(this.StaffPanel);
+            this.flowLayoutPanel1.Controls.Add(this.LeaderBoardPanel);
+            this.flowLayoutPanel1.Controls.Add(this.GamePanel);
+            this.flowLayoutPanel1.Controls.Add(this.ComputerPanel);
+            this.flowLayoutPanel1.Controls.Add(this.EventPanel);
+            this.flowLayoutPanel1.Controls.Add(this.SeatPanel);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 91);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(696, 313);
+            this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // ProfilePhoneNumberLabel
+            // StaffPanel
             // 
-            this.ProfilePhoneNumberLabel.AutoSize = true;
-            this.ProfilePhoneNumberLabel.Location = new System.Drawing.Point(344, 176);
-            this.ProfilePhoneNumberLabel.Name = "ProfilePhoneNumberLabel";
-            this.ProfilePhoneNumberLabel.Size = new System.Drawing.Size(41, 13);
-            this.ProfilePhoneNumberLabel.TabIndex = 13;
-            this.ProfilePhoneNumberLabel.Text = "label79";
+            this.StaffPanel.Controls.Add(this.CreateStaffDelete);
+            this.StaffPanel.Controls.Add(this.CreateStaffAdd);
+            this.StaffPanel.Controls.Add(this.CreateStaffRe);
+            this.StaffPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.StaffPanel.Location = new System.Drawing.Point(3, 3);
+            this.StaffPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.StaffPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.StaffPanel.Name = "StaffPanel";
+            this.StaffPanel.Size = new System.Drawing.Size(225, 100);
+            this.StaffPanel.TabIndex = 0;
             // 
-            // ProfileUsernameLabel
+            // CreateStaffRe
             // 
-            this.ProfileUsernameLabel.AutoSize = true;
-            this.ProfileUsernameLabel.Location = new System.Drawing.Point(344, 248);
-            this.ProfileUsernameLabel.Name = "ProfileUsernameLabel";
-            this.ProfileUsernameLabel.Size = new System.Drawing.Size(41, 13);
-            this.ProfileUsernameLabel.TabIndex = 14;
-            this.ProfileUsernameLabel.Text = "label79";
+            this.CreateStaffRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateStaffRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateStaffRe.Name = "CreateStaffRe";
+            this.CreateStaffRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateStaffRe.TabIndex = 6;
+            this.CreateStaffRe.Text = "Staff Account Management";
+            this.CreateStaffRe.UseVisualStyleBackColor = true;
+            this.CreateStaffRe.Click += new System.EventHandler(this.CreateStaffRe_Click);
             // 
-            // ProfilePageBackButton
+            // CreateStaffAdd
             // 
-            this.ProfilePageBackButton.Location = new System.Drawing.Point(360, 371);
-            this.ProfilePageBackButton.Name = "ProfilePageBackButton";
-            this.ProfilePageBackButton.Size = new System.Drawing.Size(75, 23);
-            this.ProfilePageBackButton.TabIndex = 15;
-            this.ProfilePageBackButton.Text = "Back";
-            this.ProfilePageBackButton.UseVisualStyleBackColor = true;
-            this.ProfilePageBackButton.Click += new System.EventHandler(this.ProfilePageBackButton_Click);
+            this.CreateStaffAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateStaffAdd.Name = "CreateStaffAdd";
+            this.CreateStaffAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateStaffAdd.TabIndex = 7;
+            this.CreateStaffAdd.Text = "Add";
+            this.CreateStaffAdd.UseVisualStyleBackColor = true;
+            this.CreateStaffAdd.Click += new System.EventHandler(this.CreateStaffAdd_Click);
             // 
-            // LogoutButton
+            // CreateStaffDelete
             // 
-            this.LogoutButton.Location = new System.Drawing.Point(405, 62);
-            this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(89, 23);
-            this.LogoutButton.TabIndex = 8;
-            this.LogoutButton.Text = "Log Out";
-            this.LogoutButton.UseVisualStyleBackColor = true;
-            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            this.CreateStaffDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateStaffDelete.Name = "CreateStaffDelete";
+            this.CreateStaffDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateStaffDelete.TabIndex = 8;
+            this.CreateStaffDelete.Text = "Delete";
+            this.CreateStaffDelete.UseVisualStyleBackColor = true;
             // 
-            // BookSeatsButton
+            // LeaderBoardPanel
             // 
-            this.BookSeatsButton.BackgroundImage = global::Azula_Cafe_Database_Management_System.Properties.Resources.bookSeatButton;
-            this.BookSeatsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookSeatsButton.Location = new System.Drawing.Point(114, 141);
-            this.BookSeatsButton.Name = "BookSeatsButton";
-            this.BookSeatsButton.Size = new System.Drawing.Size(276, 118);
-            this.BookSeatsButton.TabIndex = 2;
-            this.BookSeatsButton.Text = "Book Seats";
-            this.BookSeatsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BookSeatsButton.UseVisualStyleBackColor = true;
-            this.BookSeatsButton.Click += new System.EventHandler(this.BookSeatsButton_Click);
+            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardDelete);
+            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardAdd);
+            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardRe);
+            this.LeaderBoardPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LeaderBoardPanel.Location = new System.Drawing.Point(234, 3);
+            this.LeaderBoardPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.LeaderBoardPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.LeaderBoardPanel.Name = "LeaderBoardPanel";
+            this.LeaderBoardPanel.Size = new System.Drawing.Size(225, 100);
+            this.LeaderBoardPanel.TabIndex = 1;
             // 
-            // EventPosterImage
+            // CreateLeaderBoardDelete
             // 
-            this.EventPosterImage.Location = new System.Drawing.Point(605, 132);
-            this.EventPosterImage.Name = "EventPosterImage";
-            this.EventPosterImage.Size = new System.Drawing.Size(186, 246);
-            this.EventPosterImage.TabIndex = 6;
-            this.EventPosterImage.TabStop = false;
+            this.CreateLeaderBoardDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateLeaderBoardDelete.Name = "CreateLeaderBoardDelete";
+            this.CreateLeaderBoardDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateLeaderBoardDelete.TabIndex = 8;
+            this.CreateLeaderBoardDelete.Text = "Delete";
+            this.CreateLeaderBoardDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateLeaderBoardAdd
+            // 
+            this.CreateLeaderBoardAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateLeaderBoardAdd.Name = "CreateLeaderBoardAdd";
+            this.CreateLeaderBoardAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateLeaderBoardAdd.TabIndex = 7;
+            this.CreateLeaderBoardAdd.Text = "Add";
+            this.CreateLeaderBoardAdd.UseVisualStyleBackColor = true;
+            this.CreateLeaderBoardAdd.Click += new System.EventHandler(this.CreateLeaderBoardAdd_Click);
+            // 
+            // CreateLeaderBoardRe
+            // 
+            this.CreateLeaderBoardRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateLeaderBoardRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateLeaderBoardRe.Name = "CreateLeaderBoardRe";
+            this.CreateLeaderBoardRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateLeaderBoardRe.TabIndex = 6;
+            this.CreateLeaderBoardRe.Text = "Leaderboard Management";
+            this.CreateLeaderBoardRe.UseVisualStyleBackColor = true;
+            this.CreateLeaderBoardRe.Click += new System.EventHandler(this.CreateLeaderBoardRe_Click);
+            // 
+            // GamePanel
+            // 
+            this.GamePanel.Controls.Add(this.CreateGameDelete);
+            this.GamePanel.Controls.Add(this.CreateGameAdd);
+            this.GamePanel.Controls.Add(this.CreateGameRe);
+            this.GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GamePanel.Location = new System.Drawing.Point(465, 3);
+            this.GamePanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.GamePanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.GamePanel.Name = "GamePanel";
+            this.GamePanel.Size = new System.Drawing.Size(225, 100);
+            this.GamePanel.TabIndex = 2;
+            // 
+            // CreateGameDelete
+            // 
+            this.CreateGameDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateGameDelete.Name = "CreateGameDelete";
+            this.CreateGameDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateGameDelete.TabIndex = 8;
+            this.CreateGameDelete.Text = "Delete";
+            this.CreateGameDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateGameAdd
+            // 
+            this.CreateGameAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateGameAdd.Name = "CreateGameAdd";
+            this.CreateGameAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateGameAdd.TabIndex = 7;
+            this.CreateGameAdd.Text = "Add";
+            this.CreateGameAdd.UseVisualStyleBackColor = true;
+            this.CreateGameAdd.Click += new System.EventHandler(this.CreateGameAdd_Click);
+            // 
+            // CreateGameRe
+            // 
+            this.CreateGameRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateGameRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateGameRe.Name = "CreateGameRe";
+            this.CreateGameRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateGameRe.TabIndex = 6;
+            this.CreateGameRe.Text = "Game management";
+            this.CreateGameRe.UseVisualStyleBackColor = true;
+            this.CreateGameRe.Click += new System.EventHandler(this.CreateGameRe_Click);
+            // 
+            // ComputerPanel
+            // 
+            this.ComputerPanel.Controls.Add(this.CreateComputerDelete);
+            this.ComputerPanel.Controls.Add(this.CreateComputerAdd);
+            this.ComputerPanel.Controls.Add(this.CreateComputerRe);
+            this.ComputerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ComputerPanel.Location = new System.Drawing.Point(3, 109);
+            this.ComputerPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.ComputerPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.ComputerPanel.Name = "ComputerPanel";
+            this.ComputerPanel.Size = new System.Drawing.Size(225, 100);
+            this.ComputerPanel.TabIndex = 3;
+            // 
+            // CreateComputerDelete
+            // 
+            this.CreateComputerDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateComputerDelete.Name = "CreateComputerDelete";
+            this.CreateComputerDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateComputerDelete.TabIndex = 8;
+            this.CreateComputerDelete.Text = "Delete";
+            this.CreateComputerDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateComputerAdd
+            // 
+            this.CreateComputerAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateComputerAdd.Name = "CreateComputerAdd";
+            this.CreateComputerAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateComputerAdd.TabIndex = 7;
+            this.CreateComputerAdd.Text = "Add";
+            this.CreateComputerAdd.UseVisualStyleBackColor = true;
+            this.CreateComputerAdd.Click += new System.EventHandler(this.CreateComputerAdd_Click);
+            // 
+            // CreateComputerRe
+            // 
+            this.CreateComputerRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateComputerRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateComputerRe.Name = "CreateComputerRe";
+            this.CreateComputerRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateComputerRe.TabIndex = 6;
+            this.CreateComputerRe.Text = "Computer Management";
+            this.CreateComputerRe.UseVisualStyleBackColor = true;
+            this.CreateComputerRe.Click += new System.EventHandler(this.CreateComputerRe_Click);
+            // 
+            // EventPanel
+            // 
+            this.EventPanel.Controls.Add(this.CreateEventDelete);
+            this.EventPanel.Controls.Add(this.CreateEventAdd);
+            this.EventPanel.Controls.Add(this.CreateEventRe);
+            this.EventPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EventPanel.Location = new System.Drawing.Point(234, 109);
+            this.EventPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.EventPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.EventPanel.Name = "EventPanel";
+            this.EventPanel.Size = new System.Drawing.Size(225, 100);
+            this.EventPanel.TabIndex = 4;
+            // 
+            // CreateEventDelete
+            // 
+            this.CreateEventDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateEventDelete.Name = "CreateEventDelete";
+            this.CreateEventDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateEventDelete.TabIndex = 8;
+            this.CreateEventDelete.Text = "Delete";
+            this.CreateEventDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateEventAdd
+            // 
+            this.CreateEventAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateEventAdd.Name = "CreateEventAdd";
+            this.CreateEventAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateEventAdd.TabIndex = 7;
+            this.CreateEventAdd.Text = "Add";
+            this.CreateEventAdd.UseVisualStyleBackColor = true;
+            this.CreateEventAdd.Click += new System.EventHandler(this.CreateEventAdd_Click);
+            // 
+            // CreateEventRe
+            // 
+            this.CreateEventRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateEventRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateEventRe.Name = "CreateEventRe";
+            this.CreateEventRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateEventRe.TabIndex = 6;
+            this.CreateEventRe.Text = "Event Management";
+            this.CreateEventRe.UseVisualStyleBackColor = true;
+            this.CreateEventRe.Click += new System.EventHandler(this.CreateEventRe_Click);
+            // 
+            // SeatPanel
+            // 
+            this.SeatPanel.Controls.Add(this.CreateSeatDelete);
+            this.SeatPanel.Controls.Add(this.CreateSeatAdd);
+            this.SeatPanel.Controls.Add(this.CreateSeatRe);
+            this.SeatPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SeatPanel.Location = new System.Drawing.Point(465, 109);
+            this.SeatPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.SeatPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.SeatPanel.Name = "SeatPanel";
+            this.SeatPanel.Size = new System.Drawing.Size(225, 100);
+            this.SeatPanel.TabIndex = 5;
+            // 
+            // CreateSeatDelete
+            // 
+            this.CreateSeatDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateSeatDelete.Name = "CreateSeatDelete";
+            this.CreateSeatDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateSeatDelete.TabIndex = 8;
+            this.CreateSeatDelete.Text = "Delete";
+            this.CreateSeatDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateSeatAdd
+            // 
+            this.CreateSeatAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateSeatAdd.Name = "CreateSeatAdd";
+            this.CreateSeatAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateSeatAdd.TabIndex = 7;
+            this.CreateSeatAdd.Text = "Add";
+            this.CreateSeatAdd.UseVisualStyleBackColor = true;
+            // 
+            // CreateSeatRe
+            // 
+            this.CreateSeatRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateSeatRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateSeatRe.Name = "CreateSeatRe";
+            this.CreateSeatRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateSeatRe.TabIndex = 6;
+            this.CreateSeatRe.Text = "Seat Management";
+            this.CreateSeatRe.UseVisualStyleBackColor = true;
+            this.CreateSeatRe.Click += new System.EventHandler(this.CreateSeatRe_Click);
+            // 
+            // StaffDropTime
+            // 
+            this.StaffDropTime.Tick += new System.EventHandler(this.StaffDropTime_Tick);
+            // 
+            // LeaderDropTIme
+            // 
+            this.LeaderDropTIme.Tick += new System.EventHandler(this.LeaderDropTIme_Tick);
+            // 
+            // GameDropTime
+            // 
+            this.GameDropTime.Tick += new System.EventHandler(this.GameDropTime_Tick);
+            // 
+            // ComputerDropTime
+            // 
+            this.ComputerDropTime.Tick += new System.EventHandler(this.ComputerDropTime_Tick);
+            // 
+            // SeatDropTime
+            // 
+            this.SeatDropTime.Tick += new System.EventHandler(this.SeatDropTime_Tick);
+            // 
+            // EventDropTimer
+            // 
+            this.EventDropTimer.Tick += new System.EventHandler(this.EventDropTimer_Tick);
             // 
             // Form1
             // 
@@ -2601,12 +3074,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.BookingHistoryTable)).EndInit();
             this.BookEventsPage.ResumeLayout(false);
             this.BookEventsPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventViewerTable)).EndInit();
             this.ViewLeaderboardPage.ResumeLayout(false);
             this.ViewLeaderboardPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewLeaderboardTable)).EndInit();
+            this.ViewProfilePage.ResumeLayout(false);
+            this.ViewProfilePage.PerformLayout();
             this.StaffPage.ResumeLayout(false);
             this.StaffPage.PerformLayout();
+            this.StaffPageReloaded.ResumeLayout(false);
+            this.StaffPageReloaded.PerformLayout();
             this.StaffAccReg.ResumeLayout(false);
             this.StaffAccReg.PerformLayout();
             this.Game_Add.ResumeLayout(false);
@@ -2618,9 +3096,15 @@
             this.LeaderBoard_Add.PerformLayout();
             this.Event_Add.ResumeLayout(false);
             this.Event_Add.PerformLayout();
-            this.ViewProfilePage.ResumeLayout(false);
-            this.ViewProfilePage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EventPosterImage)).EndInit();
+            this.Seats_Add.ResumeLayout(false);
+            this.Seats_Add.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.StaffPanel.ResumeLayout(false);
+            this.LeaderBoardPanel.ResumeLayout(false);
+            this.GamePanel.ResumeLayout(false);
+            this.ComputerPanel.ResumeLayout(false);
+            this.EventPanel.ResumeLayout(false);
+            this.SeatPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2778,7 +3262,7 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.ComboBox CustNameDropDown;
         private System.Windows.Forms.ComboBox Gamedropdown;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button CreateNewSeats;
         private System.Windows.Forms.Button CreateNewEvent;
         private System.Windows.Forms.TabPage Event_Add;
         private System.Windows.Forms.DateTimePicker EventStartTime;
@@ -2850,6 +3334,50 @@
         private System.Windows.Forms.Label ProfileNameLabel;
         private System.Windows.Forms.Button ProfilePageBackButton;
         private System.Windows.Forms.Button LogoutButton;
+        private System.Windows.Forms.TabPage Seats_Add;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.TabPage StaffPageReloaded;
+        private System.Windows.Forms.Label StaffNameRe;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel StaffPanel;
+        private System.Windows.Forms.Button CreateStaffDelete;
+        private System.Windows.Forms.Button CreateStaffAdd;
+        private System.Windows.Forms.Button CreateStaffRe;
+        private System.Windows.Forms.Panel LeaderBoardPanel;
+        private System.Windows.Forms.Button CreateLeaderBoardDelete;
+        private System.Windows.Forms.Button CreateLeaderBoardAdd;
+        private System.Windows.Forms.Button CreateLeaderBoardRe;
+        private System.Windows.Forms.Panel GamePanel;
+        private System.Windows.Forms.Button CreateGameDelete;
+        private System.Windows.Forms.Button CreateGameAdd;
+        private System.Windows.Forms.Button CreateGameRe;
+        private System.Windows.Forms.Panel ComputerPanel;
+        private System.Windows.Forms.Button CreateComputerDelete;
+        private System.Windows.Forms.Button CreateComputerAdd;
+        private System.Windows.Forms.Button CreateComputerRe;
+        private System.Windows.Forms.Panel EventPanel;
+        private System.Windows.Forms.Button CreateEventDelete;
+        private System.Windows.Forms.Button CreateEventAdd;
+        private System.Windows.Forms.Button CreateEventRe;
+        private System.Windows.Forms.Panel SeatPanel;
+        private System.Windows.Forms.Button CreateSeatDelete;
+        private System.Windows.Forms.Button CreateSeatAdd;
+        private System.Windows.Forms.Button CreateSeatRe;
+        private System.Windows.Forms.Timer StaffDropTime;
+        private System.Windows.Forms.Timer LeaderDropTIme;
+        private System.Windows.Forms.Timer GameDropTime;
+        private System.Windows.Forms.Timer ComputerDropTime;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer SeatDropTime;
+        private System.Windows.Forms.Timer EventDropTimer;
     }
 }
 
