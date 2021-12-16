@@ -290,6 +290,33 @@
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
+            this.Computer_Delete = new System.Windows.Forms.TabPage();
+            this.FromDeleteComputerTOStaffPage = new System.Windows.Forms.Button();
+            this.DeleteComputerRow = new System.Windows.Forms.Button();
+            this.ComputerDeleteTable = new System.Windows.Forms.DataGridView();
+            this.ComputerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompterRAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Computer_NetSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.Game_Delete = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DeleteGameRow = new System.Windows.Forms.Button();
+            this.GameDeleteTable = new System.Windows.Forms.DataGridView();
+            this.Gname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Game_D = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.Seats_Delete = new System.Windows.Forms.TabPage();
+            this.FromSeatDeleteTOStaffPage = new System.Windows.Forms.Button();
+            this.DeleteSeatRow = new System.Windows.Forms.Button();
+            this.SeatDeleteTable = new System.Windows.Forms.DataGridView();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
             this.StaffDropTime = new System.Windows.Forms.Timer(this.components);
             this.LeaderDropTIme = new System.Windows.Forms.Timer(this.components);
             this.GameDropTime = new System.Windows.Forms.Timer(this.components);
@@ -297,39 +324,38 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.SeatDropTime = new System.Windows.Forms.Timer(this.components);
             this.EventDropTimer = new System.Windows.Forms.Timer(this.components);
-            this.Computer_Delete = new System.Windows.Forms.TabPage();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.ComputerDeleteTable = new System.Windows.Forms.DataGridView();
-            this.ComputerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompterRAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Computer_NetSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeleteComputerRow = new System.Windows.Forms.Button();
-            this.FromDeleteComputerTOStaffPage = new System.Windows.Forms.Button();
-            this.Game_Delete = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.DeleteGameRow = new System.Windows.Forms.Button();
-            this.GameDeleteTable = new System.Windows.Forms.DataGridView();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.Gname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Game_D = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seats_Delete = new System.Windows.Forms.TabPage();
-            this.FromSeatDeleteTOStaffPage = new System.Windows.Forms.Button();
-            this.DeleteSeatRow = new System.Windows.Forms.Button();
-            this.SeatDeleteTable = new System.Windows.Forms.DataGridView();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
+            this.LeaderBoard_Delete = new System.Windows.Forms.TabPage();
+            this.DeleteLeaderRow = new System.Windows.Forms.Button();
+            this.DeleteGamerTagDropDown = new System.Windows.Forms.ComboBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.DeleteGameDropDown = new System.Windows.Forms.ComboBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.LeaderBoardDeleteTable = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
             this.SeatNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PremiumStats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatGPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatRAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeatNet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PremiumStats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Event_Delete = new System.Windows.Forms.TabPage();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.DeleteEventRow = new System.Windows.Forms.Button();
+            this.DeleteEventTable = new System.Windows.Forms.DataGridView();
+            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -368,6 +394,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GameDeleteTable)).BeginInit();
             this.Seats_Delete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeatDeleteTable)).BeginInit();
+            this.LeaderBoard_Delete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaderBoardDeleteTable)).BeginInit();
+            this.Event_Delete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteEventTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -393,6 +423,8 @@
             this.tabControl1.Controls.Add(this.Computer_Delete);
             this.tabControl1.Controls.Add(this.Game_Delete);
             this.tabControl1.Controls.Add(this.Seats_Delete);
+            this.tabControl1.Controls.Add(this.LeaderBoard_Delete);
+            this.tabControl1.Controls.Add(this.Event_Delete);
             this.tabControl1.Location = new System.Drawing.Point(-7, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1946,7 +1978,7 @@
             this.CreateStaffRe.Name = "CreateStaffRe";
             this.CreateStaffRe.Size = new System.Drawing.Size(220, 97);
             this.CreateStaffRe.TabIndex = 6;
-            this.CreateStaffRe.Text = "Staff Account Management";
+            this.CreateStaffRe.Text = "Account Management";
             this.CreateStaffRe.UseVisualStyleBackColor = true;
             this.CreateStaffRe.Click += new System.EventHandler(this.CreateStaffRe_Click);
             // 
@@ -1971,6 +2003,7 @@
             this.CreateLeaderBoardDelete.TabIndex = 8;
             this.CreateLeaderBoardDelete.Text = "Delete";
             this.CreateLeaderBoardDelete.UseVisualStyleBackColor = true;
+            this.CreateLeaderBoardDelete.Click += new System.EventHandler(this.CreateLeaderBoardDelete_Click);
             // 
             // CreateLeaderBoardAdd
             // 
@@ -2102,6 +2135,7 @@
             this.CreateEventDelete.TabIndex = 8;
             this.CreateEventDelete.Text = "Delete";
             this.CreateEventDelete.UseVisualStyleBackColor = true;
+            this.CreateEventDelete.Click += new System.EventHandler(this.CreateEventDelete_Click);
             // 
             // CreateEventAdd
             // 
@@ -2222,9 +2256,9 @@
             this.StaffSupervisorID.AutoSize = true;
             this.StaffSupervisorID.Location = new System.Drawing.Point(527, 182);
             this.StaffSupervisorID.Name = "StaffSupervisorID";
-            this.StaffSupervisorID.Size = new System.Drawing.Size(61, 13);
+            this.StaffSupervisorID.Size = new System.Drawing.Size(77, 13);
             this.StaffSupervisorID.TabIndex = 34;
-            this.StaffSupervisorID.Text = "StaffID : ??";
+            this.StaffSupervisorID.Text = "StaffID : NULL";
             // 
             // StaffPosition
             // 
@@ -3084,30 +3118,6 @@
             this.label84.TabIndex = 87;
             this.label84.Text = "Cafe Azula Management Studio";
             // 
-            // StaffDropTime
-            // 
-            this.StaffDropTime.Tick += new System.EventHandler(this.StaffDropTime_Tick);
-            // 
-            // LeaderDropTIme
-            // 
-            this.LeaderDropTIme.Tick += new System.EventHandler(this.LeaderDropTIme_Tick);
-            // 
-            // GameDropTime
-            // 
-            this.GameDropTime.Tick += new System.EventHandler(this.GameDropTime_Tick);
-            // 
-            // ComputerDropTime
-            // 
-            this.ComputerDropTime.Tick += new System.EventHandler(this.ComputerDropTime_Tick);
-            // 
-            // SeatDropTime
-            // 
-            this.SeatDropTime.Tick += new System.EventHandler(this.SeatDropTime_Tick);
-            // 
-            // EventDropTimer
-            // 
-            this.EventDropTimer.Tick += new System.EventHandler(this.EventDropTimer_Tick);
-            // 
             // Computer_Delete
             // 
             this.Computer_Delete.Controls.Add(this.FromDeleteComputerTOStaffPage);
@@ -3122,25 +3132,24 @@
             this.Computer_Delete.Text = "Delete Computer";
             this.Computer_Delete.UseVisualStyleBackColor = true;
             // 
-            // label79
+            // FromDeleteComputerTOStaffPage
             // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(293, 39);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(221, 20);
-            this.label79.TabIndex = 90;
-            this.label79.Text = "Select the Computer to delete";
+            this.FromDeleteComputerTOStaffPage.Location = new System.Drawing.Point(129, 387);
+            this.FromDeleteComputerTOStaffPage.Name = "FromDeleteComputerTOStaffPage";
+            this.FromDeleteComputerTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromDeleteComputerTOStaffPage.TabIndex = 93;
+            this.FromDeleteComputerTOStaffPage.Text = "Back";
+            this.FromDeleteComputerTOStaffPage.UseVisualStyleBackColor = true;
             // 
-            // label85
+            // DeleteComputerRow
             // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(139, 0);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(532, 39);
-            this.label85.TabIndex = 89;
-            this.label85.Text = "Cafe Azula Management Studio";
+            this.DeleteComputerRow.Location = new System.Drawing.Point(532, 387);
+            this.DeleteComputerRow.Name = "DeleteComputerRow";
+            this.DeleteComputerRow.Size = new System.Drawing.Size(139, 23);
+            this.DeleteComputerRow.TabIndex = 92;
+            this.DeleteComputerRow.Text = "Delete Selected Computer";
+            this.DeleteComputerRow.UseVisualStyleBackColor = true;
+            this.DeleteComputerRow.Click += new System.EventHandler(this.DeleteComputerRow_Click);
             // 
             // ComputerDeleteTable
             // 
@@ -3191,24 +3200,25 @@
             this.Computer_NetSpeed.Name = "Computer_NetSpeed";
             this.Computer_NetSpeed.ReadOnly = true;
             // 
-            // DeleteComputerRow
+            // label79
             // 
-            this.DeleteComputerRow.Location = new System.Drawing.Point(532, 387);
-            this.DeleteComputerRow.Name = "DeleteComputerRow";
-            this.DeleteComputerRow.Size = new System.Drawing.Size(139, 23);
-            this.DeleteComputerRow.TabIndex = 92;
-            this.DeleteComputerRow.Text = "Delete Selected Computer";
-            this.DeleteComputerRow.UseVisualStyleBackColor = true;
-            this.DeleteComputerRow.Click += new System.EventHandler(this.DeleteComputerRow_Click);
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.Location = new System.Drawing.Point(293, 39);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(221, 20);
+            this.label79.TabIndex = 90;
+            this.label79.Text = "Select the Computer to delete";
             // 
-            // FromDeleteComputerTOStaffPage
+            // label85
             // 
-            this.FromDeleteComputerTOStaffPage.Location = new System.Drawing.Point(129, 387);
-            this.FromDeleteComputerTOStaffPage.Name = "FromDeleteComputerTOStaffPage";
-            this.FromDeleteComputerTOStaffPage.Size = new System.Drawing.Size(75, 23);
-            this.FromDeleteComputerTOStaffPage.TabIndex = 93;
-            this.FromDeleteComputerTOStaffPage.Text = "Back";
-            this.FromDeleteComputerTOStaffPage.UseVisualStyleBackColor = true;
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.Location = new System.Drawing.Point(139, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(532, 39);
+            this.label85.TabIndex = 89;
+            this.label85.Text = "Cafe Azula Management Studio";
             // 
             // Game_Delete
             // 
@@ -3261,26 +3271,6 @@
             this.GameDeleteTable.Size = new System.Drawing.Size(542, 283);
             this.GameDeleteTable.TabIndex = 96;
             // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(317, 39);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(195, 20);
-            this.label86.TabIndex = 95;
-            this.label86.Text = "Select the Game to delete";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(138, 0);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(532, 39);
-            this.label87.TabIndex = 94;
-            this.label87.Text = "Cafe Azula Management Studio";
-            // 
             // Gname
             // 
             this.Gname.HeaderText = "Game Name";
@@ -3306,6 +3296,26 @@
             this.Rating.HeaderText = "Rating";
             this.Rating.Name = "Rating";
             this.Rating.ReadOnly = true;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.Location = new System.Drawing.Point(317, 39);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(195, 20);
+            this.label86.TabIndex = 95;
+            this.label86.Text = "Select the Game to delete";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.Location = new System.Drawing.Point(138, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(532, 39);
+            this.label87.TabIndex = 94;
+            this.label87.Text = "Cafe Azula Management Studio";
             // 
             // Seats_Delete
             // 
@@ -3349,11 +3359,11 @@
             this.SeatDeleteTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SeatDeleteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SeatNo,
-            this.PremiumStats,
             this.SeatCPU,
             this.SeatGPU,
             this.SeatRAM,
-            this.SeatNet});
+            this.SeatNet,
+            this.PremiumStats});
             this.SeatDeleteTable.Location = new System.Drawing.Point(132, 85);
             this.SeatDeleteTable.Name = "SeatDeleteTable";
             this.SeatDeleteTable.ReadOnly = true;
@@ -3380,17 +3390,171 @@
             this.label89.TabIndex = 99;
             this.label89.Text = "Cafe Azula Management Studio";
             // 
+            // StaffDropTime
+            // 
+            this.StaffDropTime.Tick += new System.EventHandler(this.StaffDropTime_Tick);
+            // 
+            // LeaderDropTIme
+            // 
+            this.LeaderDropTIme.Tick += new System.EventHandler(this.LeaderDropTIme_Tick);
+            // 
+            // GameDropTime
+            // 
+            this.GameDropTime.Tick += new System.EventHandler(this.GameDropTime_Tick);
+            // 
+            // ComputerDropTime
+            // 
+            this.ComputerDropTime.Tick += new System.EventHandler(this.ComputerDropTime_Tick);
+            // 
+            // SeatDropTime
+            // 
+            this.SeatDropTime.Tick += new System.EventHandler(this.SeatDropTime_Tick);
+            // 
+            // EventDropTimer
+            // 
+            this.EventDropTimer.Tick += new System.EventHandler(this.EventDropTimer_Tick);
+            // 
+            // LeaderBoard_Delete
+            // 
+            this.LeaderBoard_Delete.Controls.Add(this.label96);
+            this.LeaderBoard_Delete.Controls.Add(this.label97);
+            this.LeaderBoard_Delete.Controls.Add(this.DeleteLeaderRow);
+            this.LeaderBoard_Delete.Controls.Add(this.DeleteGamerTagDropDown);
+            this.LeaderBoard_Delete.Controls.Add(this.label92);
+            this.LeaderBoard_Delete.Controls.Add(this.DeleteGameDropDown);
+            this.LeaderBoard_Delete.Controls.Add(this.label93);
+            this.LeaderBoard_Delete.Controls.Add(this.button4);
+            this.LeaderBoard_Delete.Controls.Add(this.LeaderBoardDeleteTable);
+            this.LeaderBoard_Delete.Location = new System.Drawing.Point(4, 22);
+            this.LeaderBoard_Delete.Name = "LeaderBoard_Delete";
+            this.LeaderBoard_Delete.Size = new System.Drawing.Size(806, 442);
+            this.LeaderBoard_Delete.TabIndex = 21;
+            this.LeaderBoard_Delete.Text = "Delete LeaderBoard";
+            this.LeaderBoard_Delete.UseVisualStyleBackColor = true;
+            // 
+            // DeleteLeaderRow
+            // 
+            this.DeleteLeaderRow.Location = new System.Drawing.Point(494, 394);
+            this.DeleteLeaderRow.Name = "DeleteLeaderRow";
+            this.DeleteLeaderRow.Size = new System.Drawing.Size(125, 23);
+            this.DeleteLeaderRow.TabIndex = 28;
+            this.DeleteLeaderRow.Text = "Delete Selected Row";
+            this.DeleteLeaderRow.UseVisualStyleBackColor = true;
+            this.DeleteLeaderRow.Click += new System.EventHandler(this.DeleteLeaderRow_Click);
+            // 
+            // DeleteGamerTagDropDown
+            // 
+            this.DeleteGamerTagDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DeleteGamerTagDropDown.FormattingEnabled = true;
+            this.DeleteGamerTagDropDown.Location = new System.Drawing.Point(655, 238);
+            this.DeleteGamerTagDropDown.Name = "DeleteGamerTagDropDown";
+            this.DeleteGamerTagDropDown.Size = new System.Drawing.Size(121, 21);
+            this.DeleteGamerTagDropDown.TabIndex = 23;
+            this.DeleteGamerTagDropDown.SelectedIndexChanged += new System.EventHandler(this.DeleteGamerTagDropDown_SelectedIndexChanged);
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(652, 222);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(114, 13);
+            this.label92.TabIndex = 22;
+            this.label92.Text = "Search by Gamer Tag:";
+            // 
+            // DeleteGameDropDown
+            // 
+            this.DeleteGameDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DeleteGameDropDown.FormattingEnabled = true;
+            this.DeleteGameDropDown.Location = new System.Drawing.Point(26, 238);
+            this.DeleteGameDropDown.Name = "DeleteGameDropDown";
+            this.DeleteGameDropDown.Size = new System.Drawing.Size(121, 21);
+            this.DeleteGameDropDown.TabIndex = 21;
+            this.DeleteGameDropDown.SelectedIndexChanged += new System.EventHandler(this.DeleteGameDropDown_SelectedIndexChanged);
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(23, 222);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(89, 13);
+            this.label93.TabIndex = 20;
+            this.label93.Text = "Search by Game:";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(176, 394);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Back";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // LeaderBoardDeleteTable
+            // 
+            this.LeaderBoardDeleteTable.AllowUserToAddRows = false;
+            this.LeaderBoardDeleteTable.AllowUserToDeleteRows = false;
+            this.LeaderBoardDeleteTable.AllowUserToResizeColumns = false;
+            this.LeaderBoardDeleteTable.AllowUserToResizeRows = false;
+            this.LeaderBoardDeleteTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LeaderBoardDeleteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.LeaderBoardDeleteTable.Location = new System.Drawing.Point(176, 105);
+            this.LeaderBoardDeleteTable.Name = "LeaderBoardDeleteTable";
+            this.LeaderBoardDeleteTable.Size = new System.Drawing.Size(443, 283);
+            this.LeaderBoardDeleteTable.TabIndex = 18;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Rank";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Game";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Gamer Tag";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.Location = new System.Drawing.Point(310, 39);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(203, 20);
+            this.label96.TabIndex = 102;
+            this.label96.Text = "Select the Record to delete";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label97.Location = new System.Drawing.Point(144, 0);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(532, 39);
+            this.label97.TabIndex = 101;
+            this.label97.Text = "Cafe Azula Management Studio";
+            // 
             // SeatNo
             // 
             this.SeatNo.HeaderText = "Seat Identity No";
             this.SeatNo.Name = "SeatNo";
             this.SeatNo.ReadOnly = true;
-            // 
-            // PremiumStats
-            // 
-            this.PremiumStats.HeaderText = "Premium Status";
-            this.PremiumStats.Name = "PremiumStats";
-            this.PremiumStats.ReadOnly = true;
             // 
             // SeatCPU
             // 
@@ -3415,6 +3579,122 @@
             this.SeatNet.HeaderText = "Net Speed";
             this.SeatNet.Name = "SeatNet";
             this.SeatNet.ReadOnly = true;
+            // 
+            // PremiumStats
+            // 
+            this.PremiumStats.HeaderText = "Premium Status";
+            this.PremiumStats.Name = "PremiumStats";
+            this.PremiumStats.ReadOnly = true;
+            // 
+            // Event_Delete
+            // 
+            this.Event_Delete.Controls.Add(this.button2);
+            this.Event_Delete.Controls.Add(this.DeleteEventRow);
+            this.Event_Delete.Controls.Add(this.DeleteEventTable);
+            this.Event_Delete.Controls.Add(this.label90);
+            this.Event_Delete.Controls.Add(this.label91);
+            this.Event_Delete.Location = new System.Drawing.Point(4, 22);
+            this.Event_Delete.Name = "Event_Delete";
+            this.Event_Delete.Size = new System.Drawing.Size(806, 442);
+            this.Event_Delete.TabIndex = 22;
+            this.Event_Delete.Text = "Delete Event";
+            this.Event_Delete.UseVisualStyleBackColor = true;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.Location = new System.Drawing.Point(286, 39);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(192, 20);
+            this.label90.TabIndex = 104;
+            this.label90.Text = "Select the Event to delete";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.Location = new System.Drawing.Point(120, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(532, 39);
+            this.label91.TabIndex = 103;
+            this.label91.Text = "Cafe Azula Management Studio";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(92, 399);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 107;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // DeleteEventRow
+            // 
+            this.DeleteEventRow.Location = new System.Drawing.Point(543, 399);
+            this.DeleteEventRow.Name = "DeleteEventRow";
+            this.DeleteEventRow.Size = new System.Drawing.Size(133, 23);
+            this.DeleteEventRow.TabIndex = 106;
+            this.DeleteEventRow.Text = "Delete Seleted Event";
+            this.DeleteEventRow.UseVisualStyleBackColor = true;
+            this.DeleteEventRow.Click += new System.EventHandler(this.DeleteEventRow_Click);
+            // 
+            // DeleteEventTable
+            // 
+            this.DeleteEventTable.AllowUserToAddRows = false;
+            this.DeleteEventTable.AllowUserToDeleteRows = false;
+            this.DeleteEventTable.AllowUserToOrderColumns = true;
+            this.DeleteEventTable.AllowUserToResizeColumns = false;
+            this.DeleteEventTable.AllowUserToResizeRows = false;
+            this.DeleteEventTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DeleteEventTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EventID,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.DeleteEventTable.Location = new System.Drawing.Point(92, 93);
+            this.DeleteEventTable.Name = "DeleteEventTable";
+            this.DeleteEventTable.Size = new System.Drawing.Size(584, 295);
+            this.DeleteEventTable.TabIndex = 105;
+            // 
+            // EventID
+            // 
+            this.EventID.HeaderText = "Event Identity No";
+            this.EventID.Name = "EventID";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Event Name";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Game";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Start Time";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "End Time";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Participants /Team";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // Form1
             // 
@@ -3485,6 +3765,12 @@
             this.Seats_Delete.ResumeLayout(false);
             this.Seats_Delete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeatDeleteTable)).EndInit();
+            this.LeaderBoard_Delete.ResumeLayout(false);
+            this.LeaderBoard_Delete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaderBoardDeleteTable)).EndInit();
+            this.Event_Delete.ResumeLayout(false);
+            this.Event_Delete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteEventTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3786,12 +4072,38 @@
         private System.Windows.Forms.DataGridView SeatDeleteTable;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.TabPage LeaderBoard_Delete;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Button DeleteLeaderRow;
+        private System.Windows.Forms.ComboBox DeleteGamerTagDropDown;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.ComboBox DeleteGameDropDown;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView LeaderBoardDeleteTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeatNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PremiumStats;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeatCPU;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeatGPU;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeatRAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeatNet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PremiumStats;
+        private System.Windows.Forms.TabPage Event_Delete;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DeleteEventRow;
+        private System.Windows.Forms.DataGridView DeleteEventTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }
 

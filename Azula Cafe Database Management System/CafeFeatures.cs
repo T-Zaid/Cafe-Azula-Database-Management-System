@@ -87,6 +87,15 @@ namespace Azula_Cafe_Database_Management_System
             return 0;
         }
 
+        public int deleteEvent(int Eventid)
+        {
+            string sql = "Delete from Events where EventID = " + Eventid;
+            cmd = new SqlCommand(sql, cnn);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return 1;
+        }
+
         public int InsertComputers(string gpu, string cpu, int ram, float netspeed)
         {
             string sql = "select * from Computers where CPU = '" + cpu + "' and GPU = '" + gpu + "' and RAM = " + ram + " and NetSpeed = " + netspeed;
@@ -162,7 +171,7 @@ namespace Azula_Cafe_Database_Management_System
 
         public int deletefromLeaderBoard(int gameid, int customerid)
         {
-            string sql = "Delete from Leaderboard where where GameID = " + gameid + " and CustomerID = " + customerid;
+            string sql = "Delete from Leaderboard where GameID = " + gameid + " and CustomerID = " + customerid;
             cmd = new SqlCommand(sql, cnn);
             cmd.ExecuteNonQuery();
             return 1;

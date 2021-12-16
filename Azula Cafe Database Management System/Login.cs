@@ -63,6 +63,11 @@ namespace Azula_Cafe_Database_Management_System
             return Staff_or_Cust;
         }
 
+        public int deleteAccount(int Accid)
+        {
+            return 1;
+        }
+
         public int CustomerAccountCreate(string Name, string phone, string username, string password)
         {
             string sql = "select * from Accounts where Username = '" + username + "'";
@@ -130,7 +135,11 @@ namespace Azula_Cafe_Database_Management_System
                     MaxStf = Convert.ToInt32(obj);
 
                 sql1 = "Insert into Accounts (AccountNo, Username, AccPassword) values (" + (MaxAcc + 1) + ", '" + username + "', '" + password + "')";
-                sql2 = "Insert into Staff (StaffID, StaffName, PhoneNo, Salary, AccountNo, Position, Supervisor_ID) values (" + (MaxStf + 1) + ", '" + Name + "', '" + phone + "', " + salary + ", " + (MaxAcc + 1) + ", '" + Position + "', " + supervisorID + ")";
+                if(supervisorID != 0)
+                    sql2 = "Insert into Staff (StaffID, StaffName, PhoneNo, Salary, AccountNo, Position, Supervisor_ID) values (" + (MaxStf + 1) + ", '" + Name + "', '" + phone + "', " + salary + ", " + (MaxAcc + 1) + ", '" + Position + "', " + supervisorID + ")";
+                else
+                    sql2 = "Insert into Staff (StaffID, StaffName, PhoneNo, Salary, AccountNo, Position, Supervisor_ID) values (" + (MaxStf + 1) + ", '" + Name + "', '" + phone + "', " + salary + ", " + (MaxAcc + 1) + ", '" + Position + "', NULL)";
+
                 cmd = new SqlCommand(sql1, cnn);
                 cmd.ExecuteNonQuery();
                 cmd = new SqlCommand(sql2, cnn);

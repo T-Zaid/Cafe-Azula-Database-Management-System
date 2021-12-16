@@ -618,7 +618,11 @@ namespace Azula_Cafe_Database_Management_System
             Login log = new Login(cnn);
             if (StaffName.Text.Length > 0 && StaffPhone.Text.Length > 0 && StaffPassword.Text.Length > 0 && StaffUsername.Text.Length > 0 && StaffSalary.Text.Length > 0 && StaffPosition.Text.Length > 0)
             {
-                int success = log.StaffAccountCreate(StaffName.Text.ToString(), StaffUsername.Text.ToString(), StaffPassword.Text.ToString(), StaffPhone.Text.ToString(), StaffPosition.Text.ToString(), trackid[StaffSupervisor.SelectedIndex], Convert.ToInt32(StaffSalary.Text));
+                int success;
+                if(StaffSupervisor.SelectedIndex != -1)
+                    success = log.StaffAccountCreate(StaffName.Text.ToString(), StaffUsername.Text.ToString(), StaffPassword.Text.ToString(), StaffPhone.Text.ToString(), StaffPosition.Text.ToString(), trackid[StaffSupervisor.SelectedIndex], Convert.ToInt32(StaffSalary.Text));
+                else
+                    success = log.StaffAccountCreate(StaffName.Text.ToString(), StaffUsername.Text.ToString(), StaffPassword.Text.ToString(), StaffPhone.Text.ToString(), StaffPosition.Text.ToString(), 0, Convert.ToInt32(StaffSalary.Text));
                 if (success == 1)
                 {
                     MessageBox.Show("Welcome Onboard Captain !!", "Creation Successfull");
@@ -1330,7 +1334,7 @@ namespace Azula_Cafe_Database_Management_System
                 trackid.Add(Convert.ToInt32(reader["StaffID"].ToString()));
                 StaffSupervisor.Items.Add(reader["StaffName"]);
             }
-            StaffSupervisor.SelectedIndex = 0;
+            StaffSupervisor.SelectedIndex = -1;
             reader.Close();
 
             Login log = new Login(cnn);
@@ -1554,7 +1558,7 @@ namespace Azula_Cafe_Database_Management_System
         {
             if (SeatDeleteTable.RowCount != 0)
             {
-                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Game from Cafe Azula Database?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Seat from Cafe Azula Database?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (yesNo == DialogResult.Yes)
                 {
@@ -1563,10 +1567,149 @@ namespace Azula_Cafe_Database_Management_System
 
                     if (success == 1)
                     {
-                        MessageBox.Show("Game successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Seat successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //tabControl1.SelectedTab = StaffPageReloaded;    //A workaround to get the performClick function working
                         //CreateComputerDelete.PerformClick();
                         CreateSeatDelete_Click(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        private void CreateLeaderBoardDelete_Click(object sender, EventArgs e)
+        {
+            DeleteGameDropDown.Items.Clear();
+            DeleteGamerTagDropDown.Items.Clear();
+            LeaderBoardDeleteTable.Rows.Clear();
+
+            string sql = "SELECT * FROM Leaderboard_Details ORDER BY Rank asc"; // Leaderboard_Details is a view
+            SqlCommand cmd = new SqlCommand(sql, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                LeaderBoardDeleteTable.Rows.Add(row);
+
+                if (!DeleteGameDropDown.Items.Contains(reader["Game"].ToString()))
+                {
+                    DeleteGameDropDown.Items.Add(reader["Game"].ToString());
+                }
+
+                if (!DeleteGamerTagDropDown.Items.Contains(reader["Gamer Tag"].ToString()))
+                {
+                    DeleteGamerTagDropDown.Items.Add(reader["Gamer Tag"].ToString());
+                }
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            tabControl1.SelectedTab = LeaderBoard_Delete;
+        }
+
+        private void DeleteGameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DeleteGameDropDown.SelectedIndex != -1)
+            {
+                LeaderBoardDeleteTable.Rows.Clear();
+                DeleteGamerTagDropDown.SelectedIndex = -1;
+
+                string newQuery = "SELECT * FROM Leaderboard_Details WHERE Game like '" + DeleteGameDropDown.SelectedItem.ToString() + "%' ORDER BY Rank asc";
+                SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                    LeaderBoardDeleteTable.Rows.Add(row);
+                }
+
+                reader.Close();
+                cmd.Dispose();
+            }
+        }
+
+        private void DeleteGamerTagDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DeleteGamerTagDropDown.SelectedIndex != -1)
+            {
+                LeaderBoardDeleteTable.Rows.Clear();
+                DeleteGameDropDown.SelectedIndex = -1;
+
+                string newQuery = "SELECT * FROM Leaderboard_Details WHERE \"Gamer Tag\" like '" + DeleteGamerTagDropDown.SelectedItem.ToString() + "%' ORDER BY Rank asc";
+                SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string[] row = { reader["Rank"].ToString(), reader["Game"].ToString(), reader["Gamer Tag"].ToString(), reader["Name"].ToString() };
+                    LeaderBoardDeleteTable.Rows.Add(row);
+                }
+
+                reader.Close();
+                cmd.Dispose();
+            }
+        }
+
+        private void DeleteLeaderRow_Click(object sender, EventArgs e)
+        {
+            if (LeaderBoardDeleteTable.RowCount != 0)
+            {
+                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Record from Cafe Azula LeaderBoard?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (yesNo == DialogResult.Yes)
+                {
+                    CafeFeatures feats = new CafeFeatures(cnn);
+                    string newQuery = "Select GameID FROM Games WHERE GameName = '" + LeaderBoardDeleteTable.CurrentRow.Cells[1].Value.ToString() + "'";
+                    String newQuery2 = "Select Customers.CustomerID from Accounts, Customers where Accounts.AccountNo = Customers.AccountNo and Accounts.Username = '" + LeaderBoardDeleteTable.CurrentRow.Cells[2].Value.ToString() + "'";
+                    SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                    SqlCommand cmd2 = new SqlCommand(newQuery2, cnn);
+                    int success = feats.deletefromLeaderBoard(Convert.ToInt32(cmd.ExecuteScalar()), Convert.ToInt32(cmd2.ExecuteScalar()));
+                    if (success == 1)
+                    {
+                        MessageBox.Show("LeaderBoard Record successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //tabControl1.SelectedTab = StaffPageReloaded;    //A workaround to get the performClick function working
+                        //CreateComputerDelete.PerformClick();
+                        CreateLeaderBoardDelete_Click(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        private void CreateEventDelete_Click(object sender, EventArgs e)
+        {
+            DeleteEventTable.Rows.Clear();
+            string newQuery = "SELECT * FROM Events AS E LEFT OUTER JOIN Games AS G ON E.GameID = G.GameID WHERE Start_Time > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["EventID"].ToString(), reader["EventName"].ToString(), reader["GameName"].ToString(), reader["Start_Time"].ToString(), reader["End_Time"].ToString(), reader["Max_Participants"].ToString() };
+                DeleteEventTable.Rows.Add(row);
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            tabControl1.SelectedTab = Event_Delete;
+        }
+
+        private void DeleteEventRow_Click(object sender, EventArgs e)
+        {
+            if (DeleteEventTable.RowCount != 0)
+            {
+                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Event from Cafe Azula Events?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (yesNo == DialogResult.Yes)
+                {
+                    CafeFeatures feats = new CafeFeatures(cnn);
+                    int success = feats.deleteEvent(Convert.ToInt32(DeleteEventTable.CurrentRow.Cells[0].Value.ToString()));
+                    if (success == 1)
+                    {
+                        MessageBox.Show("Event successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CreateEventDelete_Click(this, EventArgs.Empty);
                     }
                 }
             }
