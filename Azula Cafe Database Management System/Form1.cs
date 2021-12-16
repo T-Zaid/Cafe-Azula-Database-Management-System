@@ -1423,6 +1423,8 @@ namespace Azula_Cafe_Database_Management_System
                 ComputerDropDownSeats.Items.Add(reader["ComputerID"]);
             }
             tabControl1.SelectedTab = Seats_Add;
+            ComputerDropDownSeats.SelectedIndex = 0;
+            PremiumStatusSeats.SelectedIndex = 0;
         }
 
         private void ComputerDropDownSeats_SelectedIndexChanged(object sender, EventArgs e)
@@ -1432,6 +1434,142 @@ namespace Azula_Cafe_Database_Management_System
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
             InstalledCompInfo.Text = "CPU : " + reader["CPU"].ToString() + "\nGPU: " + reader["GPU"].ToString() + "\nRam : " + reader["RAM"].ToString() + "\nNet Speed: " + reader["NetSpeed"].ToString();
+        }
+
+        private void AddSeatsButton_Click(object sender, EventArgs e)
+        {
+            CafeFeatures feats = new CafeFeatures(cnn);
+            int success = feats.InsertSeat(Convert.ToInt32(ComputerDropDownSeats.Text.ToString()), Convert.ToInt32(PremiumStatusSeats.Text.ToString()));
+            if (success == 1)
+            {
+                MessageBox.Show("New Seat Added to Cafe Azula", "Seat Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControl1.SelectedTab = StaffPageReloaded;
+            }
+        }
+
+        private void CreateComputerDelete_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from Computers";
+            SqlCommand cmd = new SqlCommand(sql, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            ComputerDeleteTable.Rows.Clear();
+
+            while(reader.Read())
+            {
+                string[] row = { reader["ComputerID"].ToString(), reader["CPU"].ToString(), reader["GPU"].ToString(), reader["RAM"].ToString(), reader["NetSpeed"].ToString() };
+                ComputerDeleteTable.Rows.Add(row);
+            }
+            reader.Close();
+            cmd.Dispose();
+            tabControl1.SelectedTab = Computer_Delete;
+        }
+
+        private void DeleteComputerRow_Click(object sender, EventArgs e)
+        {
+            if (ComputerDeleteTable.RowCount != 0)
+            {
+                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Computer from Cafe Azula Database?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (yesNo == DialogResult.Yes)
+                {
+                    CafeFeatures feats = new CafeFeatures(cnn);
+                    int success = feats.deleteComputer(Convert.ToInt32(CancelBookingTable.CurrentRow.Cells[0].Value.ToString()));
+
+                    if (success == 1)
+                    {
+                        MessageBox.Show("Computer successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //tabControl1.SelectedTab = StaffPageReloaded;    //A workaround to get the performClick function working
+                        //CreateComputerDelete.PerformClick();
+                        CreateComputerDelete_Click(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        private void CreateGameDelete_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from Games";
+            SqlCommand cmd = new SqlCommand(sql, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            GameDeleteTable.Rows.Clear();
+
+            while (reader.Read())
+            {
+                string[] row = { reader["GameName"].ToString(), reader["Genre"].ToString(), reader["GameDescription"].ToString(), reader["Popularity"].ToString() };
+                GameDeleteTable.Rows.Add(row);
+            }
+            reader.Close();
+            cmd.Dispose();
+            tabControl1.SelectedTab = Game_Delete;
+        }
+
+        private void DeleteGameRow_Click(object sender, EventArgs e)
+        {
+            if (GameDeleteTable.RowCount != 0)
+            {
+                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Game from Cafe Azula Database?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (yesNo == DialogResult.Yes)
+                {
+                    CafeFeatures feats = new CafeFeatures(cnn);
+                    string newQuery = "Select GameID FROM Games WHERE GameName = '" + GameDeleteTable.CurrentRow.Cells[0].Value.ToString() + "'";
+                    SqlCommand cmd = new SqlCommand(newQuery, cnn);
+                    int success = feats.deleteGame(Convert.ToInt32(cmd.ExecuteScalar()));
+                    if (success == 1)
+                    {
+                        MessageBox.Show("Game successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //tabControl1.SelectedTab = StaffPageReloaded;    //A workaround to get the performClick function working
+                        //CreateComputerDelete.PerformClick();
+                        CreateGameDelete_Click(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        private void CreateSeatDelete_Click(object sender, EventArgs e)
+        {
+            string sql = "Select * from Seats left join Computers on Seats.ComputerID = Computers.ComputerID";
+            SqlCommand cmd = new SqlCommand(sql, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            SeatDeleteTable.Rows.Clear();
+            while(reader.Read())
+            {
+                if (reader["ComputerID"].ToString().Length > 0)
+                {
+                    string[] row = {reader["Seatno"].ToString(), reader["CPU"].ToString(), reader["GPU"].ToString(), reader["RAM"].ToString(), reader["NetSpeed"].ToString(), reader["Premium_YES_NO"].ToString()};
+                    SeatDeleteTable.Rows.Add(row);
+                }
+                else
+                {
+                    string[] row = { reader["Seatno"].ToString(), "NULL", "NULL", "NULL", "NULL", reader["Premium_YES_NO"].ToString() };
+                    SeatDeleteTable.Rows.Add(row);
+                }
+            }
+            reader.Close();
+            cmd.Dispose();
+            tabControl1.SelectedTab = Seats_Delete;
+        }
+
+        private void DeleteSeatRow_Click(object sender, EventArgs e)
+        {
+            if (SeatDeleteTable.RowCount != 0)
+            {
+                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Game from Cafe Azula Database?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (yesNo == DialogResult.Yes)
+                {
+                    CafeFeatures feats = new CafeFeatures(cnn);
+                    int success = feats.DeleteSeat(Convert.ToInt32(SeatDeleteTable.CurrentRow.Cells[0].Value.ToString()));
+
+                    if (success == 1)
+                    {
+                        MessageBox.Show("Game successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //tabControl1.SelectedTab = StaffPageReloaded;    //A workaround to get the performClick function working
+                        //CreateComputerDelete.PerformClick();
+                        CreateSeatDelete_Click(this, EventArgs.Empty);
+                    }
+                }
+            }
         }
 
         private void ProfilePageBackButton_Click(object sender, EventArgs e)

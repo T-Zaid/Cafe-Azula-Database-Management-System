@@ -175,6 +175,31 @@
             this.StaffLabelName = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.StaffPageReloaded = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.StaffPanel = new System.Windows.Forms.Panel();
+            this.CreateStaffDelete = new System.Windows.Forms.Button();
+            this.CreateStaffAdd = new System.Windows.Forms.Button();
+            this.CreateStaffRe = new System.Windows.Forms.Button();
+            this.LeaderBoardPanel = new System.Windows.Forms.Panel();
+            this.CreateLeaderBoardDelete = new System.Windows.Forms.Button();
+            this.CreateLeaderBoardAdd = new System.Windows.Forms.Button();
+            this.CreateLeaderBoardRe = new System.Windows.Forms.Button();
+            this.GamePanel = new System.Windows.Forms.Panel();
+            this.CreateGameDelete = new System.Windows.Forms.Button();
+            this.CreateGameAdd = new System.Windows.Forms.Button();
+            this.CreateGameRe = new System.Windows.Forms.Button();
+            this.ComputerPanel = new System.Windows.Forms.Panel();
+            this.CreateComputerDelete = new System.Windows.Forms.Button();
+            this.CreateComputerAdd = new System.Windows.Forms.Button();
+            this.CreateComputerRe = new System.Windows.Forms.Button();
+            this.EventPanel = new System.Windows.Forms.Panel();
+            this.CreateEventDelete = new System.Windows.Forms.Button();
+            this.CreateEventAdd = new System.Windows.Forms.Button();
+            this.CreateEventRe = new System.Windows.Forms.Button();
+            this.SeatPanel = new System.Windows.Forms.Panel();
+            this.CreateSeatDelete = new System.Windows.Forms.Button();
+            this.CreateSeatAdd = new System.Windows.Forms.Button();
+            this.CreateSeatRe = new System.Windows.Forms.Button();
             this.StaffNameRe = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.StaffAccReg = new System.Windows.Forms.TabPage();
@@ -256,6 +281,7 @@
             this.label57 = new System.Windows.Forms.Label();
             this.EventStartDate = new System.Windows.Forms.DateTimePicker();
             this.Seats_Add = new System.Windows.Forms.TabPage();
+            this.InstalledCompInfo = new System.Windows.Forms.Label();
             this.PremiumStatusSeats = new System.Windows.Forms.ComboBox();
             this.AddSeatsButton = new System.Windows.Forms.Button();
             this.FromAddSeatTOStaffPage = new System.Windows.Forms.Button();
@@ -264,31 +290,6 @@
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.StaffPanel = new System.Windows.Forms.Panel();
-            this.CreateStaffRe = new System.Windows.Forms.Button();
-            this.CreateStaffAdd = new System.Windows.Forms.Button();
-            this.CreateStaffDelete = new System.Windows.Forms.Button();
-            this.LeaderBoardPanel = new System.Windows.Forms.Panel();
-            this.CreateLeaderBoardDelete = new System.Windows.Forms.Button();
-            this.CreateLeaderBoardAdd = new System.Windows.Forms.Button();
-            this.CreateLeaderBoardRe = new System.Windows.Forms.Button();
-            this.GamePanel = new System.Windows.Forms.Panel();
-            this.CreateGameDelete = new System.Windows.Forms.Button();
-            this.CreateGameAdd = new System.Windows.Forms.Button();
-            this.CreateGameRe = new System.Windows.Forms.Button();
-            this.ComputerPanel = new System.Windows.Forms.Panel();
-            this.CreateComputerDelete = new System.Windows.Forms.Button();
-            this.CreateComputerAdd = new System.Windows.Forms.Button();
-            this.CreateComputerRe = new System.Windows.Forms.Button();
-            this.EventPanel = new System.Windows.Forms.Panel();
-            this.CreateEventDelete = new System.Windows.Forms.Button();
-            this.CreateEventAdd = new System.Windows.Forms.Button();
-            this.CreateEventRe = new System.Windows.Forms.Button();
-            this.SeatPanel = new System.Windows.Forms.Panel();
-            this.CreateSeatDelete = new System.Windows.Forms.Button();
-            this.CreateSeatAdd = new System.Windows.Forms.Button();
-            this.CreateSeatRe = new System.Windows.Forms.Button();
             this.StaffDropTime = new System.Windows.Forms.Timer(this.components);
             this.LeaderDropTIme = new System.Windows.Forms.Timer(this.components);
             this.GameDropTime = new System.Windows.Forms.Timer(this.components);
@@ -296,7 +297,39 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.SeatDropTime = new System.Windows.Forms.Timer(this.components);
             this.EventDropTimer = new System.Windows.Forms.Timer(this.components);
-            this.InstalledCompInfo = new System.Windows.Forms.Label();
+            this.Computer_Delete = new System.Windows.Forms.TabPage();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.ComputerDeleteTable = new System.Windows.Forms.DataGridView();
+            this.ComputerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompterRAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Computer_NetSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteComputerRow = new System.Windows.Forms.Button();
+            this.FromDeleteComputerTOStaffPage = new System.Windows.Forms.Button();
+            this.Game_Delete = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DeleteGameRow = new System.Windows.Forms.Button();
+            this.GameDeleteTable = new System.Windows.Forms.DataGridView();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.Gname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Game_D = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seats_Delete = new System.Windows.Forms.TabPage();
+            this.FromSeatDeleteTOStaffPage = new System.Windows.Forms.Button();
+            this.DeleteSeatRow = new System.Windows.Forms.Button();
+            this.SeatDeleteTable = new System.Windows.Forms.DataGridView();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.SeatNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PremiumStats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeatCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeatGPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeatRAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeatNet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -315,13 +348,6 @@
             this.ViewProfilePage.SuspendLayout();
             this.StaffPage.SuspendLayout();
             this.StaffPageReloaded.SuspendLayout();
-            this.StaffAccReg.SuspendLayout();
-            this.Game_Add.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PopularityUpdown)).BeginInit();
-            this.Computer_Add.SuspendLayout();
-            this.LeaderBoard_Add.SuspendLayout();
-            this.Event_Add.SuspendLayout();
-            this.Seats_Add.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.StaffPanel.SuspendLayout();
             this.LeaderBoardPanel.SuspendLayout();
@@ -329,6 +355,19 @@
             this.ComputerPanel.SuspendLayout();
             this.EventPanel.SuspendLayout();
             this.SeatPanel.SuspendLayout();
+            this.StaffAccReg.SuspendLayout();
+            this.Game_Add.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PopularityUpdown)).BeginInit();
+            this.Computer_Add.SuspendLayout();
+            this.LeaderBoard_Add.SuspendLayout();
+            this.Event_Add.SuspendLayout();
+            this.Seats_Add.SuspendLayout();
+            this.Computer_Delete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComputerDeleteTable)).BeginInit();
+            this.Game_Delete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GameDeleteTable)).BeginInit();
+            this.Seats_Delete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SeatDeleteTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -351,6 +390,9 @@
             this.tabControl1.Controls.Add(this.LeaderBoard_Add);
             this.tabControl1.Controls.Add(this.Event_Add);
             this.tabControl1.Controls.Add(this.Seats_Add);
+            this.tabControl1.Controls.Add(this.Computer_Delete);
+            this.tabControl1.Controls.Add(this.Game_Delete);
+            this.tabControl1.Controls.Add(this.Seats_Delete);
             this.tabControl1.Location = new System.Drawing.Point(-7, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1851,6 +1893,281 @@
             this.StaffPageReloaded.Text = "StaffReloaded";
             this.StaffPageReloaded.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.StaffPanel);
+            this.flowLayoutPanel1.Controls.Add(this.LeaderBoardPanel);
+            this.flowLayoutPanel1.Controls.Add(this.GamePanel);
+            this.flowLayoutPanel1.Controls.Add(this.ComputerPanel);
+            this.flowLayoutPanel1.Controls.Add(this.EventPanel);
+            this.flowLayoutPanel1.Controls.Add(this.SeatPanel);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 91);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(696, 313);
+            this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // StaffPanel
+            // 
+            this.StaffPanel.Controls.Add(this.CreateStaffDelete);
+            this.StaffPanel.Controls.Add(this.CreateStaffAdd);
+            this.StaffPanel.Controls.Add(this.CreateStaffRe);
+            this.StaffPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.StaffPanel.Location = new System.Drawing.Point(3, 3);
+            this.StaffPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.StaffPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.StaffPanel.Name = "StaffPanel";
+            this.StaffPanel.Size = new System.Drawing.Size(225, 100);
+            this.StaffPanel.TabIndex = 0;
+            // 
+            // CreateStaffDelete
+            // 
+            this.CreateStaffDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateStaffDelete.Name = "CreateStaffDelete";
+            this.CreateStaffDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateStaffDelete.TabIndex = 8;
+            this.CreateStaffDelete.Text = "Delete";
+            this.CreateStaffDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateStaffAdd
+            // 
+            this.CreateStaffAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateStaffAdd.Name = "CreateStaffAdd";
+            this.CreateStaffAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateStaffAdd.TabIndex = 7;
+            this.CreateStaffAdd.Text = "Add";
+            this.CreateStaffAdd.UseVisualStyleBackColor = true;
+            this.CreateStaffAdd.Click += new System.EventHandler(this.CreateStaffAdd_Click);
+            // 
+            // CreateStaffRe
+            // 
+            this.CreateStaffRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateStaffRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateStaffRe.Name = "CreateStaffRe";
+            this.CreateStaffRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateStaffRe.TabIndex = 6;
+            this.CreateStaffRe.Text = "Staff Account Management";
+            this.CreateStaffRe.UseVisualStyleBackColor = true;
+            this.CreateStaffRe.Click += new System.EventHandler(this.CreateStaffRe_Click);
+            // 
+            // LeaderBoardPanel
+            // 
+            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardDelete);
+            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardAdd);
+            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardRe);
+            this.LeaderBoardPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LeaderBoardPanel.Location = new System.Drawing.Point(234, 3);
+            this.LeaderBoardPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.LeaderBoardPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.LeaderBoardPanel.Name = "LeaderBoardPanel";
+            this.LeaderBoardPanel.Size = new System.Drawing.Size(225, 100);
+            this.LeaderBoardPanel.TabIndex = 1;
+            // 
+            // CreateLeaderBoardDelete
+            // 
+            this.CreateLeaderBoardDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateLeaderBoardDelete.Name = "CreateLeaderBoardDelete";
+            this.CreateLeaderBoardDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateLeaderBoardDelete.TabIndex = 8;
+            this.CreateLeaderBoardDelete.Text = "Delete";
+            this.CreateLeaderBoardDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateLeaderBoardAdd
+            // 
+            this.CreateLeaderBoardAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateLeaderBoardAdd.Name = "CreateLeaderBoardAdd";
+            this.CreateLeaderBoardAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateLeaderBoardAdd.TabIndex = 7;
+            this.CreateLeaderBoardAdd.Text = "Add";
+            this.CreateLeaderBoardAdd.UseVisualStyleBackColor = true;
+            this.CreateLeaderBoardAdd.Click += new System.EventHandler(this.CreateLeaderBoardAdd_Click);
+            // 
+            // CreateLeaderBoardRe
+            // 
+            this.CreateLeaderBoardRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateLeaderBoardRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateLeaderBoardRe.Name = "CreateLeaderBoardRe";
+            this.CreateLeaderBoardRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateLeaderBoardRe.TabIndex = 6;
+            this.CreateLeaderBoardRe.Text = "Leaderboard Management";
+            this.CreateLeaderBoardRe.UseVisualStyleBackColor = true;
+            this.CreateLeaderBoardRe.Click += new System.EventHandler(this.CreateLeaderBoardRe_Click);
+            // 
+            // GamePanel
+            // 
+            this.GamePanel.Controls.Add(this.CreateGameDelete);
+            this.GamePanel.Controls.Add(this.CreateGameAdd);
+            this.GamePanel.Controls.Add(this.CreateGameRe);
+            this.GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GamePanel.Location = new System.Drawing.Point(465, 3);
+            this.GamePanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.GamePanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.GamePanel.Name = "GamePanel";
+            this.GamePanel.Size = new System.Drawing.Size(225, 100);
+            this.GamePanel.TabIndex = 2;
+            // 
+            // CreateGameDelete
+            // 
+            this.CreateGameDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateGameDelete.Name = "CreateGameDelete";
+            this.CreateGameDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateGameDelete.TabIndex = 8;
+            this.CreateGameDelete.Text = "Delete";
+            this.CreateGameDelete.UseVisualStyleBackColor = true;
+            this.CreateGameDelete.Click += new System.EventHandler(this.CreateGameDelete_Click);
+            // 
+            // CreateGameAdd
+            // 
+            this.CreateGameAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateGameAdd.Name = "CreateGameAdd";
+            this.CreateGameAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateGameAdd.TabIndex = 7;
+            this.CreateGameAdd.Text = "Add";
+            this.CreateGameAdd.UseVisualStyleBackColor = true;
+            this.CreateGameAdd.Click += new System.EventHandler(this.CreateGameAdd_Click);
+            // 
+            // CreateGameRe
+            // 
+            this.CreateGameRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateGameRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateGameRe.Name = "CreateGameRe";
+            this.CreateGameRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateGameRe.TabIndex = 6;
+            this.CreateGameRe.Text = "Game management";
+            this.CreateGameRe.UseVisualStyleBackColor = true;
+            this.CreateGameRe.Click += new System.EventHandler(this.CreateGameRe_Click);
+            // 
+            // ComputerPanel
+            // 
+            this.ComputerPanel.Controls.Add(this.CreateComputerDelete);
+            this.ComputerPanel.Controls.Add(this.CreateComputerAdd);
+            this.ComputerPanel.Controls.Add(this.CreateComputerRe);
+            this.ComputerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ComputerPanel.Location = new System.Drawing.Point(3, 109);
+            this.ComputerPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.ComputerPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.ComputerPanel.Name = "ComputerPanel";
+            this.ComputerPanel.Size = new System.Drawing.Size(225, 100);
+            this.ComputerPanel.TabIndex = 3;
+            // 
+            // CreateComputerDelete
+            // 
+            this.CreateComputerDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateComputerDelete.Name = "CreateComputerDelete";
+            this.CreateComputerDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateComputerDelete.TabIndex = 8;
+            this.CreateComputerDelete.Text = "Delete";
+            this.CreateComputerDelete.UseVisualStyleBackColor = true;
+            this.CreateComputerDelete.Click += new System.EventHandler(this.CreateComputerDelete_Click);
+            // 
+            // CreateComputerAdd
+            // 
+            this.CreateComputerAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateComputerAdd.Name = "CreateComputerAdd";
+            this.CreateComputerAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateComputerAdd.TabIndex = 7;
+            this.CreateComputerAdd.Text = "Add";
+            this.CreateComputerAdd.UseVisualStyleBackColor = true;
+            this.CreateComputerAdd.Click += new System.EventHandler(this.CreateComputerAdd_Click);
+            // 
+            // CreateComputerRe
+            // 
+            this.CreateComputerRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateComputerRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateComputerRe.Name = "CreateComputerRe";
+            this.CreateComputerRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateComputerRe.TabIndex = 6;
+            this.CreateComputerRe.Text = "Computer Management";
+            this.CreateComputerRe.UseVisualStyleBackColor = true;
+            this.CreateComputerRe.Click += new System.EventHandler(this.CreateComputerRe_Click);
+            // 
+            // EventPanel
+            // 
+            this.EventPanel.Controls.Add(this.CreateEventDelete);
+            this.EventPanel.Controls.Add(this.CreateEventAdd);
+            this.EventPanel.Controls.Add(this.CreateEventRe);
+            this.EventPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EventPanel.Location = new System.Drawing.Point(234, 109);
+            this.EventPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.EventPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.EventPanel.Name = "EventPanel";
+            this.EventPanel.Size = new System.Drawing.Size(225, 100);
+            this.EventPanel.TabIndex = 4;
+            // 
+            // CreateEventDelete
+            // 
+            this.CreateEventDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateEventDelete.Name = "CreateEventDelete";
+            this.CreateEventDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateEventDelete.TabIndex = 8;
+            this.CreateEventDelete.Text = "Delete";
+            this.CreateEventDelete.UseVisualStyleBackColor = true;
+            // 
+            // CreateEventAdd
+            // 
+            this.CreateEventAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateEventAdd.Name = "CreateEventAdd";
+            this.CreateEventAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateEventAdd.TabIndex = 7;
+            this.CreateEventAdd.Text = "Add";
+            this.CreateEventAdd.UseVisualStyleBackColor = true;
+            this.CreateEventAdd.Click += new System.EventHandler(this.CreateEventAdd_Click);
+            // 
+            // CreateEventRe
+            // 
+            this.CreateEventRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateEventRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateEventRe.Name = "CreateEventRe";
+            this.CreateEventRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateEventRe.TabIndex = 6;
+            this.CreateEventRe.Text = "Event Management";
+            this.CreateEventRe.UseVisualStyleBackColor = true;
+            this.CreateEventRe.Click += new System.EventHandler(this.CreateEventRe_Click);
+            // 
+            // SeatPanel
+            // 
+            this.SeatPanel.Controls.Add(this.CreateSeatDelete);
+            this.SeatPanel.Controls.Add(this.CreateSeatAdd);
+            this.SeatPanel.Controls.Add(this.CreateSeatRe);
+            this.SeatPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SeatPanel.Location = new System.Drawing.Point(465, 109);
+            this.SeatPanel.MaximumSize = new System.Drawing.Size(225, 140);
+            this.SeatPanel.MinimumSize = new System.Drawing.Size(225, 100);
+            this.SeatPanel.Name = "SeatPanel";
+            this.SeatPanel.Size = new System.Drawing.Size(225, 100);
+            this.SeatPanel.TabIndex = 5;
+            // 
+            // CreateSeatDelete
+            // 
+            this.CreateSeatDelete.Location = new System.Drawing.Point(3, 117);
+            this.CreateSeatDelete.Name = "CreateSeatDelete";
+            this.CreateSeatDelete.Size = new System.Drawing.Size(219, 23);
+            this.CreateSeatDelete.TabIndex = 8;
+            this.CreateSeatDelete.Text = "Delete";
+            this.CreateSeatDelete.UseVisualStyleBackColor = true;
+            this.CreateSeatDelete.Click += new System.EventHandler(this.CreateSeatDelete_Click);
+            // 
+            // CreateSeatAdd
+            // 
+            this.CreateSeatAdd.Location = new System.Drawing.Point(3, 96);
+            this.CreateSeatAdd.Name = "CreateSeatAdd";
+            this.CreateSeatAdd.Size = new System.Drawing.Size(219, 24);
+            this.CreateSeatAdd.TabIndex = 7;
+            this.CreateSeatAdd.Text = "Add";
+            this.CreateSeatAdd.UseVisualStyleBackColor = true;
+            this.CreateSeatAdd.Click += new System.EventHandler(this.CreateSeatAdd_Click);
+            // 
+            // CreateSeatRe
+            // 
+            this.CreateSeatRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateSeatRe.Location = new System.Drawing.Point(3, 3);
+            this.CreateSeatRe.Name = "CreateSeatRe";
+            this.CreateSeatRe.Size = new System.Drawing.Size(220, 97);
+            this.CreateSeatRe.TabIndex = 6;
+            this.CreateSeatRe.Text = "Seat Management";
+            this.CreateSeatRe.UseVisualStyleBackColor = true;
+            this.CreateSeatRe.Click += new System.EventHandler(this.CreateSeatRe_Click);
+            // 
             // StaffNameRe
             // 
             this.StaffNameRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2679,6 +2996,15 @@
             this.Seats_Add.Text = "Add Seats";
             this.Seats_Add.UseVisualStyleBackColor = true;
             // 
+            // InstalledCompInfo
+            // 
+            this.InstalledCompInfo.AutoSize = true;
+            this.InstalledCompInfo.Location = new System.Drawing.Point(527, 123);
+            this.InstalledCompInfo.Name = "InstalledCompInfo";
+            this.InstalledCompInfo.Size = new System.Drawing.Size(79, 52);
+            this.InstalledCompInfo.TabIndex = 100;
+            this.InstalledCompInfo.Text = "CPU : ?? \r\nGPU : ??\r\nRam : ??\r\nNet Speed : ??";
+            // 
             // PremiumStatusSeats
             // 
             this.PremiumStatusSeats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2699,6 +3025,7 @@
             this.AddSeatsButton.TabIndex = 98;
             this.AddSeatsButton.Text = "Add Seats";
             this.AddSeatsButton.UseVisualStyleBackColor = true;
+            this.AddSeatsButton.Click += new System.EventHandler(this.AddSeatsButton_Click);
             // 
             // FromAddSeatTOStaffPage
             // 
@@ -2757,278 +3084,6 @@
             this.label84.TabIndex = 87;
             this.label84.Text = "Cafe Azula Management Studio";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.StaffPanel);
-            this.flowLayoutPanel1.Controls.Add(this.LeaderBoardPanel);
-            this.flowLayoutPanel1.Controls.Add(this.GamePanel);
-            this.flowLayoutPanel1.Controls.Add(this.ComputerPanel);
-            this.flowLayoutPanel1.Controls.Add(this.EventPanel);
-            this.flowLayoutPanel1.Controls.Add(this.SeatPanel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 91);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(696, 313);
-            this.flowLayoutPanel1.TabIndex = 6;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // StaffPanel
-            // 
-            this.StaffPanel.Controls.Add(this.CreateStaffDelete);
-            this.StaffPanel.Controls.Add(this.CreateStaffAdd);
-            this.StaffPanel.Controls.Add(this.CreateStaffRe);
-            this.StaffPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.StaffPanel.Location = new System.Drawing.Point(3, 3);
-            this.StaffPanel.MaximumSize = new System.Drawing.Size(225, 140);
-            this.StaffPanel.MinimumSize = new System.Drawing.Size(225, 100);
-            this.StaffPanel.Name = "StaffPanel";
-            this.StaffPanel.Size = new System.Drawing.Size(225, 100);
-            this.StaffPanel.TabIndex = 0;
-            // 
-            // CreateStaffRe
-            // 
-            this.CreateStaffRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateStaffRe.Location = new System.Drawing.Point(3, 3);
-            this.CreateStaffRe.Name = "CreateStaffRe";
-            this.CreateStaffRe.Size = new System.Drawing.Size(220, 97);
-            this.CreateStaffRe.TabIndex = 6;
-            this.CreateStaffRe.Text = "Staff Account Management";
-            this.CreateStaffRe.UseVisualStyleBackColor = true;
-            this.CreateStaffRe.Click += new System.EventHandler(this.CreateStaffRe_Click);
-            // 
-            // CreateStaffAdd
-            // 
-            this.CreateStaffAdd.Location = new System.Drawing.Point(3, 96);
-            this.CreateStaffAdd.Name = "CreateStaffAdd";
-            this.CreateStaffAdd.Size = new System.Drawing.Size(219, 24);
-            this.CreateStaffAdd.TabIndex = 7;
-            this.CreateStaffAdd.Text = "Add";
-            this.CreateStaffAdd.UseVisualStyleBackColor = true;
-            this.CreateStaffAdd.Click += new System.EventHandler(this.CreateStaffAdd_Click);
-            // 
-            // CreateStaffDelete
-            // 
-            this.CreateStaffDelete.Location = new System.Drawing.Point(3, 117);
-            this.CreateStaffDelete.Name = "CreateStaffDelete";
-            this.CreateStaffDelete.Size = new System.Drawing.Size(219, 23);
-            this.CreateStaffDelete.TabIndex = 8;
-            this.CreateStaffDelete.Text = "Delete";
-            this.CreateStaffDelete.UseVisualStyleBackColor = true;
-            // 
-            // LeaderBoardPanel
-            // 
-            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardDelete);
-            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardAdd);
-            this.LeaderBoardPanel.Controls.Add(this.CreateLeaderBoardRe);
-            this.LeaderBoardPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LeaderBoardPanel.Location = new System.Drawing.Point(234, 3);
-            this.LeaderBoardPanel.MaximumSize = new System.Drawing.Size(225, 140);
-            this.LeaderBoardPanel.MinimumSize = new System.Drawing.Size(225, 100);
-            this.LeaderBoardPanel.Name = "LeaderBoardPanel";
-            this.LeaderBoardPanel.Size = new System.Drawing.Size(225, 100);
-            this.LeaderBoardPanel.TabIndex = 1;
-            // 
-            // CreateLeaderBoardDelete
-            // 
-            this.CreateLeaderBoardDelete.Location = new System.Drawing.Point(3, 117);
-            this.CreateLeaderBoardDelete.Name = "CreateLeaderBoardDelete";
-            this.CreateLeaderBoardDelete.Size = new System.Drawing.Size(219, 23);
-            this.CreateLeaderBoardDelete.TabIndex = 8;
-            this.CreateLeaderBoardDelete.Text = "Delete";
-            this.CreateLeaderBoardDelete.UseVisualStyleBackColor = true;
-            // 
-            // CreateLeaderBoardAdd
-            // 
-            this.CreateLeaderBoardAdd.Location = new System.Drawing.Point(3, 96);
-            this.CreateLeaderBoardAdd.Name = "CreateLeaderBoardAdd";
-            this.CreateLeaderBoardAdd.Size = new System.Drawing.Size(219, 24);
-            this.CreateLeaderBoardAdd.TabIndex = 7;
-            this.CreateLeaderBoardAdd.Text = "Add";
-            this.CreateLeaderBoardAdd.UseVisualStyleBackColor = true;
-            this.CreateLeaderBoardAdd.Click += new System.EventHandler(this.CreateLeaderBoardAdd_Click);
-            // 
-            // CreateLeaderBoardRe
-            // 
-            this.CreateLeaderBoardRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateLeaderBoardRe.Location = new System.Drawing.Point(3, 3);
-            this.CreateLeaderBoardRe.Name = "CreateLeaderBoardRe";
-            this.CreateLeaderBoardRe.Size = new System.Drawing.Size(220, 97);
-            this.CreateLeaderBoardRe.TabIndex = 6;
-            this.CreateLeaderBoardRe.Text = "Leaderboard Management";
-            this.CreateLeaderBoardRe.UseVisualStyleBackColor = true;
-            this.CreateLeaderBoardRe.Click += new System.EventHandler(this.CreateLeaderBoardRe_Click);
-            // 
-            // GamePanel
-            // 
-            this.GamePanel.Controls.Add(this.CreateGameDelete);
-            this.GamePanel.Controls.Add(this.CreateGameAdd);
-            this.GamePanel.Controls.Add(this.CreateGameRe);
-            this.GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GamePanel.Location = new System.Drawing.Point(465, 3);
-            this.GamePanel.MaximumSize = new System.Drawing.Size(225, 140);
-            this.GamePanel.MinimumSize = new System.Drawing.Size(225, 100);
-            this.GamePanel.Name = "GamePanel";
-            this.GamePanel.Size = new System.Drawing.Size(225, 100);
-            this.GamePanel.TabIndex = 2;
-            // 
-            // CreateGameDelete
-            // 
-            this.CreateGameDelete.Location = new System.Drawing.Point(3, 117);
-            this.CreateGameDelete.Name = "CreateGameDelete";
-            this.CreateGameDelete.Size = new System.Drawing.Size(219, 23);
-            this.CreateGameDelete.TabIndex = 8;
-            this.CreateGameDelete.Text = "Delete";
-            this.CreateGameDelete.UseVisualStyleBackColor = true;
-            // 
-            // CreateGameAdd
-            // 
-            this.CreateGameAdd.Location = new System.Drawing.Point(3, 96);
-            this.CreateGameAdd.Name = "CreateGameAdd";
-            this.CreateGameAdd.Size = new System.Drawing.Size(219, 24);
-            this.CreateGameAdd.TabIndex = 7;
-            this.CreateGameAdd.Text = "Add";
-            this.CreateGameAdd.UseVisualStyleBackColor = true;
-            this.CreateGameAdd.Click += new System.EventHandler(this.CreateGameAdd_Click);
-            // 
-            // CreateGameRe
-            // 
-            this.CreateGameRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateGameRe.Location = new System.Drawing.Point(3, 3);
-            this.CreateGameRe.Name = "CreateGameRe";
-            this.CreateGameRe.Size = new System.Drawing.Size(220, 97);
-            this.CreateGameRe.TabIndex = 6;
-            this.CreateGameRe.Text = "Game management";
-            this.CreateGameRe.UseVisualStyleBackColor = true;
-            this.CreateGameRe.Click += new System.EventHandler(this.CreateGameRe_Click);
-            // 
-            // ComputerPanel
-            // 
-            this.ComputerPanel.Controls.Add(this.CreateComputerDelete);
-            this.ComputerPanel.Controls.Add(this.CreateComputerAdd);
-            this.ComputerPanel.Controls.Add(this.CreateComputerRe);
-            this.ComputerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ComputerPanel.Location = new System.Drawing.Point(3, 109);
-            this.ComputerPanel.MaximumSize = new System.Drawing.Size(225, 140);
-            this.ComputerPanel.MinimumSize = new System.Drawing.Size(225, 100);
-            this.ComputerPanel.Name = "ComputerPanel";
-            this.ComputerPanel.Size = new System.Drawing.Size(225, 100);
-            this.ComputerPanel.TabIndex = 3;
-            // 
-            // CreateComputerDelete
-            // 
-            this.CreateComputerDelete.Location = new System.Drawing.Point(3, 117);
-            this.CreateComputerDelete.Name = "CreateComputerDelete";
-            this.CreateComputerDelete.Size = new System.Drawing.Size(219, 23);
-            this.CreateComputerDelete.TabIndex = 8;
-            this.CreateComputerDelete.Text = "Delete";
-            this.CreateComputerDelete.UseVisualStyleBackColor = true;
-            // 
-            // CreateComputerAdd
-            // 
-            this.CreateComputerAdd.Location = new System.Drawing.Point(3, 96);
-            this.CreateComputerAdd.Name = "CreateComputerAdd";
-            this.CreateComputerAdd.Size = new System.Drawing.Size(219, 24);
-            this.CreateComputerAdd.TabIndex = 7;
-            this.CreateComputerAdd.Text = "Add";
-            this.CreateComputerAdd.UseVisualStyleBackColor = true;
-            this.CreateComputerAdd.Click += new System.EventHandler(this.CreateComputerAdd_Click);
-            // 
-            // CreateComputerRe
-            // 
-            this.CreateComputerRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateComputerRe.Location = new System.Drawing.Point(3, 3);
-            this.CreateComputerRe.Name = "CreateComputerRe";
-            this.CreateComputerRe.Size = new System.Drawing.Size(220, 97);
-            this.CreateComputerRe.TabIndex = 6;
-            this.CreateComputerRe.Text = "Computer Management";
-            this.CreateComputerRe.UseVisualStyleBackColor = true;
-            this.CreateComputerRe.Click += new System.EventHandler(this.CreateComputerRe_Click);
-            // 
-            // EventPanel
-            // 
-            this.EventPanel.Controls.Add(this.CreateEventDelete);
-            this.EventPanel.Controls.Add(this.CreateEventAdd);
-            this.EventPanel.Controls.Add(this.CreateEventRe);
-            this.EventPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EventPanel.Location = new System.Drawing.Point(234, 109);
-            this.EventPanel.MaximumSize = new System.Drawing.Size(225, 140);
-            this.EventPanel.MinimumSize = new System.Drawing.Size(225, 100);
-            this.EventPanel.Name = "EventPanel";
-            this.EventPanel.Size = new System.Drawing.Size(225, 100);
-            this.EventPanel.TabIndex = 4;
-            // 
-            // CreateEventDelete
-            // 
-            this.CreateEventDelete.Location = new System.Drawing.Point(3, 117);
-            this.CreateEventDelete.Name = "CreateEventDelete";
-            this.CreateEventDelete.Size = new System.Drawing.Size(219, 23);
-            this.CreateEventDelete.TabIndex = 8;
-            this.CreateEventDelete.Text = "Delete";
-            this.CreateEventDelete.UseVisualStyleBackColor = true;
-            // 
-            // CreateEventAdd
-            // 
-            this.CreateEventAdd.Location = new System.Drawing.Point(3, 96);
-            this.CreateEventAdd.Name = "CreateEventAdd";
-            this.CreateEventAdd.Size = new System.Drawing.Size(219, 24);
-            this.CreateEventAdd.TabIndex = 7;
-            this.CreateEventAdd.Text = "Add";
-            this.CreateEventAdd.UseVisualStyleBackColor = true;
-            this.CreateEventAdd.Click += new System.EventHandler(this.CreateEventAdd_Click);
-            // 
-            // CreateEventRe
-            // 
-            this.CreateEventRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateEventRe.Location = new System.Drawing.Point(3, 3);
-            this.CreateEventRe.Name = "CreateEventRe";
-            this.CreateEventRe.Size = new System.Drawing.Size(220, 97);
-            this.CreateEventRe.TabIndex = 6;
-            this.CreateEventRe.Text = "Event Management";
-            this.CreateEventRe.UseVisualStyleBackColor = true;
-            this.CreateEventRe.Click += new System.EventHandler(this.CreateEventRe_Click);
-            // 
-            // SeatPanel
-            // 
-            this.SeatPanel.Controls.Add(this.CreateSeatDelete);
-            this.SeatPanel.Controls.Add(this.CreateSeatAdd);
-            this.SeatPanel.Controls.Add(this.CreateSeatRe);
-            this.SeatPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SeatPanel.Location = new System.Drawing.Point(465, 109);
-            this.SeatPanel.MaximumSize = new System.Drawing.Size(225, 140);
-            this.SeatPanel.MinimumSize = new System.Drawing.Size(225, 100);
-            this.SeatPanel.Name = "SeatPanel";
-            this.SeatPanel.Size = new System.Drawing.Size(225, 100);
-            this.SeatPanel.TabIndex = 5;
-            // 
-            // CreateSeatDelete
-            // 
-            this.CreateSeatDelete.Location = new System.Drawing.Point(3, 117);
-            this.CreateSeatDelete.Name = "CreateSeatDelete";
-            this.CreateSeatDelete.Size = new System.Drawing.Size(219, 23);
-            this.CreateSeatDelete.TabIndex = 8;
-            this.CreateSeatDelete.Text = "Delete";
-            this.CreateSeatDelete.UseVisualStyleBackColor = true;
-            // 
-            // CreateSeatAdd
-            // 
-            this.CreateSeatAdd.Location = new System.Drawing.Point(3, 96);
-            this.CreateSeatAdd.Name = "CreateSeatAdd";
-            this.CreateSeatAdd.Size = new System.Drawing.Size(219, 24);
-            this.CreateSeatAdd.TabIndex = 7;
-            this.CreateSeatAdd.Text = "Add";
-            this.CreateSeatAdd.UseVisualStyleBackColor = true;
-            this.CreateSeatAdd.Click += new System.EventHandler(this.CreateSeatAdd_Click);
-            // 
-            // CreateSeatRe
-            // 
-            this.CreateSeatRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateSeatRe.Location = new System.Drawing.Point(3, 3);
-            this.CreateSeatRe.Name = "CreateSeatRe";
-            this.CreateSeatRe.Size = new System.Drawing.Size(220, 97);
-            this.CreateSeatRe.TabIndex = 6;
-            this.CreateSeatRe.Text = "Seat Management";
-            this.CreateSeatRe.UseVisualStyleBackColor = true;
-            this.CreateSeatRe.Click += new System.EventHandler(this.CreateSeatRe_Click);
-            // 
             // StaffDropTime
             // 
             this.StaffDropTime.Tick += new System.EventHandler(this.StaffDropTime_Tick);
@@ -3053,14 +3108,313 @@
             // 
             this.EventDropTimer.Tick += new System.EventHandler(this.EventDropTimer_Tick);
             // 
-            // InstalledCompInfo
+            // Computer_Delete
             // 
-            this.InstalledCompInfo.AutoSize = true;
-            this.InstalledCompInfo.Location = new System.Drawing.Point(527, 123);
-            this.InstalledCompInfo.Name = "InstalledCompInfo";
-            this.InstalledCompInfo.Size = new System.Drawing.Size(79, 52);
-            this.InstalledCompInfo.TabIndex = 100;
-            this.InstalledCompInfo.Text = "CPU : ?? \r\nGPU : ??\r\nRam : ??\r\nNet Speed : ??";
+            this.Computer_Delete.Controls.Add(this.FromDeleteComputerTOStaffPage);
+            this.Computer_Delete.Controls.Add(this.DeleteComputerRow);
+            this.Computer_Delete.Controls.Add(this.ComputerDeleteTable);
+            this.Computer_Delete.Controls.Add(this.label79);
+            this.Computer_Delete.Controls.Add(this.label85);
+            this.Computer_Delete.Location = new System.Drawing.Point(4, 22);
+            this.Computer_Delete.Name = "Computer_Delete";
+            this.Computer_Delete.Size = new System.Drawing.Size(806, 442);
+            this.Computer_Delete.TabIndex = 18;
+            this.Computer_Delete.Text = "Delete Computer";
+            this.Computer_Delete.UseVisualStyleBackColor = true;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.Location = new System.Drawing.Point(293, 39);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(221, 20);
+            this.label79.TabIndex = 90;
+            this.label79.Text = "Select the Computer to delete";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.Location = new System.Drawing.Point(139, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(532, 39);
+            this.label85.TabIndex = 89;
+            this.label85.Text = "Cafe Azula Management Studio";
+            // 
+            // ComputerDeleteTable
+            // 
+            this.ComputerDeleteTable.AllowUserToAddRows = false;
+            this.ComputerDeleteTable.AllowUserToDeleteRows = false;
+            this.ComputerDeleteTable.AllowUserToResizeColumns = false;
+            this.ComputerDeleteTable.AllowUserToResizeRows = false;
+            this.ComputerDeleteTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ComputerDeleteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ComputerID,
+            this.CPU,
+            this.GPU,
+            this.CompterRAM,
+            this.Computer_NetSpeed});
+            this.ComputerDeleteTable.Location = new System.Drawing.Point(129, 85);
+            this.ComputerDeleteTable.Name = "ComputerDeleteTable";
+            this.ComputerDeleteTable.ReadOnly = true;
+            this.ComputerDeleteTable.Size = new System.Drawing.Size(542, 283);
+            this.ComputerDeleteTable.TabIndex = 91;
+            // 
+            // ComputerID
+            // 
+            this.ComputerID.HeaderText = "Computer Identity No";
+            this.ComputerID.Name = "ComputerID";
+            this.ComputerID.ReadOnly = true;
+            // 
+            // CPU
+            // 
+            this.CPU.HeaderText = "CPU";
+            this.CPU.Name = "CPU";
+            this.CPU.ReadOnly = true;
+            // 
+            // GPU
+            // 
+            this.GPU.HeaderText = "GPU";
+            this.GPU.Name = "GPU";
+            this.GPU.ReadOnly = true;
+            // 
+            // CompterRAM
+            // 
+            this.CompterRAM.HeaderText = "RAM";
+            this.CompterRAM.Name = "CompterRAM";
+            this.CompterRAM.ReadOnly = true;
+            // 
+            // Computer_NetSpeed
+            // 
+            this.Computer_NetSpeed.HeaderText = "Net Speed";
+            this.Computer_NetSpeed.Name = "Computer_NetSpeed";
+            this.Computer_NetSpeed.ReadOnly = true;
+            // 
+            // DeleteComputerRow
+            // 
+            this.DeleteComputerRow.Location = new System.Drawing.Point(532, 387);
+            this.DeleteComputerRow.Name = "DeleteComputerRow";
+            this.DeleteComputerRow.Size = new System.Drawing.Size(139, 23);
+            this.DeleteComputerRow.TabIndex = 92;
+            this.DeleteComputerRow.Text = "Delete Selected Computer";
+            this.DeleteComputerRow.UseVisualStyleBackColor = true;
+            this.DeleteComputerRow.Click += new System.EventHandler(this.DeleteComputerRow_Click);
+            // 
+            // FromDeleteComputerTOStaffPage
+            // 
+            this.FromDeleteComputerTOStaffPage.Location = new System.Drawing.Point(129, 387);
+            this.FromDeleteComputerTOStaffPage.Name = "FromDeleteComputerTOStaffPage";
+            this.FromDeleteComputerTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromDeleteComputerTOStaffPage.TabIndex = 93;
+            this.FromDeleteComputerTOStaffPage.Text = "Back";
+            this.FromDeleteComputerTOStaffPage.UseVisualStyleBackColor = true;
+            // 
+            // Game_Delete
+            // 
+            this.Game_Delete.Controls.Add(this.button1);
+            this.Game_Delete.Controls.Add(this.DeleteGameRow);
+            this.Game_Delete.Controls.Add(this.GameDeleteTable);
+            this.Game_Delete.Controls.Add(this.label86);
+            this.Game_Delete.Controls.Add(this.label87);
+            this.Game_Delete.Location = new System.Drawing.Point(4, 22);
+            this.Game_Delete.Name = "Game_Delete";
+            this.Game_Delete.Size = new System.Drawing.Size(806, 442);
+            this.Game_Delete.TabIndex = 19;
+            this.Game_Delete.Text = "Delete Game";
+            this.Game_Delete.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(128, 387);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 98;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // DeleteGameRow
+            // 
+            this.DeleteGameRow.Location = new System.Drawing.Point(531, 387);
+            this.DeleteGameRow.Name = "DeleteGameRow";
+            this.DeleteGameRow.Size = new System.Drawing.Size(139, 23);
+            this.DeleteGameRow.TabIndex = 97;
+            this.DeleteGameRow.Text = "Delete Selected Game";
+            this.DeleteGameRow.UseVisualStyleBackColor = true;
+            this.DeleteGameRow.Click += new System.EventHandler(this.DeleteGameRow_Click);
+            // 
+            // GameDeleteTable
+            // 
+            this.GameDeleteTable.AllowUserToAddRows = false;
+            this.GameDeleteTable.AllowUserToDeleteRows = false;
+            this.GameDeleteTable.AllowUserToResizeColumns = false;
+            this.GameDeleteTable.AllowUserToResizeRows = false;
+            this.GameDeleteTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GameDeleteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Gname,
+            this.Genre,
+            this.Game_D,
+            this.Rating});
+            this.GameDeleteTable.Location = new System.Drawing.Point(128, 85);
+            this.GameDeleteTable.Name = "GameDeleteTable";
+            this.GameDeleteTable.ReadOnly = true;
+            this.GameDeleteTable.Size = new System.Drawing.Size(542, 283);
+            this.GameDeleteTable.TabIndex = 96;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.Location = new System.Drawing.Point(317, 39);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(195, 20);
+            this.label86.TabIndex = 95;
+            this.label86.Text = "Select the Game to delete";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.Location = new System.Drawing.Point(138, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(532, 39);
+            this.label87.TabIndex = 94;
+            this.label87.Text = "Cafe Azula Management Studio";
+            // 
+            // Gname
+            // 
+            this.Gname.HeaderText = "Game Name";
+            this.Gname.Name = "Gname";
+            this.Gname.ReadOnly = true;
+            // 
+            // Genre
+            // 
+            this.Genre.HeaderText = "Genre";
+            this.Genre.Name = "Genre";
+            this.Genre.ReadOnly = true;
+            // 
+            // Game_D
+            // 
+            this.Game_D.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Game_D.HeaderText = "Game Description";
+            this.Game_D.MinimumWidth = 10;
+            this.Game_D.Name = "Game_D";
+            this.Game_D.ReadOnly = true;
+            // 
+            // Rating
+            // 
+            this.Rating.HeaderText = "Rating";
+            this.Rating.Name = "Rating";
+            this.Rating.ReadOnly = true;
+            // 
+            // Seats_Delete
+            // 
+            this.Seats_Delete.Controls.Add(this.FromSeatDeleteTOStaffPage);
+            this.Seats_Delete.Controls.Add(this.DeleteSeatRow);
+            this.Seats_Delete.Controls.Add(this.SeatDeleteTable);
+            this.Seats_Delete.Controls.Add(this.label88);
+            this.Seats_Delete.Controls.Add(this.label89);
+            this.Seats_Delete.Location = new System.Drawing.Point(4, 22);
+            this.Seats_Delete.Name = "Seats_Delete";
+            this.Seats_Delete.Size = new System.Drawing.Size(806, 442);
+            this.Seats_Delete.TabIndex = 20;
+            this.Seats_Delete.Text = "Delete Seats";
+            this.Seats_Delete.UseVisualStyleBackColor = true;
+            // 
+            // FromSeatDeleteTOStaffPage
+            // 
+            this.FromSeatDeleteTOStaffPage.Location = new System.Drawing.Point(132, 387);
+            this.FromSeatDeleteTOStaffPage.Name = "FromSeatDeleteTOStaffPage";
+            this.FromSeatDeleteTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromSeatDeleteTOStaffPage.TabIndex = 103;
+            this.FromSeatDeleteTOStaffPage.Text = "Back";
+            this.FromSeatDeleteTOStaffPage.UseVisualStyleBackColor = true;
+            // 
+            // DeleteSeatRow
+            // 
+            this.DeleteSeatRow.Location = new System.Drawing.Point(535, 387);
+            this.DeleteSeatRow.Name = "DeleteSeatRow";
+            this.DeleteSeatRow.Size = new System.Drawing.Size(139, 23);
+            this.DeleteSeatRow.TabIndex = 102;
+            this.DeleteSeatRow.Text = "Delete Selected Seats";
+            this.DeleteSeatRow.UseVisualStyleBackColor = true;
+            this.DeleteSeatRow.Click += new System.EventHandler(this.DeleteSeatRow_Click);
+            // 
+            // SeatDeleteTable
+            // 
+            this.SeatDeleteTable.AllowUserToAddRows = false;
+            this.SeatDeleteTable.AllowUserToDeleteRows = false;
+            this.SeatDeleteTable.AllowUserToResizeColumns = false;
+            this.SeatDeleteTable.AllowUserToResizeRows = false;
+            this.SeatDeleteTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SeatDeleteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SeatNo,
+            this.PremiumStats,
+            this.SeatCPU,
+            this.SeatGPU,
+            this.SeatRAM,
+            this.SeatNet});
+            this.SeatDeleteTable.Location = new System.Drawing.Point(132, 85);
+            this.SeatDeleteTable.Name = "SeatDeleteTable";
+            this.SeatDeleteTable.ReadOnly = true;
+            this.SeatDeleteTable.Size = new System.Drawing.Size(542, 283);
+            this.SeatDeleteTable.TabIndex = 101;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label88.Location = new System.Drawing.Point(321, 39);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(185, 20);
+            this.label88.TabIndex = 100;
+            this.label88.Text = "Select the Seat to delete";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.Location = new System.Drawing.Point(142, 0);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(532, 39);
+            this.label89.TabIndex = 99;
+            this.label89.Text = "Cafe Azula Management Studio";
+            // 
+            // SeatNo
+            // 
+            this.SeatNo.HeaderText = "Seat Identity No";
+            this.SeatNo.Name = "SeatNo";
+            this.SeatNo.ReadOnly = true;
+            // 
+            // PremiumStats
+            // 
+            this.PremiumStats.HeaderText = "Premium Status";
+            this.PremiumStats.Name = "PremiumStats";
+            this.PremiumStats.ReadOnly = true;
+            // 
+            // SeatCPU
+            // 
+            this.SeatCPU.HeaderText = "CPU";
+            this.SeatCPU.Name = "SeatCPU";
+            this.SeatCPU.ReadOnly = true;
+            // 
+            // SeatGPU
+            // 
+            this.SeatGPU.HeaderText = "GPU";
+            this.SeatGPU.Name = "SeatGPU";
+            this.SeatGPU.ReadOnly = true;
+            // 
+            // SeatRAM
+            // 
+            this.SeatRAM.HeaderText = "RAM";
+            this.SeatRAM.Name = "SeatRAM";
+            this.SeatRAM.ReadOnly = true;
+            // 
+            // SeatNet
+            // 
+            this.SeatNet.HeaderText = "Net Speed";
+            this.SeatNet.Name = "SeatNet";
+            this.SeatNet.ReadOnly = true;
             // 
             // Form1
             // 
@@ -3102,6 +3456,13 @@
             this.StaffPage.PerformLayout();
             this.StaffPageReloaded.ResumeLayout(false);
             this.StaffPageReloaded.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.StaffPanel.ResumeLayout(false);
+            this.LeaderBoardPanel.ResumeLayout(false);
+            this.GamePanel.ResumeLayout(false);
+            this.ComputerPanel.ResumeLayout(false);
+            this.EventPanel.ResumeLayout(false);
+            this.SeatPanel.ResumeLayout(false);
             this.StaffAccReg.ResumeLayout(false);
             this.StaffAccReg.PerformLayout();
             this.Game_Add.ResumeLayout(false);
@@ -3115,13 +3476,15 @@
             this.Event_Add.PerformLayout();
             this.Seats_Add.ResumeLayout(false);
             this.Seats_Add.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.StaffPanel.ResumeLayout(false);
-            this.LeaderBoardPanel.ResumeLayout(false);
-            this.GamePanel.ResumeLayout(false);
-            this.ComputerPanel.ResumeLayout(false);
-            this.EventPanel.ResumeLayout(false);
-            this.SeatPanel.ResumeLayout(false);
+            this.Computer_Delete.ResumeLayout(false);
+            this.Computer_Delete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ComputerDeleteTable)).EndInit();
+            this.Game_Delete.ResumeLayout(false);
+            this.Game_Delete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GameDeleteTable)).EndInit();
+            this.Seats_Delete.ResumeLayout(false);
+            this.Seats_Delete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SeatDeleteTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3396,6 +3759,39 @@
         private System.Windows.Forms.Timer SeatDropTime;
         private System.Windows.Forms.Timer EventDropTimer;
         private System.Windows.Forms.Label InstalledCompInfo;
+        private System.Windows.Forms.TabPage Computer_Delete;
+        private System.Windows.Forms.DataGridView ComputerDeleteTable;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ComputerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GPU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompterRAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Computer_NetSpeed;
+        private System.Windows.Forms.Button FromDeleteComputerTOStaffPage;
+        private System.Windows.Forms.Button DeleteComputerRow;
+        private System.Windows.Forms.TabPage Game_Delete;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DeleteGameRow;
+        private System.Windows.Forms.DataGridView GameDeleteTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Game_D;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TabPage Seats_Delete;
+        private System.Windows.Forms.Button FromSeatDeleteTOStaffPage;
+        private System.Windows.Forms.Button DeleteSeatRow;
+        private System.Windows.Forms.DataGridView SeatDeleteTable;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PremiumStats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatCPU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatGPU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatRAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeatNet;
     }
 }
 
