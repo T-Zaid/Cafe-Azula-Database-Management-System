@@ -302,7 +302,7 @@
             this.label79 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.Game_Delete = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FromDeleteGameTOStaffPage = new System.Windows.Forms.Button();
             this.DeleteGameRow = new System.Windows.Forms.Button();
             this.GameDeleteTable = new System.Windows.Forms.DataGridView();
             this.Gname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -330,7 +330,7 @@
             this.label92 = new System.Windows.Forms.Label();
             this.DeleteGameDropDown = new System.Windows.Forms.ComboBox();
             this.label93 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.FromDeleteLeaderBoardTOStaffPage = new System.Windows.Forms.Button();
             this.LeaderBoardDeleteTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -347,7 +347,7 @@
             this.Event_Delete = new System.Windows.Forms.TabPage();
             this.label90 = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.FromDeleteEventTOStaffPage = new System.Windows.Forms.Button();
             this.DeleteEventRow = new System.Windows.Forms.Button();
             this.DeleteEventTable = new System.Windows.Forms.DataGridView();
             this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -356,6 +356,15 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_Delete = new System.Windows.Forms.TabPage();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.SearchAccName = new System.Windows.Forms.TextBox();
+            this.label98 = new System.Windows.Forms.Label();
+            this.AccountTableView = new System.Windows.Forms.DataGridView();
+            this.TableSwitchButton = new System.Windows.Forms.Button();
+            this.DeleteSelectedAccount = new System.Windows.Forms.Button();
+            this.FromDeleteAccountTOStaffPage = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CustAccReg.SuspendLayout();
@@ -398,6 +407,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.LeaderBoardDeleteTable)).BeginInit();
             this.Event_Delete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteEventTable)).BeginInit();
+            this.Account_Delete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountTableView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -425,6 +436,7 @@
             this.tabControl1.Controls.Add(this.Seats_Delete);
             this.tabControl1.Controls.Add(this.LeaderBoard_Delete);
             this.tabControl1.Controls.Add(this.Event_Delete);
+            this.tabControl1.Controls.Add(this.Account_Delete);
             this.tabControl1.Location = new System.Drawing.Point(-7, -5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1960,6 +1972,7 @@
             this.CreateStaffDelete.TabIndex = 8;
             this.CreateStaffDelete.Text = "Delete";
             this.CreateStaffDelete.UseVisualStyleBackColor = true;
+            this.CreateStaffDelete.Click += new System.EventHandler(this.CreateStaffDelete_Click);
             // 
             // CreateStaffAdd
             // 
@@ -2792,6 +2805,7 @@
             this.Rank_ig.Name = "Rank_ig";
             this.Rank_ig.Size = new System.Drawing.Size(85, 20);
             this.Rank_ig.TabIndex = 63;
+            this.Rank_ig.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Rank_ig_KeyPress);
             // 
             // label55
             // 
@@ -3069,6 +3083,7 @@
             this.FromAddSeatTOStaffPage.TabIndex = 97;
             this.FromAddSeatTOStaffPage.Text = "Back";
             this.FromAddSeatTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromAddSeatTOStaffPage.Click += new System.EventHandler(this.FromAddSeatTOStaffPage_Click);
             // 
             // ComputerDropDownSeats
             // 
@@ -3140,6 +3155,7 @@
             this.FromDeleteComputerTOStaffPage.TabIndex = 93;
             this.FromDeleteComputerTOStaffPage.Text = "Back";
             this.FromDeleteComputerTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromDeleteComputerTOStaffPage.Click += new System.EventHandler(this.FromDeleteComputerTOStaffPage_Click);
             // 
             // DeleteComputerRow
             // 
@@ -3222,7 +3238,7 @@
             // 
             // Game_Delete
             // 
-            this.Game_Delete.Controls.Add(this.button1);
+            this.Game_Delete.Controls.Add(this.FromDeleteGameTOStaffPage);
             this.Game_Delete.Controls.Add(this.DeleteGameRow);
             this.Game_Delete.Controls.Add(this.GameDeleteTable);
             this.Game_Delete.Controls.Add(this.label86);
@@ -3234,14 +3250,15 @@
             this.Game_Delete.Text = "Delete Game";
             this.Game_Delete.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // FromDeleteGameTOStaffPage
             // 
-            this.button1.Location = new System.Drawing.Point(128, 387);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 98;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.FromDeleteGameTOStaffPage.Location = new System.Drawing.Point(128, 387);
+            this.FromDeleteGameTOStaffPage.Name = "FromDeleteGameTOStaffPage";
+            this.FromDeleteGameTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromDeleteGameTOStaffPage.TabIndex = 98;
+            this.FromDeleteGameTOStaffPage.Text = "Back";
+            this.FromDeleteGameTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromDeleteGameTOStaffPage.Click += new System.EventHandler(this.FromDeleteGameTOStaffPage_Click);
             // 
             // DeleteGameRow
             // 
@@ -3339,6 +3356,7 @@
             this.FromSeatDeleteTOStaffPage.TabIndex = 103;
             this.FromSeatDeleteTOStaffPage.Text = "Back";
             this.FromSeatDeleteTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromSeatDeleteTOStaffPage.Click += new System.EventHandler(this.FromSeatDeleteTOStaffPage_Click);
             // 
             // DeleteSeatRow
             // 
@@ -3423,7 +3441,7 @@
             this.LeaderBoard_Delete.Controls.Add(this.label92);
             this.LeaderBoard_Delete.Controls.Add(this.DeleteGameDropDown);
             this.LeaderBoard_Delete.Controls.Add(this.label93);
-            this.LeaderBoard_Delete.Controls.Add(this.button4);
+            this.LeaderBoard_Delete.Controls.Add(this.FromDeleteLeaderBoardTOStaffPage);
             this.LeaderBoard_Delete.Controls.Add(this.LeaderBoardDeleteTable);
             this.LeaderBoard_Delete.Location = new System.Drawing.Point(4, 22);
             this.LeaderBoard_Delete.Name = "LeaderBoard_Delete";
@@ -3480,14 +3498,15 @@
             this.label93.TabIndex = 20;
             this.label93.Text = "Search by Game:";
             // 
-            // button4
+            // FromDeleteLeaderBoardTOStaffPage
             // 
-            this.button4.Location = new System.Drawing.Point(176, 394);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = true;
+            this.FromDeleteLeaderBoardTOStaffPage.Location = new System.Drawing.Point(176, 394);
+            this.FromDeleteLeaderBoardTOStaffPage.Name = "FromDeleteLeaderBoardTOStaffPage";
+            this.FromDeleteLeaderBoardTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromDeleteLeaderBoardTOStaffPage.TabIndex = 19;
+            this.FromDeleteLeaderBoardTOStaffPage.Text = "Back";
+            this.FromDeleteLeaderBoardTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromDeleteLeaderBoardTOStaffPage.Click += new System.EventHandler(this.FromDeleteLeaderBoardTOStaffPage_Click);
             // 
             // LeaderBoardDeleteTable
             // 
@@ -3588,7 +3607,7 @@
             // 
             // Event_Delete
             // 
-            this.Event_Delete.Controls.Add(this.button2);
+            this.Event_Delete.Controls.Add(this.FromDeleteEventTOStaffPage);
             this.Event_Delete.Controls.Add(this.DeleteEventRow);
             this.Event_Delete.Controls.Add(this.DeleteEventTable);
             this.Event_Delete.Controls.Add(this.label90);
@@ -3604,7 +3623,7 @@
             // 
             this.label90.AutoSize = true;
             this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(286, 39);
+            this.label90.Location = new System.Drawing.Point(310, 39);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(192, 20);
             this.label90.TabIndex = 104;
@@ -3614,20 +3633,21 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(120, 0);
+            this.label91.Location = new System.Drawing.Point(144, 0);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(532, 39);
             this.label91.TabIndex = 103;
             this.label91.Text = "Cafe Azula Management Studio";
             // 
-            // button2
+            // FromDeleteEventTOStaffPage
             // 
-            this.button2.Location = new System.Drawing.Point(92, 399);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 107;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
+            this.FromDeleteEventTOStaffPage.Location = new System.Drawing.Point(92, 399);
+            this.FromDeleteEventTOStaffPage.Name = "FromDeleteEventTOStaffPage";
+            this.FromDeleteEventTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromDeleteEventTOStaffPage.TabIndex = 107;
+            this.FromDeleteEventTOStaffPage.Text = "Back";
+            this.FromDeleteEventTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromDeleteEventTOStaffPage.Click += new System.EventHandler(this.FromDeleteEventTOStaffPage_Click);
             // 
             // DeleteEventRow
             // 
@@ -3695,6 +3715,105 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Participants /Team";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // Account_Delete
+            // 
+            this.Account_Delete.Controls.Add(this.FromDeleteAccountTOStaffPage);
+            this.Account_Delete.Controls.Add(this.DeleteSelectedAccount);
+            this.Account_Delete.Controls.Add(this.TableSwitchButton);
+            this.Account_Delete.Controls.Add(this.AccountTableView);
+            this.Account_Delete.Controls.Add(this.label98);
+            this.Account_Delete.Controls.Add(this.SearchAccName);
+            this.Account_Delete.Controls.Add(this.label94);
+            this.Account_Delete.Controls.Add(this.label95);
+            this.Account_Delete.Location = new System.Drawing.Point(4, 22);
+            this.Account_Delete.Name = "Account_Delete";
+            this.Account_Delete.Size = new System.Drawing.Size(806, 442);
+            this.Account_Delete.TabIndex = 23;
+            this.Account_Delete.Text = "Delete Account";
+            this.Account_Delete.UseVisualStyleBackColor = true;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label94.Location = new System.Drawing.Point(170, 39);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(474, 40);
+            this.label94.TabIndex = 106;
+            this.label94.Text = "Select the Account to Delete from Azula Database\r\nThe most powerful page of the A" +
+    "ppliation (USE WITH CAUTION!!)";
+            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.Location = new System.Drawing.Point(138, 0);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(532, 39);
+            this.label95.TabIndex = 105;
+            this.label95.Text = "Cafe Azula Management Studio";
+            // 
+            // SearchAccName
+            // 
+            this.SearchAccName.Location = new System.Drawing.Point(145, 100);
+            this.SearchAccName.Name = "SearchAccName";
+            this.SearchAccName.Size = new System.Drawing.Size(287, 20);
+            this.SearchAccName.TabIndex = 107;
+            this.SearchAccName.TextChanged += new System.EventHandler(this.SearchAccName_TextChanged);
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(47, 103);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(92, 13);
+            this.label98.TabIndex = 108;
+            this.label98.Text = "Enter Username : ";
+            // 
+            // AccountTableView
+            // 
+            this.AccountTableView.AllowUserToAddRows = false;
+            this.AccountTableView.AllowUserToDeleteRows = false;
+            this.AccountTableView.AllowUserToOrderColumns = true;
+            this.AccountTableView.AllowUserToResizeColumns = false;
+            this.AccountTableView.AllowUserToResizeRows = false;
+            this.AccountTableView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AccountTableView.Location = new System.Drawing.Point(50, 126);
+            this.AccountTableView.Name = "AccountTableView";
+            this.AccountTableView.Size = new System.Drawing.Size(584, 295);
+            this.AccountTableView.TabIndex = 109;
+            // 
+            // TableSwitchButton
+            // 
+            this.TableSwitchButton.Location = new System.Drawing.Point(640, 126);
+            this.TableSwitchButton.Name = "TableSwitchButton";
+            this.TableSwitchButton.Size = new System.Drawing.Size(75, 66);
+            this.TableSwitchButton.TabIndex = 110;
+            this.TableSwitchButton.Text = "Show for Customer";
+            this.TableSwitchButton.UseVisualStyleBackColor = true;
+            this.TableSwitchButton.Click += new System.EventHandler(this.TableSwitchButton_Click);
+            // 
+            // DeleteSelectedAccount
+            // 
+            this.DeleteSelectedAccount.Location = new System.Drawing.Point(640, 335);
+            this.DeleteSelectedAccount.Name = "DeleteSelectedAccount";
+            this.DeleteSelectedAccount.Size = new System.Drawing.Size(151, 23);
+            this.DeleteSelectedAccount.TabIndex = 111;
+            this.DeleteSelectedAccount.Text = "Delete Selected Account";
+            this.DeleteSelectedAccount.UseVisualStyleBackColor = true;
+            this.DeleteSelectedAccount.Click += new System.EventHandler(this.DeleteSelectedAccount_Click);
+            // 
+            // FromDeleteAccountTOStaffPage
+            // 
+            this.FromDeleteAccountTOStaffPage.Location = new System.Drawing.Point(678, 379);
+            this.FromDeleteAccountTOStaffPage.Name = "FromDeleteAccountTOStaffPage";
+            this.FromDeleteAccountTOStaffPage.Size = new System.Drawing.Size(75, 23);
+            this.FromDeleteAccountTOStaffPage.TabIndex = 112;
+            this.FromDeleteAccountTOStaffPage.Text = "back";
+            this.FromDeleteAccountTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromDeleteAccountTOStaffPage.Click += new System.EventHandler(this.FromDeleteAccountTOStaffPage_Click);
             // 
             // Form1
             // 
@@ -3771,6 +3890,9 @@
             this.Event_Delete.ResumeLayout(false);
             this.Event_Delete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteEventTable)).EndInit();
+            this.Account_Delete.ResumeLayout(false);
+            this.Account_Delete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountTableView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4057,7 +4179,7 @@
         private System.Windows.Forms.Button FromDeleteComputerTOStaffPage;
         private System.Windows.Forms.Button DeleteComputerRow;
         private System.Windows.Forms.TabPage Game_Delete;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button FromDeleteGameTOStaffPage;
         private System.Windows.Forms.Button DeleteGameRow;
         private System.Windows.Forms.DataGridView GameDeleteTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gname;
@@ -4080,7 +4202,7 @@
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.ComboBox DeleteGameDropDown;
         private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button FromDeleteLeaderBoardTOStaffPage;
         private System.Windows.Forms.DataGridView LeaderBoardDeleteTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
@@ -4095,7 +4217,7 @@
         private System.Windows.Forms.TabPage Event_Delete;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button FromDeleteEventTOStaffPage;
         private System.Windows.Forms.Button DeleteEventRow;
         private System.Windows.Forms.DataGridView DeleteEventTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventID;
@@ -4104,6 +4226,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.TabPage Account_Delete;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.TextBox SearchAccName;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Button FromDeleteAccountTOStaffPage;
+        private System.Windows.Forms.Button DeleteSelectedAccount;
+        private System.Windows.Forms.Button TableSwitchButton;
+        private System.Windows.Forms.DataGridView AccountTableView;
     }
 }
 

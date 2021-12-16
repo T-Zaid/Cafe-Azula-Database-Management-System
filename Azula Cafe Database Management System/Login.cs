@@ -65,6 +65,10 @@ namespace Azula_Cafe_Database_Management_System
 
         public int deleteAccount(int Accid)
         {
+            string sql = "Delete from Accounts where AccountNo = " + Accid;
+            cmd = new SqlCommand(sql, cnn);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
             return 1;
         }
 

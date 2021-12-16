@@ -1715,6 +1715,126 @@ namespace Azula_Cafe_Database_Management_System
             }
         }
 
+        private void CreateStaffDelete_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this.Controls);
+            string sql = "select Accounts.Username, Staff.StaffName, Staff.Salary, Staff.Position from Accounts, Staff where Accounts.AccountNo = Staff.AccountNo";
+            SqlDataAdapter adapt = new SqlDataAdapter(sql, cnn);
+            DataTable data = new DataTable();
+            adapt.Fill(data);
+            AccountTableView.DataSource = data;
+
+            tabControl1.SelectedTab = Account_Delete;
+        }
+
+        private void TableSwitchButton_Click(object sender, EventArgs e)
+        {
+            if(TableSwitchButton.Text == "Show for Customer")
+            {
+                string sql = "select Accounts.Username, Customers.CustName, Customers.PhoneNo from Accounts, Customers where Accounts.AccountNo = Customers.AccountNo";
+                SqlDataAdapter adapt = new SqlDataAdapter(sql, cnn);
+                DataTable data = new DataTable();
+                adapt.Fill(data);
+                AccountTableView.DataSource = data;
+                TableSwitchButton.Text = "Show for Staff";
+            }
+            else
+            {
+                string sql = "select Accounts.Username, Staff.StaffName, Staff.Salary, Staff.Position from Accounts, Staff where Accounts.AccountNo = Staff.AccountNo";
+                SqlDataAdapter adapt = new SqlDataAdapter(sql, cnn);
+                DataTable data = new DataTable();
+                adapt.Fill(data);
+                AccountTableView.DataSource = data;
+                TableSwitchButton.Text = "Show for Customer";
+            }
+        }
+
+        private void SearchAccName_TextChanged(object sender, EventArgs e)
+        {
+            if (TableSwitchButton.Text == "Show for Customer")
+            {
+                string sql = "select Accounts.Username, Staff.StaffName, Staff.Salary, Staff.Position from Accounts, Staff where Accounts.AccountNo = Staff.AccountNo and Accounts.Username like '" + SearchAccName.Text.ToString() + "%'";
+                SqlDataAdapter adapt = new SqlDataAdapter(sql, cnn);
+                DataTable data = new DataTable();
+                adapt.Fill(data);
+                AccountTableView.DataSource = data;
+            }
+            else
+            {
+                string sql = "select Accounts.Username, Customers.CustName, Customers.PhoneNo from Accounts, Customers where Accounts.AccountNo = Customers.AccountNo and Accounts.Username like '" + SearchAccName.Text.ToString() + "%'";
+                SqlDataAdapter adapt = new SqlDataAdapter(sql, cnn);
+                DataTable data = new DataTable();
+                adapt.Fill(data);
+                AccountTableView.DataSource = data;
+            }
+        }
+
+        private void DeleteSelectedAccount_Click(object sender, EventArgs e)
+        {
+            if (AccountTableView.RowCount != 0)
+            {
+                var yesNo = MessageBox.Show("Are you sure you want to permanently delete this Account from Cafe Azula Database?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (yesNo == DialogResult.Yes)
+                {
+                    string sql = "Select AccountNo from Accounts where Username = '" + AccountTableView.CurrentRow.Cells[0].Value.ToString() + "'";
+                    SqlCommand cmd = new SqlCommand(sql, cnn);
+                    int Accid = Convert.ToInt32(cmd.ExecuteScalar());
+                    cmd.Dispose();
+
+                    Login log = new Login(cnn);
+                    int success = log.deleteAccount(Accid);
+
+                    if (success == 1)
+                    {
+                        MessageBox.Show("Account successfully Deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CreateStaffDelete_Click(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        private void FromSeatDeleteTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
+        private void FromAddSeatTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
+        private void FromDeleteComputerTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
+        private void FromDeleteGameTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
+        private void FromDeleteLeaderBoardTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
+        private void FromDeleteEventTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
+        private void FromDeleteAccountTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
+        private void Rank_ig_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
         private void ProfilePageBackButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = CustomerPage;
