@@ -12,7 +12,7 @@ namespace Azula_Cafe_Database_Management_System
         private SqlConnection cnn;
         private SqlCommand cmd;
         private SqlDataReader reader;
-        public List<string> positions = new List<string>() { "Chairman", "CEO", "Manager", "Accounts", "HR Department", "Event Manager", "Seat Planner" };
+        public List<string> positions = new List<string>() { "Chairman", "CEO", "Manager", "Cafe Management", "HR Department", "Event Manager", "Seat Planner" };
 
         //public Login(string connstring)
         //{

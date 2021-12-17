@@ -72,10 +72,44 @@ namespace Azula_Cafe_Database_Management_System
                     reader.Read();
                     //StaffLabelName.Text = reader["StaffName"].ToString();
                     StaffNameRe.Text = reader["StaffName"].ToString();
+                    Staff_Designation.Text = "Designation : " + reader["Position"].ToString();
                     staff_accessibility = log.positions.FindIndex(x => x == (reader["Position"].ToString()));
                     reader.Close();
                     cmd.Dispose();
                     //tabControl1.SelectedTab = StaffPage;
+
+                    if (staff_accessibility == 3)
+                    {
+                        CreateStaffRe.Enabled = false;
+                        CreateLeaderBoardRe.Enabled = false;
+                        CreateEventRe.Enabled = false;
+                        CreateSeatRe.Enabled = false;
+                    }
+                    if (staff_accessibility == 4)
+                    {
+                        CreateLeaderBoardRe.Enabled = false;
+                        CreateEventRe.Enabled = false;
+                        CreateSeatRe.Enabled = false;
+                        CreateGameRe.Enabled = false;
+                        CreateComputerRe.Enabled = false;
+                    }
+                    if (staff_accessibility == 5)
+                    {
+                        CreateStaffRe.Enabled = false;
+                        CreateLeaderBoardRe.Enabled = false;
+                        CreateSeatRe.Enabled = false;
+                        CreateGameRe.Enabled = false;
+                        CreateComputerRe.Enabled = false;
+                    }
+                    if (staff_accessibility == 6)
+                    {
+                        CreateStaffRe.Enabled = false;
+                        CreateLeaderBoardRe.Enabled = false;
+                        CreateEventRe.Enabled = false;
+                        CreateGameRe.Enabled = false;
+                        CreateComputerRe.Enabled = false;
+                    }
+
                     tabControl1.SelectedTab = StaffPageReloaded;
                 }
                 else if (flag[0] == 0)
@@ -1833,6 +1867,52 @@ namespace Azula_Cafe_Database_Management_System
         {
             if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void Staff_Logout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void Staff_Profile_Click(object sender, EventArgs e)
+        {
+            string newQuery = "SELECT Staff.StaffName, Staff.PhoneNo, Staff.Position, Staff.Salary, Accounts.Username from Staff, Accounts where Staff.AccountNo = Accounts.AccountNo and Staff.StaffID = " + staffID_From1;
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            reader.Read();
+
+            StaffNameProfile.Text = reader["StaffName"].ToString();
+            StaffPhoneProfile.Text = reader["PhoneNo"].ToString();
+            PositionProfile.Text = reader["Position"].ToString();
+            StaffProfile_Username.Text = reader["Username"].ToString();
+            StaffProfile_Salary.Text = reader["Salary"].ToString();
+
+            reader.Close();
+            cmd.Dispose();
+
+            if(staff_accessibility > 2)
+            {
+                supervisingStatus.Hide();
+                SupervisedTable.Hide();
+            }
+            else
+            {
+                string sql = "Select StaffName, Position from Staff where Supervisor_ID in ( select StaffID from Staff where StaffID = " + staffID_From1 + " )";
+                SqlCommand cmd1 = new SqlCommand(sql, cnn);
+                SqlDataReader reader1 = cmd1.ExecuteReader();
+
+                while(reader1.Read())
+                {
+                    string[] row = { reader1["StaffName"].ToString(), reader1["Position"].ToString() };
+                    SupervisedTable.Rows.Add(row);
+                }
+            }
+
+            reader.Close();
+            cmd.Dispose();
+
+            tabControl1.SelectedTab = StaffProfile;
         }
 
         private void ProfilePageBackButton_Click(object sender, EventArgs e)
