@@ -123,5 +123,56 @@
   <ItemGroup>
     <None Include="Resources\bookSeatButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\azuladbmainbackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\azuladbmainbackground %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customerbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customerbackground1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultbackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookingHistoryButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewEventsButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewEventsButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookingHistoryButton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelSeatsButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StaffSideBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StaffSideBackground1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StaffSideBackground2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StaffSideBackground3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StaffSideBackground4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customerSideBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customerSideBackground1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
