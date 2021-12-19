@@ -374,8 +374,8 @@
             this.PositionProfile = new System.Windows.Forms.Label();
             this.StaffPhoneProfile = new System.Windows.Forms.Label();
             this.StaffNameProfile = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.StaffPhoneNoChangeButton = new System.Windows.Forms.Button();
+            this.StaffEditNameButton = new System.Windows.Forms.Button();
             this.ChangePasswordProfile = new System.Windows.Forms.Button();
             this.label107 = new System.Windows.Forms.Label();
             this.label103 = new System.Windows.Forms.Label();
@@ -485,7 +485,7 @@
             this.LoginPage.Location = new System.Drawing.Point(4, 22);
             this.LoginPage.Name = "LoginPage";
             this.LoginPage.Padding = new System.Windows.Forms.Padding(3);
-            this.LoginPage.Size = new System.Drawing.Size(806, 441);
+            this.LoginPage.Size = new System.Drawing.Size(806, 459);
             this.LoginPage.TabIndex = 0;
             this.LoginPage.Text = "Login";
             this.LoginPage.UseVisualStyleBackColor = true;
@@ -589,7 +589,7 @@
             this.CustAccReg.Location = new System.Drawing.Point(4, 22);
             this.CustAccReg.Name = "CustAccReg";
             this.CustAccReg.Padding = new System.Windows.Forms.Padding(3);
-            this.CustAccReg.Size = new System.Drawing.Size(806, 460);
+            this.CustAccReg.Size = new System.Drawing.Size(806, 438);
             this.CustAccReg.TabIndex = 1;
             this.CustAccReg.Text = "Register Customer Account";
             this.CustAccReg.UseVisualStyleBackColor = true;
@@ -718,7 +718,7 @@
             this.CustomerPage.Controls.Add(this.BookSeatsButton);
             this.CustomerPage.Location = new System.Drawing.Point(4, 22);
             this.CustomerPage.Name = "CustomerPage";
-            this.CustomerPage.Size = new System.Drawing.Size(806, 460);
+            this.CustomerPage.Size = new System.Drawing.Size(806, 438);
             this.CustomerPage.TabIndex = 2;
             this.CustomerPage.Text = "Customer";
             this.CustomerPage.UseVisualStyleBackColor = true;
@@ -851,7 +851,7 @@
             this.BookSeatsPage.Controls.Add(this.label6);
             this.BookSeatsPage.Location = new System.Drawing.Point(4, 22);
             this.BookSeatsPage.Name = "BookSeatsPage";
-            this.BookSeatsPage.Size = new System.Drawing.Size(806, 460);
+            this.BookSeatsPage.Size = new System.Drawing.Size(806, 438);
             this.BookSeatsPage.TabIndex = 3;
             this.BookSeatsPage.Text = "Book Seats";
             this.BookSeatsPage.UseVisualStyleBackColor = true;
@@ -1000,7 +1000,7 @@
             this.BookSeatsPage2.Controls.Add(this.label12);
             this.BookSeatsPage2.Location = new System.Drawing.Point(4, 22);
             this.BookSeatsPage2.Name = "BookSeatsPage2";
-            this.BookSeatsPage2.Size = new System.Drawing.Size(806, 460);
+            this.BookSeatsPage2.Size = new System.Drawing.Size(806, 438);
             this.BookSeatsPage2.TabIndex = 4;
             this.BookSeatsPage2.Text = "Book Seats 2";
             this.BookSeatsPage2.UseVisualStyleBackColor = true;
@@ -1140,7 +1140,7 @@
             this.CancelSeatPage.Controls.Add(this.label21);
             this.CancelSeatPage.Location = new System.Drawing.Point(4, 22);
             this.CancelSeatPage.Name = "CancelSeatPage";
-            this.CancelSeatPage.Size = new System.Drawing.Size(806, 460);
+            this.CancelSeatPage.Size = new System.Drawing.Size(806, 438);
             this.CancelSeatPage.TabIndex = 5;
             this.CancelSeatPage.Text = "Cancel Seat";
             this.CancelSeatPage.UseVisualStyleBackColor = true;
@@ -1187,7 +1187,7 @@
             // 
             // CancelBookingBackButton
             // 
-            this.CancelBookingBackButton.Location = new System.Drawing.Point(433, 395);
+            this.CancelBookingBackButton.Location = new System.Drawing.Point(436, 391);
             this.CancelBookingBackButton.Name = "CancelBookingBackButton";
             this.CancelBookingBackButton.Size = new System.Drawing.Size(75, 23);
             this.CancelBookingBackButton.TabIndex = 4;
@@ -1197,11 +1197,11 @@
             // 
             // CancelBookingButton
             // 
-            this.CancelBookingButton.Location = new System.Drawing.Point(299, 395);
+            this.CancelBookingButton.Location = new System.Drawing.Point(281, 391);
             this.CancelBookingButton.Name = "CancelBookingButton";
-            this.CancelBookingButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelBookingButton.Size = new System.Drawing.Size(96, 23);
             this.CancelBookingButton.TabIndex = 3;
-            this.CancelBookingButton.Text = "Cancel";
+            this.CancelBookingButton.Text = "Cancel Booking";
             this.CancelBookingButton.UseVisualStyleBackColor = true;
             this.CancelBookingButton.Click += new System.EventHandler(this.CancelBookingButton_Click);
             // 
@@ -1294,7 +1294,7 @@
             this.ViewBookingsPage.Controls.Add(this.label26);
             this.ViewBookingsPage.Location = new System.Drawing.Point(4, 22);
             this.ViewBookingsPage.Name = "ViewBookingsPage";
-            this.ViewBookingsPage.Size = new System.Drawing.Size(806, 460);
+            this.ViewBookingsPage.Size = new System.Drawing.Size(806, 438);
             this.ViewBookingsPage.TabIndex = 7;
             this.ViewBookingsPage.Text = "Booking History";
             this.ViewBookingsPage.UseVisualStyleBackColor = true;
@@ -1464,7 +1464,7 @@
             this.BookEventsPage.Controls.Add(this.label65);
             this.BookEventsPage.Location = new System.Drawing.Point(4, 22);
             this.BookEventsPage.Name = "BookEventsPage";
-            this.BookEventsPage.Size = new System.Drawing.Size(806, 460);
+            this.BookEventsPage.Size = new System.Drawing.Size(806, 438);
             this.BookEventsPage.TabIndex = 13;
             this.BookEventsPage.Text = "View/Book Events";
             this.BookEventsPage.UseVisualStyleBackColor = true;
@@ -1601,7 +1601,7 @@
             this.ViewLeaderboardPage.Controls.Add(this.label69);
             this.ViewLeaderboardPage.Location = new System.Drawing.Point(4, 22);
             this.ViewLeaderboardPage.Name = "ViewLeaderboardPage";
-            this.ViewLeaderboardPage.Size = new System.Drawing.Size(806, 460);
+            this.ViewLeaderboardPage.Size = new System.Drawing.Size(806, 438);
             this.ViewLeaderboardPage.TabIndex = 14;
             this.ViewLeaderboardPage.Text = "View Leaderboard";
             this.ViewLeaderboardPage.UseVisualStyleBackColor = true;
@@ -1801,7 +1801,7 @@
             this.ViewProfilePage.Controls.Add(this.label75);
             this.ViewProfilePage.Location = new System.Drawing.Point(4, 22);
             this.ViewProfilePage.Name = "ViewProfilePage";
-            this.ViewProfilePage.Size = new System.Drawing.Size(806, 441);
+            this.ViewProfilePage.Size = new System.Drawing.Size(806, 438);
             this.ViewProfilePage.TabIndex = 15;
             this.ViewProfilePage.Text = "Profile Page";
             this.ViewProfilePage.UseVisualStyleBackColor = true;
@@ -1934,7 +1934,7 @@
             this.StaffPage.Controls.Add(this.label24);
             this.StaffPage.Location = new System.Drawing.Point(4, 22);
             this.StaffPage.Name = "StaffPage";
-            this.StaffPage.Size = new System.Drawing.Size(806, 441);
+            this.StaffPage.Size = new System.Drawing.Size(806, 438);
             this.StaffPage.TabIndex = 6;
             this.StaffPage.Text = "Staff";
             this.StaffPage.UseVisualStyleBackColor = true;
@@ -2036,7 +2036,7 @@
             this.StaffPageReloaded.Controls.Add(this.label80);
             this.StaffPageReloaded.Location = new System.Drawing.Point(4, 22);
             this.StaffPageReloaded.Name = "StaffPageReloaded";
-            this.StaffPageReloaded.Size = new System.Drawing.Size(806, 460);
+            this.StaffPageReloaded.Size = new System.Drawing.Size(806, 438);
             this.StaffPageReloaded.TabIndex = 17;
             this.StaffPageReloaded.Text = "StaffReloaded";
             this.StaffPageReloaded.UseVisualStyleBackColor = true;
@@ -2401,7 +2401,7 @@
             this.StaffAccReg.Controls.Add(this.label35);
             this.StaffAccReg.Location = new System.Drawing.Point(4, 22);
             this.StaffAccReg.Name = "StaffAccReg";
-            this.StaffAccReg.Size = new System.Drawing.Size(806, 441);
+            this.StaffAccReg.Size = new System.Drawing.Size(806, 438);
             this.StaffAccReg.TabIndex = 8;
             this.StaffAccReg.Text = "Register Staff Account";
             this.StaffAccReg.UseVisualStyleBackColor = true;
@@ -2602,7 +2602,7 @@
             this.Game_Add.Controls.Add(this.label45);
             this.Game_Add.Location = new System.Drawing.Point(4, 22);
             this.Game_Add.Name = "Game_Add";
-            this.Game_Add.Size = new System.Drawing.Size(806, 441);
+            this.Game_Add.Size = new System.Drawing.Size(806, 438);
             this.Game_Add.TabIndex = 9;
             this.Game_Add.Text = "Adding Games";
             this.Game_Add.UseVisualStyleBackColor = true;
@@ -2740,7 +2740,7 @@
             this.Computer_Add.Controls.Add(this.label50);
             this.Computer_Add.Location = new System.Drawing.Point(4, 22);
             this.Computer_Add.Name = "Computer_Add";
-            this.Computer_Add.Size = new System.Drawing.Size(806, 441);
+            this.Computer_Add.Size = new System.Drawing.Size(806, 438);
             this.Computer_Add.TabIndex = 10;
             this.Computer_Add.Text = "Adding Computers";
             this.Computer_Add.UseVisualStyleBackColor = true;
@@ -2874,7 +2874,7 @@
             this.LeaderBoard_Add.Controls.Add(this.label56);
             this.LeaderBoard_Add.Location = new System.Drawing.Point(4, 22);
             this.LeaderBoard_Add.Name = "LeaderBoard_Add";
-            this.LeaderBoard_Add.Size = new System.Drawing.Size(806, 441);
+            this.LeaderBoard_Add.Size = new System.Drawing.Size(806, 438);
             this.LeaderBoard_Add.TabIndex = 11;
             this.LeaderBoard_Add.Text = "LeaderBoard";
             this.LeaderBoard_Add.UseVisualStyleBackColor = true;
@@ -3010,7 +3010,7 @@
             this.Event_Add.Controls.Add(this.EventStartDate);
             this.Event_Add.Location = new System.Drawing.Point(4, 22);
             this.Event_Add.Name = "Event_Add";
-            this.Event_Add.Size = new System.Drawing.Size(806, 441);
+            this.Event_Add.Size = new System.Drawing.Size(806, 438);
             this.Event_Add.TabIndex = 12;
             this.Event_Add.Text = "Add Event";
             this.Event_Add.UseVisualStyleBackColor = true;
@@ -3206,7 +3206,7 @@
             this.Seats_Add.Controls.Add(this.label84);
             this.Seats_Add.Location = new System.Drawing.Point(4, 22);
             this.Seats_Add.Name = "Seats_Add";
-            this.Seats_Add.Size = new System.Drawing.Size(806, 441);
+            this.Seats_Add.Size = new System.Drawing.Size(806, 438);
             this.Seats_Add.TabIndex = 16;
             this.Seats_Add.Text = "Add Seats";
             this.Seats_Add.UseVisualStyleBackColor = true;
@@ -3314,7 +3314,7 @@
             this.Computer_Delete.Controls.Add(this.label85);
             this.Computer_Delete.Location = new System.Drawing.Point(4, 22);
             this.Computer_Delete.Name = "Computer_Delete";
-            this.Computer_Delete.Size = new System.Drawing.Size(806, 441);
+            this.Computer_Delete.Size = new System.Drawing.Size(806, 438);
             this.Computer_Delete.TabIndex = 18;
             this.Computer_Delete.Text = "Delete Computer";
             this.Computer_Delete.UseVisualStyleBackColor = true;
@@ -3422,7 +3422,7 @@
             this.Game_Delete.Controls.Add(this.label87);
             this.Game_Delete.Location = new System.Drawing.Point(4, 22);
             this.Game_Delete.Name = "Game_Delete";
-            this.Game_Delete.Size = new System.Drawing.Size(806, 460);
+            this.Game_Delete.Size = new System.Drawing.Size(806, 438);
             this.Game_Delete.TabIndex = 19;
             this.Game_Delete.Text = "Delete Game";
             this.Game_Delete.UseVisualStyleBackColor = true;
@@ -3525,7 +3525,7 @@
             this.Seats_Delete.Controls.Add(this.label89);
             this.Seats_Delete.Location = new System.Drawing.Point(4, 22);
             this.Seats_Delete.Name = "Seats_Delete";
-            this.Seats_Delete.Size = new System.Drawing.Size(806, 460);
+            this.Seats_Delete.Size = new System.Drawing.Size(806, 438);
             this.Seats_Delete.TabIndex = 20;
             this.Seats_Delete.Text = "Delete Seats";
             this.Seats_Delete.UseVisualStyleBackColor = true;
@@ -3644,7 +3644,7 @@
             this.LeaderBoard_Delete.Controls.Add(this.LeaderBoardDeleteTable);
             this.LeaderBoard_Delete.Location = new System.Drawing.Point(4, 22);
             this.LeaderBoard_Delete.Name = "LeaderBoard_Delete";
-            this.LeaderBoard_Delete.Size = new System.Drawing.Size(806, 460);
+            this.LeaderBoard_Delete.Size = new System.Drawing.Size(806, 438);
             this.LeaderBoard_Delete.TabIndex = 21;
             this.LeaderBoard_Delete.Text = "Delete LeaderBoard";
             this.LeaderBoard_Delete.UseVisualStyleBackColor = true;
@@ -3786,7 +3786,7 @@
             this.Event_Delete.Controls.Add(this.label91);
             this.Event_Delete.Location = new System.Drawing.Point(4, 22);
             this.Event_Delete.Name = "Event_Delete";
-            this.Event_Delete.Size = new System.Drawing.Size(806, 460);
+            this.Event_Delete.Size = new System.Drawing.Size(806, 438);
             this.Event_Delete.TabIndex = 22;
             this.Event_Delete.Text = "Delete Event";
             this.Event_Delete.UseVisualStyleBackColor = true;
@@ -3905,7 +3905,7 @@
             this.Account_Delete.Controls.Add(this.label95);
             this.Account_Delete.Location = new System.Drawing.Point(4, 22);
             this.Account_Delete.Name = "Account_Delete";
-            this.Account_Delete.Size = new System.Drawing.Size(806, 459);
+            this.Account_Delete.Size = new System.Drawing.Size(806, 438);
             this.Account_Delete.TabIndex = 23;
             this.Account_Delete.Text = "Delete Account";
             this.Account_Delete.UseVisualStyleBackColor = true;
@@ -4011,8 +4011,8 @@
             this.StaffProfile.Controls.Add(this.PositionProfile);
             this.StaffProfile.Controls.Add(this.StaffPhoneProfile);
             this.StaffProfile.Controls.Add(this.StaffNameProfile);
-            this.StaffProfile.Controls.Add(this.button2);
-            this.StaffProfile.Controls.Add(this.button3);
+            this.StaffProfile.Controls.Add(this.StaffPhoneNoChangeButton);
+            this.StaffProfile.Controls.Add(this.StaffEditNameButton);
             this.StaffProfile.Controls.Add(this.ChangePasswordProfile);
             this.StaffProfile.Controls.Add(this.label107);
             this.StaffProfile.Controls.Add(this.label103);
@@ -4021,7 +4021,7 @@
             this.StaffProfile.Controls.Add(this.label106);
             this.StaffProfile.Location = new System.Drawing.Point(4, 22);
             this.StaffProfile.Name = "StaffProfile";
-            this.StaffProfile.Size = new System.Drawing.Size(806, 460);
+            this.StaffProfile.Size = new System.Drawing.Size(806, 438);
             this.StaffProfile.TabIndex = 24;
             this.StaffProfile.Text = "Staff Profile";
             this.StaffProfile.UseVisualStyleBackColor = true;
@@ -4107,6 +4107,7 @@
             this.FromStaffProfileTOStaffPage.TabIndex = 27;
             this.FromStaffProfileTOStaffPage.Text = "Back";
             this.FromStaffProfileTOStaffPage.UseVisualStyleBackColor = true;
+            this.FromStaffProfileTOStaffPage.Click += new System.EventHandler(this.FromStaffProfileTOStaffPage_Click);
             // 
             // PositionProfile
             // 
@@ -4135,23 +4136,25 @@
             this.StaffNameProfile.TabIndex = 24;
             this.StaffNameProfile.Text = "StaffName";
             // 
-            // button2
+            // StaffPhoneNoChangeButton
             // 
-            this.button2.Location = new System.Drawing.Point(412, 202);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Edit Phone Number";
-            this.button2.UseVisualStyleBackColor = true;
+            this.StaffPhoneNoChangeButton.Location = new System.Drawing.Point(412, 202);
+            this.StaffPhoneNoChangeButton.Name = "StaffPhoneNoChangeButton";
+            this.StaffPhoneNoChangeButton.Size = new System.Drawing.Size(120, 23);
+            this.StaffPhoneNoChangeButton.TabIndex = 23;
+            this.StaffPhoneNoChangeButton.Text = "Edit Phone Number";
+            this.StaffPhoneNoChangeButton.UseVisualStyleBackColor = true;
+            this.StaffPhoneNoChangeButton.Click += new System.EventHandler(this.StaffPhoneNoChangeButton_Click);
             // 
-            // button3
+            // StaffEditNameButton
             // 
-            this.button3.Location = new System.Drawing.Point(412, 137);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Edit Name";
-            this.button3.UseVisualStyleBackColor = true;
+            this.StaffEditNameButton.Location = new System.Drawing.Point(412, 137);
+            this.StaffEditNameButton.Name = "StaffEditNameButton";
+            this.StaffEditNameButton.Size = new System.Drawing.Size(75, 23);
+            this.StaffEditNameButton.TabIndex = 22;
+            this.StaffEditNameButton.Text = "Edit Name";
+            this.StaffEditNameButton.UseVisualStyleBackColor = true;
+            this.StaffEditNameButton.Click += new System.EventHandler(this.StaffChangeNameButton_Click);
             // 
             // ChangePasswordProfile
             // 
@@ -4161,6 +4164,7 @@
             this.ChangePasswordProfile.TabIndex = 21;
             this.ChangePasswordProfile.Text = "Change Password";
             this.ChangePasswordProfile.UseVisualStyleBackColor = true;
+            this.ChangePasswordProfile.Click += new System.EventHandler(this.ChangePasswordProfile_Click);
             // 
             // label107
             // 
@@ -4668,8 +4672,8 @@
         private System.Windows.Forms.Label PositionProfile;
         private System.Windows.Forms.Label StaffPhoneProfile;
         private System.Windows.Forms.Label StaffNameProfile;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button StaffPhoneNoChangeButton;
+        private System.Windows.Forms.Button StaffEditNameButton;
         private System.Windows.Forms.Button ChangePasswordProfile;
         private System.Windows.Forms.Label label107;
         private System.Windows.Forms.Label label103;

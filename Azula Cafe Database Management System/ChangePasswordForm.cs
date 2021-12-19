@@ -15,12 +15,14 @@ namespace Azula_Cafe_Database_Management_System
     {
         private SqlConnection cnn;
         private int customerID_PassForm;
+        string Staff_Cust;
 
-        public ChangePasswordForm(SqlConnection connection, int custID)
+        public ChangePasswordForm(SqlConnection connection, int ID, string StaffOrCust = "Cust")
         {
             InitializeComponent();
             cnn = connection;
-            customerID_PassForm = custID;
+            customerID_PassForm = ID;
+            Staff_Cust = StaffOrCust.ToLower();
         }
 
         private void UpdatePasswordButton_Click(object sender, EventArgs e)
@@ -29,7 +31,11 @@ namespace Azula_Cafe_Database_Management_System
             {
                 if(NewPasswordTextBox.Text.Length > 0 && NewPasswordTextBox.Text.Length <= 15)
                 {
-                    string newQuery = "UPDATE Accounts SET AccPassword = '" + NewPasswordTextBox.Text.ToString() + "' WHERE AccountNo = (SELECT AccountNo FROM Customers WHERE CustomerID = " + customerID_PassForm.ToString() + ")";
+                    string newQuery = "UPDATE Accounts SET AccPassword = '" + NewPasswordTextBox.Text.ToString() + "' WHERE AccountNo = (SELECT AccountNo FROM Customers WHERE CustomerID = " + customerID_PassForm.ToString() + ")";;
+                    
+                    if(Staff_Cust == "staff")
+                        newQuery = "UPDATE Accounts SET AccPassword = '" + NewPasswordTextBox.Text.ToString() + "' WHERE AccountNo = (SELECT AccountNo FROM Staff WHERE StaffID = " + customerID_PassForm.ToString() + ")";
+                    
                     SqlCommand cmd = new SqlCommand(newQuery, cnn);
                     cmd.ExecuteNonQuery();
                     cmd.Dispose();

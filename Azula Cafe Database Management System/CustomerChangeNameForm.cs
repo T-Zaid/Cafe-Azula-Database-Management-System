@@ -15,15 +15,16 @@ namespace Azula_Cafe_Database_Management_System
     {
         private int customerID_NameForm;
         private SqlConnection cnn;
-        private string changeAttribute;
+        private string changeAttribute, Cust_Staff;
 
-        public CustomerChangeNameForm(SqlConnection connection, int CustID, string Attribute)
+        public CustomerChangeNameForm(SqlConnection connection, int ID, string Attribute, string CustOrStaff = "Cust")
         {
             InitializeComponent();
-            customerID_NameForm = CustID;
+            customerID_NameForm = ID;
             cnn = connection;
             label1.Text = "Enter new " + Attribute + ":";
             changeAttribute = Attribute;
+            Cust_Staff = CustOrStaff.ToLower();
         }
 
         private void UpdateNameButton_Click(object sender, EventArgs e)
@@ -33,6 +34,10 @@ namespace Azula_Cafe_Database_Management_System
                 if (NewNameTextBox.Text.Length != 0 && NewNameTextBox.Text.Length <= 50)
                 {
                     string newQuery = "UPDATE Customers SET CustName = '" + NewNameTextBox.Text.ToString() + "' WHERE CustomerID = " + customerID_NameForm.ToString();
+                    
+                    if(Cust_Staff == "staff")
+                        newQuery = "UPDATE Staff SET StaffName = '" + NewNameTextBox.Text.ToString() + "' WHERE StaffID = " + customerID_NameForm.ToString();
+
                     SqlCommand cmd = new SqlCommand(newQuery, cnn);
                     cmd.ExecuteNonQuery();
                     cmd.Dispose();
@@ -50,6 +55,10 @@ namespace Azula_Cafe_Database_Management_System
                 if (NewNameTextBox.Text.Length == 11)
                 {
                     string newQuery = "UPDATE Customers SET PhoneNo = '" + NewNameTextBox.Text.ToString() + "' WHERE CustomerID = " + customerID_NameForm.ToString();
+                    
+                    if(Cust_Staff == "staff")
+                        newQuery = "UPDATE Staff SET PhoneNo = '" + NewNameTextBox.Text.ToString() + "' WHERE StaffID = " + customerID_NameForm.ToString();
+
                     SqlCommand cmd = new SqlCommand(newQuery, cnn);
                     cmd.ExecuteNonQuery();
                     cmd.Dispose();

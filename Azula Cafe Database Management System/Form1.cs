@@ -1930,6 +1930,44 @@ namespace Azula_Cafe_Database_Management_System
 
         }
 
+        private void StaffChangeNameButton_Click(object sender, EventArgs e)
+        {
+            CustomerChangeNameForm changeName = new CustomerChangeNameForm(cnn, staffID_From1, "Name", "staff");
+            changeName.ShowDialog();
+
+            string newQuery = "SELECT StaffName FROM Staff WHERE StaffID = " + staffID_From1.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            reader.Read();
+            StaffNameProfile.Text = reader["StaffName"].ToString();
+            StaffNameRe.Text = reader["StaffName"].ToString();
+        }
+
+        private void StaffPhoneNoChangeButton_Click(object sender, EventArgs e)
+        {
+            CustomerChangeNameForm changePhone = new CustomerChangeNameForm(cnn, staffID_From1, "Phone Number", "staff");
+            changePhone.ShowDialog();
+
+            string newQuery = "SELECT PhoneNo FROM Staff WHERE StaffID = " + staffID_From1.ToString();
+            SqlCommand cmd = new SqlCommand(newQuery, cnn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            reader.Read();
+            StaffPhoneProfile.Text = reader["PhoneNo"].ToString();
+        }
+
+        private void ChangePasswordProfile_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm changePass = new ChangePasswordForm(cnn, staffID_From1, "staff");
+            changePass.ShowDialog();
+        }
+
+        private void FromStaffProfileTOStaffPage_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = StaffPageReloaded;
+        }
+
         private void ProfilePageBackButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = CustomerPage;
