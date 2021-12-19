@@ -1968,6 +1968,12 @@ namespace Azula_Cafe_Database_Management_System
             tabControl1.SelectedTab = StaffPageReloaded;
         }
 
+        private void MovetoLoginPage_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this.Controls);
+            tabControl1.SelectedTab = LoginPage;
+        }
+
         private void ProfilePageBackButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = CustomerPage;
