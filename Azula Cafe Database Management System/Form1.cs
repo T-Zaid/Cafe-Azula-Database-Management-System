@@ -29,8 +29,8 @@ namespace Azula_Cafe_Database_Management_System
             InitializeComponent();
             umer_connectionString = @"Data Source=DESKTOP-L0E3C0D\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
             connectionString = @"Data Source=ZAID-PC\SERWORK;Initial Catalog=AzulaDB;Integrated Security = True;MultipleActiveResultSets=true";
-            //cnn = new SqlConnection(connectionString);
-            cnn = new SqlConnection(umer_connectionString);
+            cnn = new SqlConnection(connectionString);
+            //cnn = new SqlConnection(umer_connectionString);
             cnn.Open();
         }
 
@@ -1511,7 +1511,7 @@ namespace Azula_Cafe_Database_Management_System
                 if (yesNo == DialogResult.Yes)
                 {
                     CafeFeatures feats = new CafeFeatures(cnn);
-                    int success = feats.deleteComputer(Convert.ToInt32(CancelBookingTable.CurrentRow.Cells[0].Value.ToString()));
+                    int success = feats.deleteComputer(Convert.ToInt32(ComputerDeleteTable.CurrentRow.Cells[0].Value.ToString()));
 
                     if (success == 1)
                     {
