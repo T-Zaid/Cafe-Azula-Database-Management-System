@@ -1898,6 +1898,7 @@ namespace Azula_Cafe_Database_Management_System
             }
             else
             {
+                SupervisedTable.Rows.Clear();
                 string sql = "Select StaffName, Position from Staff where Supervisor_ID in ( select StaffID from Staff where StaffID = " + staffID_From1 + " )";
                 SqlCommand cmd1 = new SqlCommand(sql, cnn);
                 SqlDataReader reader1 = cmd1.ExecuteReader();
